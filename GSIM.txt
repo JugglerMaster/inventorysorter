@@ -1,0 +1,897 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+bool Tutorials = true;
+
+
+
+
+bool MRs = true;
+
+int UA = 25;
+
+
+bool MGG = true;
+
+int GGI = 2500;
+
+
+
+
+
+
+
+public static string[] MTS = { "!GSIM-Manual", "[Manual]" };
+
+
+bool AC = true;
+
+bool RCP = false;
+
+
+bool RH = true;
+
+bool RSF = true;
+
+bool STOR = true;
+
+bool SCW = true;
+
+
+bool SKI = true;
+
+
+bool SGP = true;
+
+
+bool IBT = true;
+
+
+
+
+
+public static string[] ITS = { "!GSIM-Locked", "[Locked]", "Control Station", "Seat", "Helm", "Safe Zone" };
+
+
+public static string[] SCT =
+{
+    "!GSIM-Stock",
+    "[Stock]",
+
+};
+
+
+public static string[] HTS =
+{
+    "!GSIM-Hidden",
+    "[Hidden]",
+
+
+};
+
+
+static string[] SET = { "!GSIM-NoSorting", "[No Sorting]" };
+
+
+static string[] HET = { "!GSIM-NoGOAT", "[No GOAT]" };
+
+
+
+
+
+static string[] ACT = { "!GSIM-AutoCrafting", "[AutoCrafting]" };
+
+static string[] ACE = { "!GSIM-AutoEXT:", "[AutoCraftingExtension:" };
+
+
+static string[] LST = { "!GSIM-LogScreen", "[LogScreen]" };
+
+
+static string[] SST = { "!GSIM-StatusScreen", "!StatusScreen", "[StatusScreen]" };
+
+
+static string[] MLT = { "!GSIM-MultiLCD", "[GOAT]" };
+
+
+static string[] IST = { "!GSIM-Inventory", "[Inventory]" };
+
+
+static string[] CST = { "!GSIM-ContainerLevel", "[ContainerLevel]" };
+
+
+
+
+
+bool CBM = false;
+
+
+Color CBNC = new Color(0.341f, 0.286f, 0.64f);
+
+
+Color CBPC = new Color(1f, 1f, 0f);
+
+
+
+
+
+bool VBPL = false;
+    
+
+double UTC = 0.0;
+
+
+bool AT = false;
+double ATMS = 0.5;
+
+
+int MinCycle = 10;
+
+
+static int LL = 48;
+
+bool RBTC = false;
+
+int VTEC = 16;
+
+
+
+MyItemType A;MyItemType B;MyItemType C;MyItemType D;MyItemType E;MyDefinitionId F;string G="1.3.0";public
+ Program(){VTEC
+=Math.Max(2,VTEC);H();Runtime.UpdateFrequency=UpdateFrequency.Update1|UpdateFrequency.Update10;I["learning"]=J;I[
+"learningOre"]=K;I["resetIndex"]=L;I["removeNotCraftableBlueprints"]=M;I["addItem"]=N;I["addItemOverride"]=O;I["addAllKnownItems"]=P;
+I["translateItemNames"]=Q;I["scanProduction"]=S;A=MyItemType.Parse("MyObjectBuilder_Ingot/Uranium");B=MyItemType.Parse(
+"MyObjectBuilder_Ore/Ice");C=MyItemType.Parse("MyObjectBuilder_Ore/Iron");D=MyItemType.Parse("MyObjectBuilder_Ingot/Iron");E=MyItemType.Parse(
+"MyObjectBuilder_Component/Construction");F=MyDefinitionId.Parse("MyObjectBuilder_BlueprintDefinition/Position0010_StoneOreToIngotBasic");R.S=CBM;R.T=CBNC;R.U=
+CBPC;V.W=VBPL;X.Y=UTC;var Z=Me.GetSurface(0);if(Z!=null){var a=new List<string>();var b="ColorfulIcons_Component/SolarCell";
+Z.ClearImagesFromSelection();Z.AddImageToSelection(b);Z.GetSelectedImages(a);V.c=a.Contains(b);}}void H(){d=e();f=g();}
+public void
+ Save
+(){}bool h=false;int i=1;MyIni j=new MyIni();List<IMyTextPanel>k=new List<IMyTextPanel>();DateTime l;Dictionary<
+IMyTerminalBlock,m>n=new Dictionary<IMyTerminalBlock,m>();Dictionary<string,List<m>>o=new Dictionary<string,List<m>>();Dictionary<m,List
+<string>>p=new Dictionary<m,List<string>>();List<IMyTerminalBlock>q=new List<IMyTerminalBlock>();List<IMyShipConnector>r=
+new List<IMyShipConnector>();List<IMyMechanicalConnectionBlock>s=new List<IMyMechanicalConnectionBlock>();List<
+IMyTerminalBlock>t=new List<IMyTerminalBlock>();Dictionary<string,IMyTerminalBlock>u=new Dictionary<string,IMyTerminalBlock>();List<
+IMyReactor>v=new List<IMyReactor>();List<IMyGasGenerator>w=new List<IMyGasGenerator>();List<IMyGasTank>x=new List<IMyGasTank>();
+List<IMyBatteryBlock>y=new List<IMyBatteryBlock>();List<MyInventoryItem>z=new List<MyInventoryItem>();MyInventoryItem?ª;
+MyInventoryItem µ;MyFixedPoint º=0;MyFixedPoint À=0;MyFixedPoint Á=0;IMyInventory Â;IMyInventory Ã;List<string>Ä=new List<string>();
+string Å="";string Æ="";IEnumerator<bool>d;IEnumerator<bool>f;Dictionary<MyItemType,V>Ç=new Dictionary<MyItemType,V>();
+Dictionary<string,V>È=new Dictionary<string,V>();string[]É;Dictionary<string,V>Ê=new Dictionary<string,V>();List<V>Ë=new List<V>()
+;V Ì;List<string>Í=new List<string>();Dictionary<string,float>Î=new Dictionary<string,float>();Dictionary<string,List<
+IMyInventory>>Ï=new Dictionary<string,List<IMyInventory>>();int Ð=0;string Ñ="";int Ò;string Ó;int Ô=0;static List<KeyValuePair<
+string,DateTime>>Õ=new List<KeyValuePair<string,DateTime>>();IMyTextSurface Ö;IMyTextSurface Ø;IMyTextSurface LN;IMyTextSurface LC;string Ù="";int Ú=0;static List
+<string>Û=new List<string>();List<IMyProductionBlock>Ü=new List<IMyProductionBlock>();List<IMyProductionBlock>Ý=new List<
+IMyProductionBlock>();List<IMyProductionBlock>Þ=new List<IMyProductionBlock>();List<MyProductionItem>ß=new List<MyProductionItem>();List<à
+>á=new List<à>();bool â=false;bool ã=false;DateTime?ä;bool å=false;bool æ=false;ç è=new ç();List<IMyRefinery>é=new List<
+IMyRefinery>();MyItemType?ê=null;bool ë=false;bool ì=false;bool í=false;List<IMyTextPanel>î=new List<IMyTextPanel>();Dictionary<
+IMyTextSurfaceProvider,IMyTerminalBlock>ï=new Dictionary<IMyTextSurfaceProvider,IMyTerminalBlock>();Dictionary<IMyTextSurface,IMyTerminalBlock
+>ð=new Dictionary<IMyTextSurface,IMyTerminalBlock>();Dictionary<IMyTextSurface,IMyTerminalBlock>ñ=new Dictionary<
+IMyTextSurface,IMyTerminalBlock>();Dictionary<IMyTextSurface,string>ò=new Dictionary<IMyTextSurface,string>();IMyTextSurface ó;
+RectangleF ô;List<string>õ=new List<string>();string[]ö;int ø;int ù;int ú;IMyTextPanel û;List<IMyTextPanel>ü=new List<IMyTextPanel
+>();bool ý=false;string þ;string[]ÿ;float Ā;float ā;int Ă;int ă;bool Ą;bool ą;MyCommandLine Ć=new MyCommandLine();
+Dictionary<string,Action>I=new Dictionary<string,Action>(StringComparer.OrdinalIgnoreCase);float ć;float Ĉ;string ĉ;string Ċ;
+string ċ;string Č;int č;IMySlimBlock Ď;Dictionary<V,float>ď=new Dictionary<V,float>();float Đ;float đ;float Ē;bool ē=false;
+List<V>Ĕ=new List<V>();float ĕ;bool Ė;int ė;int Ę;MyItemType?ę;bool Ě;static List<string>ě=new List<string>();static List<
+string>Ĝ=new List<string>();static List<string>DBG=new List<string>();static List<string>DBG2=new List<string>();bool ĝ=false;int Ğ=0;int ğ=0;bool Ġ;bool ġ;bool SCN;List<MyProductionItem>Ģ=new List<MyProductionItem>();
+bool ģ;bool Ĥ=false;List<V>ĥ=new List<V>();List<V>Ħ=new List<V>();int ħ;int Ĩ;int ĩ;int Ī;bool ī=false;List<IMyTerminalBlock
+>Ĭ=new List<IMyTerminalBlock>();List<IMyTerminalBlock>ĭ=new List<IMyTerminalBlock>();Į į;Į İ;IMyTextPanel ı;string Ĳ=
+" error: output could not be cleared";IEnumerator<bool>e(){while(true){l=DateTime.UtcNow;Ĵ:ĳ();if(!h||true){Ò=1;Ô=0;Ó="Updating Grid";i=ĵ(Me,out ą);q.Clear()
+;t.Clear();u.Clear();ï.Clear();r.Clear();GridTerminalSystem.GetBlocksOfType(r);s.Clear();GridTerminalSystem.
+GetBlocksOfType(s);Ķ.ķ(Me.CubeGrid,SET,HET);yield return true;k.Clear();GridTerminalSystem.GetBlocksOfType(q);yield return true;foreach
+(var ĸ in r){if(ĸ==null)continue;Ķ.Ĺ(ĸ);if(!ĸ.IsConnected)continue;if(ĸ.OtherConnector==null)continue;if(!ĸ.CustomName.ĺ(
+HET)&&!ĸ.OtherConnector.CustomName.ĺ(HET)){if(i<Ļ(ĸ,q)){Ò=0;Ô=0;Ó="Script paused due to Priority";ģ=true;for(int ļ=0;ļ<60;ļ
+++){yield return true;}goto Ĵ;}}yield return true;}foreach(var ĸ in s){Ķ.Ľ(ĸ);}yield return true;Ķ.ľ();ģ=false;yield
+return true;Ü.Clear();Ý.Clear();î.Clear();v.Clear();é.Clear();w.Clear();y.Clear();x.Clear();Ĭ.Clear();Ú=0;foreach(var Ŀ in q){
+Ú++;if(Ú%(VTEC*2)==0)yield return true;if(Ŀ==null)continue;if(!Ķ.ŀ(Ŀ.CubeGrid)&&Ķ.Ł(Ŀ.CubeGrid))continue;if(!Ķ.ŀ(Ŀ.
+CubeGrid)&&Ķ.ł(Ŀ.CubeGrid)){if(Ŀ.CustomName.ĺ(SCT)){}else if(MRs&&Ŀ is IMyReactor){}else if(MGG&&Ŀ is IMyGasGenerator){}else if(
+!SGP&&Ŀ is IMyRefinery){}else if(!SGP&&Ŀ is IMyProductionBlock){}else continue;}if(Ŀ is IMyTextSurfaceProvider&&Ŀ.
+CustomName.ĺ(MLT))ï.Add(Ŀ as IMyTextSurfaceProvider,Ŀ);if(Ŀ is IMyTextPanel&&Ŀ.CustomName.Contains("[perf]"))ı=Ŀ as IMyTextPanel;
+if(Ŀ is IMyProductionBlock&&(!SGP||Ķ.ŀ(Ŀ.CubeGrid)))Ü.Add(Ŀ as IMyProductionBlock);if(Ŀ is IMyProductionBlock)Ý.Add(Ŀ as
+IMyProductionBlock);if(Ŀ is IMyTextPanel)î.Add(Ŀ as IMyTextPanel);if(Ŀ is IMyTextPanel&&Ķ.ŀ(Ŀ.CubeGrid)&&Ŀ.CustomName.ĺ(SST))k.Add(Ŀ as
+IMyTextPanel);if(Ŀ is IMyReactor)v.Add(Ŀ as IMyReactor);if(Ŀ is IMyRefinery&&(!SGP||Ķ.ŀ(Ŀ.CubeGrid)))é.Add(Ŀ as IMyRefinery);if(Ŀ is
+IMyGasGenerator)w.Add(Ŀ as IMyGasGenerator);if(Ŀ is IMyBatteryBlock&&Ķ.ŀ(Ŀ.CubeGrid))y.Add(Ŀ as IMyBatteryBlock);if(Ŀ is IMyGasTank&&Ķ.
+ŀ(Ŀ.CubeGrid))x.Add(Ŀ as IMyGasTank);if(Ŀ is IMyTextSurface&&Ŀ.CustomName.ĺ(LST)&&Ķ.ŀ(Ŀ.CubeGrid)){Ö=Ŀ as IMyTextSurface;
+Ö.ContentType=ContentType.TEXT_AND_IMAGE;}if(Ŀ is IMyTextSurface&&Ŀ.CustomName.Contains("[DEBUG]")&&Ķ.ŀ(Ŀ.CubeGrid)){Ø=Ŀ
+as IMyTextSurface;Ø.ContentType=ContentType.TEXT_AND_IMAGE;}if(Ŀ is IMyTextSurface&&Ŀ.CustomName.ĺ(new[]{"learn"})&&Ķ.ŀ(Ŀ.CubeGrid)){LN=Ŀ as IMyTextSurface;LN.ContentType=ContentType.TEXT_AND_IMAGE;}if(Ŀ is IMyTextSurface&&Ŀ.CustomName.ĺ(new[]{"craftingStatus"})&&Ķ.ŀ(Ŀ.CubeGrid)){LC=Ŀ as IMyTextSurface;LC.ContentType=ContentType.TEXT_AND_IMAGE;}if(Ŀ is IMyTextSurface&&Ŀ.CustomName.ĺ(SCT)){Ĭ.Add(Ŀ);(Ŀ as
+IMyTextSurface).ContentType=ContentType.SCRIPT;}if(!Ŀ.HasInventory)continue;if(Ŀ.CustomName.ĺ(ITS))continue;if(IBT&&Ŀ is
+IMyShipToolBase)continue;t.Add(Ŀ);if(!u.ContainsKey(Ŀ.CustomName)){u.Add(Ŀ.CustomName,Ŀ);}}yield return true;h=true;}if(RH){foreach(var
+Ń in é){if(Ń.CustomName.ĺ(MTS))continue;Ń.UseConveyorSystem=false;}}Ò=3;Ô=0;Ó="Reading Item Index";Ú=0;if(ë){Me.
+CustomData="";Å="";Ç.Clear();è.ń();ë=false;}if(ì){foreach(var ņ in V.Ņ){var Ň=MyItemType.Parse(ņ.Key);if(Ç.ContainsKey(Ň))continue
+;Ç.Add(Ň,new V(Ň));}ì=false;yield return true;}if(Me.CustomData!=""){Ä=Me.CustomData.Split('\n').ToList();Å=Me.CustomData
+;var ļ=1;for(;ļ<Ä.Count;ļ++){if(Ä[ļ]=="#### Internals ####")break;var ª=new V(Ä[ļ]);if(ª.ň&&!Ç.ContainsKey(ª.ŉ)){Ç.Add(ª.
+ŉ,ª);if(ª.Ŋ())è.ŋ(ª,Ç);}else if(ª.ň&&Ç.ContainsKey(ª.ŉ)){Ç[ª.ŉ].Ō(Ä[ļ]);}if(ª.ň&&!Í.Contains(ª.ō))Í.Add(ª.ō);Ú++;if(Ú%(
+VTEC*2)==0)yield return true;}for(;ļ<Ä.Count;ļ++){if(Ä[ļ]=="#### Ore Yields ####")break;É=Ä[ļ].Split('~');if(É.Length<7)
+continue;if(!È.ContainsKey(É[1])){È.Add(É[1],new V(É[3],É[4],É[1],É[2]));}}for(;ļ<Ä.Count;ļ++){è.Ŏ(Ä[ļ],Ç);}}else{Å="";}if(í){
+foreach(var ņ in V.Ņ){var Ň=MyItemType.Parse(ņ.Key);if(Ç.ContainsKey(Ň)&&ņ.Value.ŏ!="")Ç[Ň].Ő=ņ.Value.ŏ;}í=false;Å="";yield
+return true;}Ò=3;Ô=0;Ó="Adding Internal Items";if(!È.ContainsKey("OxygenGas")){È.Add("OxygenGas",new V("gas","oxygen",
+"OxygenGas","Gases"));}if(!È.ContainsKey("HydrogenGas")){È.Add("HydrogenGas",new V("gas","hydrogen","HydrogenGas","Gases"));}if(!È.
+ContainsKey("Electricity")){È.Add("Electricity",new V("energy","electricity","Electricity","Energy"));}yield return true;Ë=Ç.Values
+.ToList();yield return true;Ë=Ë.OrderBy(ő=>ő.Œ).ToList();yield return true;Ë=Ë.OrderBy(ő=>ő.ō).ToList();yield return true
+;Ê.Clear();foreach(var ª in Ë){if(Ê.ContainsKey(ª.Ő)){ª.Ő=œ(Ê,ª.Ő);}Ê.Add(ª.Ő,ª);}foreach(var ª in È){Ê.Add(ª.Value.Ő,ª.
+Value);}Ò=4;Ô=0;Ó="Updating Managed Containers";Ú=0;n.Clear();p.Clear();o.Clear();Į.Ŕ();foreach(var ŕ in t){if(ŕ==null)
+continue;if(ŕ.CustomName.ĺ(SCT)){Ô=1;new Į(ŕ);while(!Į.Ŗ(ŕ).Ō(Ë,Ê)){yield return true;}yield return true;}foreach(var ŗ in Í){if
+(ŕ.DisplayNameText.Contains(ŗ)){if(!n.ContainsKey(ŕ))n.Add(ŕ,new m(ŕ));if(!n[ŕ].Ř.Contains(ŗ))n[ŕ].Ř.Add(ŗ);}}Ú++;if(Ú%
+VTEC==0)yield return true;}Ô=2;foreach(var ř in Ĭ){new Į(ř,GridTerminalSystem,t).Ō(Ë,Ê);}į=new Į(100,"Reactors");į.Ś=0;Ô=3;
+if(MRs&&Ç.ContainsKey(A)){foreach(var ś in v){if(ś==null)continue;if(ś.CustomName.ĺ(MTS))continue;if(Į.Ŝ(ś))continue;į.ŝ(ś
+);į.N(Ç[A],(int)Math.Round((float)ś.GetInventory().MaxVolume*UA));ś.UseConveyorSystem=false;yield return true;}}İ=new Į(
+100,"GasGenerators");İ.Ś=2;Ô=4;if(MGG&&Ç.ContainsKey(B)){foreach(var Ş in w){if(Ş==null)continue;if(!Ş.IsFunctional)
+continue;if(Ş.CustomName.ĺ(MTS))continue;if(Į.Ŝ(Ş))continue;İ.ŝ(Ş);İ.N(Ç[B],(int)Math.Round((float)Ş.GetInventory().MaxVolume*
+GGI));Ş.UseConveyorSystem=false;yield return true;}}Ô=5;Į.ş();yield return true;Ô=6;n=n.OrderByDescending(Š=>Š.Value.i).
+ToDictionary(š=>š.Key,š=>š.Value);yield return true;Ï.Clear();foreach(var Ţ in n){foreach(var ŗ in Ţ.Value.Ř){if(!o.ContainsKey(ŗ))o
+.Add(ŗ,new List<m>());o[ŗ].Add(Ţ.Value);if(!p.ContainsKey(Ţ.Value))p.Add(Ţ.Value,new List<string>());p[Ţ.Value].Add(ŗ);}
+if(Ţ.Value.Ř.Count!=1)continue;if(!Ï.ContainsKey(Ţ.Value.Ř[0]))Ï.Add(Ţ.Value.Ř[0],new List<IMyInventory>());Ï[Ţ.Value.Ř[0]
+].Add(Ţ.Key.GetInventory());}Ô=7;Î.Clear();foreach(var ŗ in Í){Ā=0f;ā=0f;if(o.ContainsKey(ŗ)){foreach(var ŕ in o[ŗ]){Ā+=(
+float)ŕ.Â.CurrentVolume;ā+=(float)ŕ.Â.MaxVolume;}}if(ā>0f){Î.Add(ŗ,Ā/ā);}else{Î.Add(ŗ,-1f);}}Ò=5;Ô=0;Ó="Learning Blueprints";
+if(SCN){foreach(var Ť in Ü){yield return true;if(Ť==null)continue;if(!Ť.IsWorking)continue;if(Ť is IMyAssembler&&(Ť as IMyAssembler).Mode==MyAssemblerMode.Disassembly)continue;ß.Clear();Ť.GetQueue(ß);if(ß.Count==0)continue;{bool hx=true;for(int qx=1;qx<ß.Count;qx++)if(ß[qx].BlueprintId!=ß[0].BlueprintId){hx=false;break;}if(!hx)continue;}z.Clear();Ť.OutputInventory.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))Ç.Add(ª.Type,new V(ª.Type));if(!Ç[ª.Type].Ŧ.HasValue){Ç[ª.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("scan "+Ť.CustomName+" "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);if(LN!=null)LN.WriteText(string.Join("\n",DBG2));if(SCN){SCN=false;Ź("Scan found new blueprint "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);}}}}}â=ã;bool ţ=false;foreach(var Ť in Ü){yield return true;if(Ť==null)continue;if(Ť is IMyRefinery)continue;if(Ť is
+IMyAssembler&&(Ť as IMyAssembler).Mode==MyAssemblerMode.Disassembly)continue;if(ã){if(ä==null){ä=DateTime.UtcNow;ţ=true;}if(ţ){Ť.
+ClearQueue();for(int ļ=Ť.OutputInventory.ItemCount-1;ļ>=0;ļ--){ť(Ť.OutputInventory,Ť.OutputInventory.GetItemAt(ļ).Value);yield
+return true;}continue;}Ť.ShowOnHUD=true;if(!Ť.CustomName.Contains(" is Learning"))Ť.CustomName+=" is Learning";if(Ť.CustomName
+.Contains(Ĳ)){if(Ť.OutputInventory.ItemCount==0){Ť.CustomName=Ť.CustomName.Replace(Ĳ,"");}Ť.ClearQueue();continue;}â=true
+;Ó="Learning Item Recepies";Ô=1;ß.Clear();Ť.GetQueue(ß);if(ß.Count>1){for(int ļ=ß.Count-1;ļ>0;ļ--){Ť.RemoveQueueItem(ļ,ß[
+ļ].Amount);}continue;}if(Ť.OutputInventory.ItemCount!=1)continue;ª=Ť.OutputInventory.GetItemAt(0);if(!ª.HasValue)continue
+;if(!Ç.ContainsKey(ª.Value.Type)){Ç.Add(ª.Value.Type,new V(ª.Value.Type));}Ç[ª.Value.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("learn "+ª.Value.Type.SubtypeId+"="+ß[0].BlueprintId.SubtypeId);ä=DateTime.
+UtcNow;Ť.ClearQueue();Ĥ=ť(Ť.OutputInventory,ª.Value);if(!Ĥ){if(!Ť.CustomName.Contains(Ĳ))Ť.CustomName+=Ĳ;}}else{Ť.ShowOnHUD=
+false;Ť.CustomName=Ť.CustomName.Replace(" is Learning","");Ť.CustomName=Ť.CustomName.Replace(Ĳ,"");}}if(â)continue;if(!ī){Ô=2
+;var ŧ=Me.GetProperty("GSIMIntegration_filteredBlueprintLib")?.As<string>();var Ũ=ŧ?.GetValue(Me);MyIniParseResult ũ;
+MyIni Ū=new MyIni();if(Ū.TryParse(Ũ,out ũ)){Ó="Parsing Library Data";List<string>ū=new List<string>();Ū.GetSections(ū);
+foreach(var Ŭ in ū){yield return true;Ó=$"Parsing Library Data {Ŭ}";if(!Ū.Get(Ŭ,"Enabled").ToBoolean(false))continue;if(!Ū.Get(
+Ŭ,"Atomic").ToBoolean(false))continue;var ŭ="";Ŭ.Ů("::","",out ŭ);var ů=Ū.Get(Ŭ,"Results").ToString();if(ů=="")continue;
+MyDefinitionId Ű;if(!MyDefinitionId.TryParse(V.ű+ŭ,out Ű))continue;var ų=Ū.Get(Ŭ,"DisplayName").ToString().Ų();if(ů.IndexOf(',')>=0)
+continue;var Ŵ="";ů.Ů("","x",out Ŵ);var ŵ=1;int.TryParse(Ŵ,out ŵ);if(ŵ==0)ŵ=1;ů=ů.TrimStart('0','1','2','3','4','5','6','7','8',
+'9','.','x');ů=ů.Trim();try{MyItemType Ŷ=MyItemType.Parse(ů);V.ŷ(Ŷ.TypeId+"/"+Ŷ.SubtypeId,ų:ų,ŭ:Ű.ToString(),Ÿ:false,ŵ:ŵ);Ź
+($"Added {ų} to internal library");}catch{}}yield return true;}ī=true;}Ò=6;Ô=0;Ó="Learning Ore Yields";Ă=0;foreach(var Ń
+in é){yield return true;if(Ń==null)continue;if(!Ń.IsWorking)continue;Ă++;if(Ă>2)continue;if(æ){Ń.ShowOnHUD=true;Ń.
+UseConveyorSystem=false;if(!Ń.CustomName.Contains(" is Learning"))Ń.CustomName+=" is Learning";Ô=1;Ó="Learning Ore Yields";â=true;int ŵ=X
+.ź(Ń);if(ê==null&&Ń.InputInventory.ItemCount>0){z.Clear();Ń.InputInventory.GetItems(z);for(int ļ=z.Count-1;ļ>=0;ļ--){º=z[
+ļ].Amount;if(!Ç.ContainsKey(z[ļ].Type))Ç.Add(z[ļ].Type,new V(z[ļ].Type));ť(Ń.InputInventory,z[ļ]);yield return true;}}
+else if(ê==null&&Ń.OutputInventory.ItemCount>0){z.Clear();Ń.OutputInventory.GetItems(z);for(int ļ=z.Count-1;ļ>=0;ļ--){º=z[ļ]
+.Amount;if(!Ç.ContainsKey(z[ļ].Type))Ç.Add(z[ļ].Type,new V(z[ļ].Type));ť(Ń.OutputInventory,z[ļ]);yield return true;}}else
+if(ê==null&&Ğ==0){if(!o.ContainsKey("Ores")){Ź("Error: No ores container!");continue;}foreach(var ŕ in o["Ores"]){Â=ŕ.Â;z.
+Clear();Â.GetItems(z);for(int ļ=z.Count-1;ļ>=0;ļ--){if(!Ç.ContainsKey(z[ļ].Type))Ç.Add(z[ļ].Type,new V(z[ļ].Type));if(!Ç[z[ļ]
+.Type].Ŋ())continue;if(!è.Ż(Ç[z[ļ].Type]))è.ŋ(Ç[z[ļ].Type],Ç);if(!è.ż(Ç[z[ļ].Type]))continue;if(z[ļ].Amount<100)continue;
+if(!Â.CanTransferItemTo(Ń.InputInventory,z[ļ].Type))continue;if(!Ń.InputInventory.CanItemsBeAdded(100,z[ļ].Type))continue;
+ê=z[ļ].Type;Â.TransferItemTo(Ń.InputInventory,ļ,null,true,100);goto Ž;}yield return true;}Ž:yield return true;}else if(ê.
+HasValue&&Ń.OutputInventory.ItemCount>0&&Ń.InputInventory.ItemCount==0){yield return true;z.Clear();Ń.OutputInventory.GetItems(z
+);è.ž(Ç[ê.Value],Ç,z,ŵ);Ź($"Learned Yield for {Ç[ê.Value].Ő}: {è.ſ(Ç[ê.Value])}");ğ=0;ê=null;Ğ=3;break;}}else{Ń.ShowOnHUD
+=false;Ń.CustomName=Ń.CustomName.Replace(" is Learning","");}}if(Ğ>0)Ğ--;ğ++;if(â)continue;Ò=7;Ô=0;Ó=
+"Updating Item Database";yield return true;foreach(var ª in Ħ){if(Ç.ContainsKey(ª.ŉ)){Ç[ª.ŉ].Ő=ª.Ő;Ç[ª.ŉ].ō=ª.ō;if(ª.Ŧ!=null)Ç[ª.ŉ].Ŧ=ª.Ŧ;Ź(
+$"Item \"{ª.Ő}\" overridden from external source.");}else{Ç.Add(ª.ŉ,ª);Ź($"Item \"{ª.Ő}\" imported from external source.");}}Ħ.Clear();yield return true;foreach(var ª in
+ĥ){if(Ç.ContainsKey(ª.ŉ)){if(Ç[ª.ŉ].Ŧ==null&&ª.Ŧ!=null){Ç[ª.ŉ].Ŧ=ª.Ŧ;Ź(
+$"Item \"{ª.Ő}\" Blueprint learned from external source.");}}else{Ç.Add(ª.ŉ,ª);Ź($"Item \"{ª.Ő}\" imported from external source.");}}ĥ.Clear();yield return true;foreach(var ŕ in
+t){if(ŕ==null)continue;z.Clear();Â=ŕ.GetInventory();if(ŕ is IMyProductionBlock)Â=((IMyProductionBlock)ŕ).OutputInventory;
+z.Clear();Â.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type)){Ì=new V(ª.Type);if(!Ì.ň)continue;Ź(
+$"Learning new Item {Ì.Ő}({Ì.ō}) from Container {ŕ.CustomName}");Ç.Add(ª.Type,Ì);if(!Í.Contains(Ç[ª.Type].ō))Í.Add(Ç[ª.Type].ō);if(Ç[ª.Type].Ŋ()&&!è.Ż(Ç[ª.Type]))è.ŋ(Ç[ª.Type],Ç);}
+yield return true;}}Ò=8;Ô=0;Ó="Writing Item Index";Æ="";Ä.Clear();i=ĵ(Me,out ą);Ä.Add("@GOAT-Inventory-Manager");Ä.Add(
+$"@GSIM-GridPriotity={i}");Ä.Add($"~Name~Category~TypeId~SubTypeId~Blueprint~");foreach(var ª in Ë){if(ª.ō!=Æ){Ä.Add($"\n#### {ª.ō} ####\n");Æ=ª.
+ō;}Ä.Add(ª.ToString());ª.ƀ=0;}Ä.Add($"\n#### Internals ####\n");foreach(var ª in È){Ä.Add(ª.Value.ToString());ª.Value.ƀ=0
+;}Ä.Add($"\n#### Ore Yields ####\n");Ä.Add(è.ToString());if(Me.CustomData==Å||Å=="")Me.CustomData=string.Join("\n",Ä);Ò=9
+;Ô=0;Ó="Sorting Items";Ú=0;Ī=t.Count;ĩ=0;foreach(var ŕ in t){ĩ++;Ú++;if(Ú%VTEC==0)yield return true;if(ŕ==null)continue;
+if(ŕ is IMyParachute)continue;if(ŕ is IMyUserControllableGun)continue;if(ŕ is IMyGasGenerator&&!Į.Ŝ(ŕ))continue;if(ŕ is
+IMyReactor&&!Į.Ŝ(ŕ))continue;if(ŕ.CustomName.ĺ(ITS))continue;Â=ŕ.GetInventory(0);Ô=1;if(ŕ is IMyProductionBlock)Â=((
+IMyProductionBlock)ŕ).OutputInventory;if(ŕ is IMyProductionBlock&&!(ŕ is IMyAssembler&&(ŕ as IMyAssembler).Mode==MyAssemblerMode.Disassembly)){var xq=(IMyProductionBlock)ŕ;if(xq.IsWorking){ß.Clear();xq.GetQueue(ß);if(ß.Count>0){bool hx=true;for(int qx=1;qx<ß.Count;qx++)if(ß[qx].BlueprintId!=ß[0].BlueprintId){hx=false;break;}if(hx){z.Clear();xq.OutputInventory.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))Ç.Add(ª.Type,new V(ª.Type));if(!Ç[ª.Type].Ŧ.HasValue){Ç[ª.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("scan "+xq.CustomName+" "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);if(LN!=null)LN.WriteText(string.Join("\n",DBG2));if(SCN){SCN=false;Ź("Scan found new blueprint "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);}}}}}}}if(ŕ is IMyAssembler&&(ŕ as IMyAssembler).Mode==MyAssemblerMode.Disassembly)Â=((IMyAssembler)ŕ).
+InputInventory;Ô=2;if(Â==null)continue;if(Į.Ŝ(ŕ)&&!Į.Ŗ(ŕ).Ɓ){Ú++;if(Ú%VTEC==0)yield return true;continue;}for(int ļ=Â.ItemCount-1;ļ>=0
+;ļ--){À=0;Á=0;Ú++;if(Ú%VTEC==0)yield return true;ª=Â.GetItemAt(ļ);if(!ª.HasValue)continue;µ=ª.Value;Ô=3;if(!Ç.ContainsKey
+(µ.Type))continue;Ì=Ç[µ.Type];º=ª.Value.Amount;Ô=4;foreach(var ƃ in Į.Ƃ){Ô=5;Ú++;if(Ú%VTEC==0)yield return true;if(ƃ==
+null)continue;var Ƅ=false;À=ƃ.ƅ(µ.Type,µ.Amount,ref Ƅ);if(À<=0){Ú++;if(Ú%VTEC==0)yield return true;continue;}Ô=6;º=À;if(Į.Ŝ(
+ŕ)){while(Į.Ŗ(ŕ).Ɔ(µ.Type,º,ref Á,ƃ.i)){yield return true;}if(Á==0){Ú++;if(Ú%VTEC==0)yield return true;continue;}if(Ƅ&&ƃ.
+i<=Į.Ŗ(ŕ).i)Ƅ=false;}if(Á>0){º=(MyFixedPoint)Math.Min((double)Á,(double)À);}if(Ƅ&&Á==0){bool Ƈ=false;while(!ƃ.ƈ(Â,ļ,ref Ƈ
+)){yield return true;}if(Ƈ)Ź($"Moved {Ì.Ő}({Ì.ō}) from {ŕ.CustomName} to {ƃ.Ő}");}else{bool Ƈ=false;while(!ƃ.ƈ(Â,ļ,ref Ƈ,
+º)){yield return true;}if(Ƈ)Ɖ(º,Ì.Ő,Ì.ō,ŕ.CustomName,ƃ.Ő);}}if(Į.Ŝ(ŕ)){À=0;if(À<=0){Ú++;if(Ú%VTEC==0)yield return true;
+continue;}º=À;Á=À;}Ô=7;if(!o.ContainsKey(Ì.ō)){Ú++;if(Ú%VTEC==0)yield return true;continue;}foreach(var Ɗ in o[Ì.ō]){Ú++;if(Ú%
+VTEC==0)yield return true;if(Ɗ==null)continue;Ô=8;if(n.ContainsKey(ŕ)&&n[ŕ].Ř.Contains(Ì.ō)&&n[ŕ].i>=Ɗ.i){Ú++;if(Ú%VTEC==0)
+yield return true;continue;}Ã=Ɗ.Â;if(Ã==null)continue;if(!Â.CanTransferItemTo(Ã,µ.Type)){Ú++;if(Ú%VTEC==0)yield return true;
+continue;}if(!Ã.CanItemsBeAdded(1,µ.Type))continue;Ô=9;if(Á>0){if(Â.TransferItemTo(Ã,ļ,null,true,º)){Ź(
+$"Moved {º}x{Ì.Ő}({Ì.ō}) from {ŕ.CustomName} to {Ɗ.ŕ.CustomName}");break;}}else{if(Â.TransferItemTo(Ã,ļ,null,true)){Ź($"Moved {Ì.Ő}({Ì.ō}) from {ŕ.CustomName} to {Ɗ.ŕ.CustomName}");
+break;}}}}}yield return true;Ô=10;foreach(var ƃ in Į.Ƃ){Ô=11;if(ƃ.Ƌ()){Ô=12;while(ƃ.ƌ()){yield return true;}Ź(
+$"Balancing {ƃ.Ő}");}}Ô=20;foreach(var ƍ in Ï){Ô=21;if(RBTC&&ƍ.Value.Count>1){Ô=22;while(!X.Ǝ(ƍ.Value)){yield return true;}Ź(
+$"Balancing {ƍ.Key} Containers");yield return true;}}Ò=10;Ô=0;Ó="Updating Item Counts";foreach(var Ə in È){Ə.Value.ƀ=0;Ə.Value.Ɛ=0;}foreach(var ª in Ç)
+{Ç[ª.Key].ƀ=0;Ç[ª.Key].Ƒ=0;Ç[ª.Key].ƒ=0;}Ò=11;Ô=0;Ó="Updating ordered Items";foreach(var Ɠ in Ü){if(Ɠ==null)continue;if(!
+Ɠ.IsWorking)continue;ß.Clear();Ɠ.GetQueue(ß);foreach(var Ɣ in ß){foreach(var ª in Ç){if(!ª.Value.Ŧ.HasValue||ª.Value.Ŧ.
+Value!=Ɣ.BlueprintId)continue;if(Ɠ is IMyAssembler&&(Ɠ as IMyAssembler).Mode==MyAssemblerMode.Disassembly){}else{}}}yield
+return true;}foreach(var ŕ in t){if(ŕ==null)continue;if(ŕ.CustomName.ĺ(HTS))continue;if(ŕ.CustomName.ĺ(MTS))continue;if(ŕ is
+IMyProductionBlock&&!((IMyProductionBlock)ŕ).IsWorking)continue;ĝ=false;foreach(var ƕ in p){if(ƕ.Key.ŕ==ŕ){ĝ=true;break;}}if(STOR&&Į.Ŝ(ŕ))
+ĝ=true;z.Clear();Â=ŕ.GetInventory();if(Â==null)continue;Â.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))
+continue;Ç[ª.Type].N((int)ª.Amount);if(ĝ||ŕ is IMyRefinery){Ç[ª.Type].Ɩ((int)ª.Amount);}if(ŕ is IMyRefinery&&!ŕ.CustomName.ĺ(MTS
+)&&(ŕ as IMyRefinery).IsWorking){è.Ɨ(ª,Ç,ŕ as IMyRefinery);}yield return true;}if(ŕ is IMyRefinery){z.Clear();Â=(ŕ as
+IMyRefinery).OutputInventory;if(Â==null)continue;Â.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))continue;Ç[ª.Type].N((
+int)ª.Amount);yield return true;}}else if(ŕ is IMyAssembler){Â=(ŕ as IMyAssembler).OutputInventory;if(Â==null)continue;z.
+Clear();Â.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))continue;Ç[ª.Type].N((int)ª.Amount);yield return true;}}
+var Ƙ=ŕ as IMyGasTank;if(Ƙ==null)continue;if(Ƙ.GetInventory()==null)continue;foreach(var Ə in È){if(!(Ƙ.BlockDefinition.
+SubtypeId.ToLower().Contains(Ə.Value.ƙ)||(Ƙ.BlockDefinition.SubtypeId==""&&Ə.Value.ƙ=="oxygen")))continue;Ə.Value.ƚ((int)Ƙ.
+Capacity);Ə.Value.N((int)(Ƙ.FilledRatio*Ƙ.Capacity));}yield return true;}foreach(var ƛ in y){È["Electricity"].ƚ((int)(ƛ?.
+MaxStoredPower*1000000));È["Electricity"].N((int)(ƛ?.CurrentStoredPower*1000000));}yield return true;foreach(var ª in Ç){ª.Value.Ɯ();}
+foreach(var ª in È){ª.Value.Ɯ();}ý=true;Ò=12;Ô=0;Ó="Ordering Items";if(!AC)goto Ɲ;á.Clear();DBG.Clear();int cq=0,cnb=0;foreach(var ª in Ç){if(!ª.Value.Ŧ.
+HasValue){if(ª.Value.Ɛ>0)cnb++;continue;}ø=ª.Value.ƞ();if(ª.Value.Ɛ>0)cq++;if(ø>0){á.Add(new à(ª.Value.Ŧ.Value,ø,ª.Value.i!=0?ª.Value.i*-1f:(ª.Value.ƀ/ª.Value.Ɛ),ª.Value))
+;}else if(ø<0){á.Add(new à(ª.Value.Ŧ.Value,ø,ª.Value.i!=0?ª.Value.i*-1f:(ª.Value.Ɛ/ª.Value.ƀ),ª.Value));}}Ô=1;DBG.Add("q"+cq+" nb"+cnb+" o"+á.Count+" a"+Ü.Count);á=á.OrderBy
+(Š=>Š.i).ToList();if(RCP)á.Reverse();Ô=2;foreach(var Ɠ in Ü){if(Ɠ==null)continue;if(Ɠ.CustomName.ĺ(MTS))continue;if(Ɠ is
+IMyRefinery)continue;bool xw=false;foreach(var Ɵ in á){if(Ɠ.CanUseBlueprint(Ɵ.Ŧ)){xw=true;break;}}if(xw)Ɠ.ClearQueue();}Ô=3;foreach(var Ɵ in á){ø=Ɵ.Ơ;ù=Ɵ.Ơ;if(ø>0){Þ.Clear();var ơ=0;foreach(var Ɠ in Ü){if(Ɠ==null)
+continue;if(Ɠ.CustomName.ĺ(MTS))continue;if(!Ɠ.IsWorking)continue;if(Ɠ is IMyAssembler&&(Ɠ as IMyAssembler).Mode==
+MyAssemblerMode.Disassembly)continue;if(!Ɠ.CanUseBlueprint(Ɵ.Ŧ))continue;if(Ɠ is IMyAssembler&&!Ɠ.BlockDefinition.TypeIdString.ToLower(
+).Contains("survivalkit"))ơ++;Þ.Add(Ɠ);}DBG.Add(Ɵ.Ƣ.Ő+":"+Þ.Count+" bp="+Ɵ.Ŧ.SubtypeId);if(Ɵ==á[0])foreach(var Ɠ in Ü)DBG.Add((Ɠ==null?"?":Ɠ.CustomName)+":"+(Ɠ==null?"N":Ɠ.CustomName.ĺ(MTS)?"M":!Ɠ.IsWorking?"W":(Ɠ is IMyAssembler&&(Ɠ as IMyAssembler).Mode==MyAssemblerMode.Disassembly)?"D":Ɠ.CanUseBlueprint(Ɵ.Ŧ)?"Y":"C"));foreach(var Ɠ in Ü){if(Ɠ==null)continue;if(Ɠ.BlockDefinition.TypeIdString.ToLower
+().Contains("survivalkit")&&ơ>0){Þ.Remove(Ɠ);}}foreach(var Ɠ in Þ){ú=Math.Min(Math.Min((int)Math.Ceiling(ø/(double)Þ.
+Count),ø),ù);if(ú<=0)continue;Ɠ.AddQueueItem(Ɵ.Ŧ,(MyFixedPoint)ú);Ź($"Queued {ú}x{Ɵ.Ƣ.Ő} at {Ɠ.CustomName}");Ɵ.Ƣ.ƒ+=ú;ù-=ú;}}
+else if(ø<0){ø=Math.Abs(ø);ù=Math.Abs(ø);Þ.Clear();foreach(var Ɠ in Ü){if(Ɠ==null)continue;if(Ɠ.CustomName.ĺ(MTS))continue;
+if(!Ɠ.IsWorking)continue;if(Ɠ is IMyAssembler&&(Ɠ as IMyAssembler).Mode==MyAssemblerMode.Assembly)continue;if(!Ɠ.
+CanUseBlueprint(Ɵ.Ŧ))continue;Þ.Add(Ɠ);}foreach(var Ɠ in Þ){ú=Math.Min(Math.Min((int)Math.Ceiling(ø/(double)Þ.Count),ø),ù);if(ú<=0)
+continue;Ɠ.AddQueueItem(Ɵ.Ŧ,(MyFixedPoint)ú);Ź($"Queued {ú}x{Ɵ.Ƣ.Ő} at {Ɠ.CustomName}");Ɵ.Ƣ.ƒ-=ú;ù-=ú;}}yield return true;}yield
+return true;var ƣ=false;if(SKI&&F!=null){foreach(var Ń in é){if(!Ń.BlockDefinition.TypeIdString.ToLower().Contains(
+"survivalkit")){ƣ=true;}}if(!ƣ){foreach(var Ɠ in Ü){if(Ɠ==null)continue;if(Ɠ.CustomName.ĺ(MTS))continue;if(!Ɠ.IsWorking)continue;if(Ɠ
+is IMyAssembler&&(Ɠ as IMyAssembler).Mode==MyAssemblerMode.Disassembly)continue;if(!Ɠ.CanUseBlueprint(F))continue;Ģ.Clear(
+);Ɠ.GetQueue(Ģ);for(int ļ=0;ļ<Ģ.Count;ļ++){if(Ģ[ļ].BlueprintId!=F)continue;Ɠ.RemoveQueueItem(ļ,Ģ[ļ].Amount);}Ɠ.
+AddQueueItem(F,1000.0);}}}Ò=13;Ô=0;Ó="Assembler Cleanup";foreach(var Ť in Ý){if(Ť==null)continue;if(Ť.CustomName.ĺ(MTS))continue;if(
+Ť is IMyRefinery)continue;if(Ť is IMyAssembler){(Ť as IMyAssembler).CooperativeMode=false;}if(!Ť.IsQueueEmpty&&Ť.
+InputInventory.VolumeFillFactor<0.95f)continue;Â=Ť.InputInventory;if(Ť is IMyAssembler&&(Ť as IMyAssembler).Mode==MyAssemblerMode.
+Disassembly){Â=Ť.OutputInventory;}if(Â.ItemCount==0)continue;z.Clear();Â.GetItems(z);for(int ļ=z.Count-1;ļ>=0;ļ--){º=z[ļ].Amount;if
+(!Ç.ContainsKey(z[ļ].Type))continue;Ì=Ç[z[ļ].Type];ť(Â,z[ļ],Ť.CustomName);yield return true;}yield return true;}Ɲ:if(!RH)
+goto Ƥ;Ò=14;Ô=0;Ó="Refinery Handling";ď.Clear();đ=0;Ē=0;ē=false;Ĕ.Clear();Ě=false;foreach(var ª in Ç){if(!ª.Value.ƥ)continue
+;if(ª.Value.Ɛ==0)continue;ď.Add(ª.Value,ª.Value.Ƒ/(float)ª.Value.Ɛ);}Ô=1;yield return true;if(RSF){foreach(var ª in Ç){if
+(!ª.Value.Ʀ())continue;if(ª.Value.Ƒ==0)continue;đ=1000000f;Đ=1f;Ĕ.Add(ª.Value);}yield return true;}Ô=2;Ƨ();if(ď.Count>0){
+var ƨ=ď.OrderBy(Š=>Š.Value).ToList();foreach(var Ʃ in ƨ){đ=Ʃ.Key.Ɛ-Ʃ.Key.ƀ-Ʃ.Key.ƒ;Ē=Ʃ.Key.Ɛ-Ʃ.Key.ƀ;if(đ<=0f)continue;if(Ʃ
+.Key.ƒ>0f)ē=true;Ì=è.ƪ(Ʃ.Key,out Đ,Ç);if(Ì!=null){Ĕ.Add(Ì);break;}}}yield return true;Ô=3;if(Ĕ.Count==0&&!ē){ƫ(
+"Refining Mode: Auto");ƫ("Ore List:");Ĕ=è.Ƭ(Ç);}else{ƫ("Refining Mode: Quota");ƫ("Ore List:");foreach(var ª in Ĕ){ƫ(ª.Ő);}}yield return true;
+if(Ĕ.Count==0)goto Ƥ;Ô=4;Ė=false;ė=0;Ę=0;foreach(var Ń in é){if(Ń==null)continue;if(!Ń.IsWorking)continue;if(Ń.CustomName.
+ĺ(MTS))continue;Ę++;Â=Ń.InputInventory;if(Â.ItemCount==0)continue;z.Clear();Â.GetItems(z);if(Â.ContainItems(1,Ĕ[0].ŉ)&&z[
+0].Type!=Ĕ[0].ŉ)Ě=true;if(ę!=null&&Ĕ[0].ŉ==ę.Value&&!Ě)continue;Ô=5;for(int ļ=z.Count-1;ļ>=0;ļ--){º=z[ļ].Amount;if(!Ç.
+ContainsKey(z[ļ].Type))continue;Ì=Ç[z[ļ].Type];ť(Â,z[ļ],Ń.CustomName);yield return true;}yield return true;}for(int ļ=0;ļ<10;ļ++){
+yield return true;}Ô=6;ę=Ĕ[0].ŉ;ĭ.Clear();if(STOR){foreach(var Ʈ in Į.ƭ){if(Ʈ.Key==null)continue;ĭ.Add(Ʈ.Key);}}foreach(var ŕ
+in p){if(ŕ.Key==null)continue;if(ŕ.Key.ŕ.CustomName.ĺ(ITS))continue;ĭ.Add(ŕ.Key.ŕ);}foreach(var Ư in Ĕ){foreach(var ŕ in ĭ
+){Â=ŕ.GetInventory();Â.GetItems(z);for(int ļ=Â.ItemCount-1;ļ>=0;ļ--){ª=Â.GetItemAt(ļ);if(!ª.HasValue)continue;ĕ=(float)ª.
+Value.Amount/Ę;if(ª.Value.Type!=Ư.ŉ)continue;foreach(var Ń in é){if(Ń==null)continue;if(!Ń.IsWorking)continue;if(Ń.CustomName
+.ĺ(MTS))continue;Ń.UseConveyorSystem=false;int ŵ=X.ź(Ń);Ā=(((float)Ń.InputInventory.MaxVolume*0.95f-(float)Ń.
+InputInventory.CurrentVolume)/ª.Value.Type.GetItemInfo().Volume);if(Ā<=0f)continue;if(đ>0){float ư=100/(float)ŵ;º=(MyFixedPoint)Math.
+Min(Math.Min((đ/Đ)*100f*ư,Ā),ĕ*1.001f);}else{º=(MyFixedPoint)Math.Min((ĕ*1.001f),Ā);}if(º<=0)continue;Ã=Ń.InputInventory;if
+(!Â.CanTransferItemTo(Ã,ª.Value.Type)&&SCW){Ʊ($"No conveyor connection between \"{ŕ.CustomName}\" and \"{Ń.CustomName}\""
+);continue;}if(!Ã.CanItemsBeAdded(º,ª.Value.Type))continue;if(đ>0){if(Â.TransferItemTo(Ã,ļ,0,true,º)){Ɖ(º,Ư.Ő,Ư.ō,ŕ.
+CustomName,Ń.CustomName);}}else{if(!Ã.ContainItems(1,ª.Value.Type)&&Ã.ItemCount>=3)continue;if(Â.TransferItemTo(Ã,ļ,null,true,º)){
+Ɖ(º,Ư.Ő,Ư.ō,ŕ.CustomName,Ń.CustomName);Ė=true;}}}}}yield return true;if(Ė)ė++;if(ė>=3)break;}Ƥ:Ò=15;Ô=0;Ó=
+"Refilling Bottles";foreach(var ŕ in Į.ƭ){if(ŕ.Key==null)continue;if(ŕ.Key.GetInventory()==null)continue;z.Clear();ŕ.Key.GetInventory().
+GetItems(z);for(int ļ=z.Count-1;ļ>=0;ļ--){Ú++;if(Ú%VTEC==0)yield return true;if(z[ļ]==null)continue;if(!Ç.ContainsKey(z[ļ].Type)
+)continue;Ì=Ç[z[ļ].Type];if(!Ì.Ʋ()&&!Ì.Ƴ())continue;foreach(var Ƙ in x){if(Ƙ==null)continue;if(!Ƙ.HasInventory)continue;Ã
+=Ƙ.GetInventory();if(!ŕ.Key.GetInventory().CanTransferItemTo(Ã,z[ļ].Type))continue;if(!Ã.CanItemsBeAdded(1,z[ļ].Type))
+continue;if(ŕ.Key.GetInventory().TransferItemTo(Ã,ļ,0)){Ƙ.RefillBottles();if(Ã.TransferItemTo(ŕ.Key.GetInventory(),0)){break;}}}
+}Ú++;if(Ú%VTEC==0)yield return true;}Ô=1;foreach(var ŕ in n){if(ŕ.Key==null)continue;if(ŕ.Key.GetInventory()==null)
+continue;z.Clear();ŕ.Value.Â.GetItems(z);for(int ļ=z.Count-1;ļ>=0;ļ--){Ú++;if(Ú%VTEC==0)yield return true;if(z[ļ]==null)continue
+;if(!Ç.ContainsKey(z[ļ].Type))continue;Ì=Ç[z[ļ].Type];if(!Ì.Ʋ()&&!Ì.Ƴ())continue;foreach(var Ƙ in x){if(Ƙ==null)continue;
+if(!Ƙ.HasInventory)continue;Ã=Ƙ.GetInventory();if(!ŕ.Value.Â.CanTransferItemTo(Ã,z[ļ].Type))continue;if(!Ã.CanItemsBeAdded
+(1,z[ļ].Type))continue;if(ŕ.Value.Â.TransferItemTo(Ã,ļ,0)){Ƙ.RefillBottles();if(Ã.TransferItemTo(ŕ.Value.Â,0)){break;}}}}
+yield return true;}Ò=16;Ó="Waiting for next loop";while((DateTime.UtcNow-l).TotalSeconds<MinCycle){yield return true;}yield
+return true;if(!Ġ)continue;Ò=17;Ó="Remove Not Craftable Blueprints";foreach(var ª in Ç){Ú++;if(Ú%(VTEC*2)==0)yield return true
+;if(ª.Value.Ŧ==null)continue;ġ=false;foreach(var Ɠ in Ü){if(Ɠ.CanUseBlueprint(ª.Value.Ŧ.Value)){ġ=true;break;}}if(!ġ)ª.
+Value.Ŧ=null;}Ġ=false;yield return true;}}string ƴ;List<string>Ƶ=new List<string>();IMyTerminalBlock ƶ;IMyInventory Ʒ;float Ƹ
+=1f;int ƹ=16;int ƺ=0;bool ƻ=false;DateTime?Ƽ;DateTime?ƽ;string ƾ;float ƿ;DateTime?ǀ;bool ǁ;int ǂ=0;Vector3 ǃ;Color Ǆ;int
+ǅ=0;int ǆ=0;List<IMyTextPanel>Ǉ;List<IMyTextPanel>ǈ;List<V>ǉ;List<Į>Ǌ=new List<Į>();IEnumerator<bool>g(){while(true){ǂ++;
+ǆ=0;Ǉ=k.FindAll(Š=>true);yield return true;ǈ=î.FindAll(Š=>true);yield return true;foreach(var ǋ in Ǉ){ǆ=1;ǋ.ContentType=
+ContentType.SCRIPT;ó=(IMyTextSurface)ǋ;ô=new RectangleF((ó.TextureSize-ó.SurfaceSize)/2f,ó.SurfaceSize);j.Clear();X.ǌ(ǋ.CustomData,
+ref j);var Ǎ=ô.Height>ô.Width;var ǎ=ó.DrawFrame();var Ǐ=new Vector2(16,16)+ô.Position;Ƹ=j.ǐ("fontSize").ToSingle(1f);bool Ǒ
+=j.ǐ("showKnowledgeBase").ToBoolean(true);bool ǒ=j.ǐ("tutorialCompleted").ToBoolean(false);if(ǒ)Tutorials=false;if(ó.
+SurfaceSize.X<300||ó.SurfaceSize.Y<300){R.Ǔ(ó,ǎ,Ǐ,"No Entry");Ǐ.X+=40*Ƹ;R.ǔ(ó,ǎ,Ǐ,"Screen to small!");goto Ǖ;}R.ǖ(ó,ǎ,Ǐ,
+$"GOAT Sorter {G}",Ƹ);R.Ǔ(ó,ǎ,new Vector2(ô.Right-ƹ-32*Ƹ,Ǐ.Y),"Screen_LoadingBar",Ƹ*0.8f,Ǘ:(float)((ǂ/10f)%Math.PI*2f));Ǐ.Y+=30*Ƹ;if(
+Tutorials){if(!Ç.ContainsKey(D))Ç.Add(D,new V(D));if(!Ç.ContainsKey(C))Ç.Add(C,new V(C));if(!Ç.ContainsKey(E))Ç.Add(E,new V(E));
+if(!è.Ż(Ç[C]))è.ŋ(Ç[C],Ç);Ă=R.ǘ(ó,ǎ,Ǐ,$"Hello and, again welcome to the GOAT Sorter Inventory Manager!\nWe hope that this brief Tutorial helps you setting up the Script!"
+,Ƹ);Ǐ.Y+=30*(Ă+1)*Ƹ;Ą=false;foreach(var ŕ in p){if(ŕ.Value.Contains(Ç[C].ō))Ą=true;}if(!Ą){R.ǘ(ó,ǎ,Ǐ,$"It looks like your grid doesn't have a Cargo Container for Ores specified. Please Add \"{Ç[C].ō}\" to the name of a Cargo Container."
+,Ƹ);goto Ǖ;}Ą=false;foreach(var ŕ in p){if(ŕ.Value.Contains(Ç[D].ō))Ą=true;}if(!Ą){R.ǘ(ó,ǎ,Ǐ,
+$"Next We will need a Container for our Ingots. Please add \"{Ç[D].ō}\" to the name of a Cargo Container.",Ƹ);goto Ǖ;}Ą=false;foreach(var ŕ in p){if(ŕ.Value.Contains(Ç[E].ō))Ą=true;}if(!Ą){R.ǘ(ó,ǎ,Ǐ,
+$"Lastly we need a Container for crafted Components. Please add \"{Ç[E].ō}\" to the name of a Cargo Container.",Ƹ);goto Ǖ;}if(AC){if(Ü.Count==0){R.ǘ(ó,ǎ,Ǐ,
+$"GOAT Sorter can automatically craft items for you. Please Build an Assembler.",Ƹ);goto Ǖ;}if(û==null){R.ǘ(ó,ǎ,Ǐ,$"An AutoCrafting Screen is required to configure Auto crafting. Please Build a screen and include \"{ACT[0]}\" in its name."
+,Ƹ);goto Ǖ;}if(Ç[E].Ɛ==0){R.ǘ(ó,ǎ,Ǐ,$"You can set a target quota for an item by pressing F on the auto crafting screen and change the number after the \"/\". Go ahead and change the quota for {Ç[E].Ő}"
+,Ƹ);goto Ǖ;}}if(Ƽ==null){Ƽ=DateTime.UtcNow;}R.ǘ(ó,ǎ,Ǐ,$"This completes the basic tutorial. For more information please checkout our guide on steam.\n The tutorial will exit in {Math.Floor(30-(DateTime.UtcNow-Ƽ.Value).TotalSeconds)} seconds"
+,Ƹ);if((DateTime.UtcNow-Ƽ.Value).TotalSeconds>=29){Tutorials=false;}}else{Ǐ.Y+=15*Ƹ;R.ǔ(ó,ǎ,Ǐ,"Inventory Space:",0.5f*Ƹ);
+Ǐ.Y+=15*Ƹ;Ǐ.X=R.Ǚ(ô,16);foreach(var ǚ in Î){R.ǔ(ó,ǎ,Ǐ,ǚ.Key,0.5f*Ƹ);Ǐ.X+=ó.SurfaceSize.X/(Ǎ?2f:4f);if(ǚ.Value<0f){R.Ǔ(ó,ǎ
+,Ǐ,"Construction",0.5f*Ƹ);R.ǔ(ó,ǎ,Ǐ+new Vector2(20,0)*Ƹ,"No Container",0.5f*Ƹ);}else{R.Ǜ(ó,ǎ,Ǐ,ǚ.Value,0.5f*Ƹ,ǜ:(Ǎ?0.5f:
+0.25f));if(ǚ.Value>=0.8&&ǚ.Value<0.95){R.Ǔ(ó,ǎ,Ǐ+new Vector2(-20,0)*Ƹ,"Danger",0.5f*Ƹ);}else if(ǚ.Value>=0.95){R.Ǔ(ó,ǎ,Ǐ+new
+Vector2(-20,0)*Ƹ,"No Entry",0.5f*Ƹ);}}if(Ǐ.X<ó.SurfaceSize.X/2f-16&&!Ǎ){Ǐ.X+=ó.SurfaceSize.X/4f;}else{Ǐ.Y+=15*Ƹ;Ǐ.X=R.Ǚ(ô,16);}
+}Ǐ.Y+=15*Ƹ;if(Ǐ.X>30)Ǐ.Y+=15*Ƹ;Ǐ.X=R.Ǚ(ô,16);if(Ĝ.Count>0){R.Ǔ(ó,ǎ,Ǐ,"Danger",Ƹ);R.ǖ(ó,ǎ,Ǐ,"     Problems",Ƹ);Ǐ.Y+=30*Ƹ;
+foreach(var ǝ in Ĝ){Ă=R.ǘ(ó,ǎ,Ǐ,ǝ,0.5f*Ƹ);Ǐ.Y+=15*Ă*Ƹ;}}if(Ǒ){R.ǖ(ó,ǎ,Ǐ,"Knowledge Base",0.5f*Ƹ);Ǐ.Y+=15*Ƹ;if(ƽ==null||(
+DateTime.UtcNow-ƽ.Value).TotalSeconds>=30){ƽ=DateTime.UtcNow;ƾ=Ǟ.ǟ();}R.ǘ(ó,ǎ,Ǐ,ƾ,0.5f*Ƹ);}}j.Clear();j.Ǡ("fontSize",Ƹ);j.Ǡ(
+"showKnowledgeBase",Ǒ);j.Ǡ("tutorialCompleted",true);ǋ.CustomData=j.ǡ();Ǖ:ǎ.Dispose();yield return true;}if(!ý){yield return true;continue;
+}ǆ=2;R.Ǣ();õ.Clear();û=null;ǉ=Ç.Values.ToList();yield return true;ǅ=0;foreach(var ǣ in ǈ){if(ǣ==null)continue;if(!Ķ.ŀ(ǣ.
+CubeGrid))continue;if(!ǣ.CustomName.ĺ(ACT))continue;if(ǣ.CustomName.ĺ(ACE))continue;û=ǣ;ó=(IMyTextSurface)ǣ;õ=û.GetText().Split(
+'\n').ToList();foreach(var Â in õ){if(Â.StartsWith("#")||Â.StartsWith("~"))continue;ö=Â.Split(new[]{'~','/'});foreach(var ª
+in ǉ){ǅ++;if(ǅ>5000){yield return true;ǅ=0;}if(ª.Ő!=ö[0])continue;ª.Ǥ(Â);}}yield return true;}ǆ=3;õ.Clear();ƴ="";õ.Add("~ AutoCrafting Settings:\n~ ItemName~~~~<current amount>/<wanted amount>(modifier, optional)\n~ Available Modifiers, for Explanation and Examples READ THE GUIDE!!!\n~ A = Craft Items, Default behaviour.\n~ D = Disassemble Items.\n~ H = Hide Items from the AutoCrafting Display (but not settings)\n~ [Y:<number>] = defines yield per craft.\n~ [P:<number>] = defines a manual Crafting Priority.\n~ Modifiers can be combined.\n~ More Settings in the Custom Data!\n~ *Note about Ingot Quotas, these are optional, you can leave them at 0 and let the Script Refine everything as needed!"
+);foreach(var ª in Ë){if(!ª.Ŧ.HasValue&&!ª.ƥ)continue;if(ª.ō!=ƴ){õ.Add($"\n~~~~~~~~ {ª.ō} ~~~~~~~~");ƴ=ª.ō;}õ.Add(ª.ǥ());
+}ǆ=4;if(û!=null)û.WriteText(string.Join("\n",õ));ü.Clear();foreach(var ǣ in ǈ){if(ǣ==null)continue;if(!Ķ.ŀ(ǣ.CubeGrid))
+continue;if(ǣ.CustomName.ĺ(ACT)&&!ǣ.CustomName.ĺ(ACE)){ü.Add(ǣ);break;}}ǆ=5;yield return true;foreach(var ǣ in ǈ){if(ǣ==null)
+continue;if(!Ķ.ŀ(ǣ.CubeGrid))continue;if(ǣ.CustomName.ĺ(ACE)){ü.Add(ǣ);}}ǆ=6;yield return true;ü=ü.OrderBy((Ǧ)=>{if(Ǧ.CustomName
+.ĺ(ACT)&&!Ǧ.CustomName.ĺ(ACE))return-1;int ǧ=0;foreach(var Ǩ in ACE){if(!Ǧ.CustomName.Contains(Ǩ))continue;int.TryParse(Ǧ
+.CustomName.Substring(Ǧ.CustomName.IndexOf(Ǩ,StringComparison.Ordinal)+Ǩ.Length,1),out ǧ);}return ǧ;}).ToList();yield
+return true;int ǩ=0;int Ǫ=0;ǅ=0;ǆ=7;foreach(var ǣ in ü){ǆ=8;if(ǣ==null)continue;ó=(IMyTextSurface)ǣ;ó.ContentType=ContentType.
+SCRIPT;ó.Script="";ô=new RectangleF((ó.TextureSize-ó.SurfaceSize)/2f,ó.SurfaceSize);var ǎ=ó.DrawFrame();var Ǐ=ô.Position;bool
+ǫ=false;ƴ="";int Ǭ=ǩ;ǩ=0;bool ǭ=false;if(Ǫ==0){X.ǌ(ǣ.CustomData,ref j);Ǭ=j.ǐ("More").ToInt32(0);ǭ=j.ǐ("ScrollingEnabled")
+.ToBoolean(true);Ƹ=j.ǐ("FontSize").ToSingle(1f);ƹ=j.ǐ("Margin").ToInt32(16);ƿ=j.ǐ("MinScrollWait").ToSingle(8f);ǁ=j.ǐ(
+"ColoredIcons").ToBoolean(false);if(ü.Count>1){Ǭ=0;ǭ=false;}}Ǐ.X+=ƹ;Ǐ.Y+=ƹ;foreach(var ª in Ë){ǆ=9;ǅ++;if(ǅ>25){yield return true;ǅ=0;
+}if(!ª.Ŧ.HasValue&&!ª.ƥ)continue;if(ª.Ǯ)continue;if(ǩ<Ǭ){ǩ++;continue;}if(Ǐ.Y+((ƹ*2)+(ª.ō!=ƴ?60:30))*Ƹ>ô.Height){if(Ǫ==0
+&&(ǀ==null||(DateTime.UtcNow-ǀ.Value).TotalSeconds>=ƿ)){j.Clear();j.Ǡ("More",ǭ?ǩ:0);j.Ǡ("ScrollingEnabled",ǭ);j.Ǡ(
+"FontSize",Ƹ);j.Ǡ("Margin",ƹ);j.Ǡ("MinScrollWait",ƿ);j.Ǡ("ColoredIcons",ǁ);ǣ.CustomData=j.ǡ();ǀ=DateTime.UtcNow;}ǫ=true;break;}if(
+ª.ō!=ƴ){R.ǖ(ó,ǎ,Ǐ,ª.ō,Ƹ,ƹ);Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);ƴ=ª.ō;}R.ǯ(ó,ǎ,Ǐ,ª,Ƹ,ƹ,ô,ǁ);Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);
+ǩ++;}if(!ǫ&&Ǫ==0&&(ǀ==null||(DateTime.UtcNow-ǀ.Value).TotalSeconds>=ƿ)){j.Clear();j.Ǡ("More",0);j.Ǡ("ScrollingEnabled",ǭ)
+;j.Ǡ("FontSize",Ƹ);j.Ǡ("Margin",ƹ);j.Ǡ("MinScrollWait",ƿ);j.Ǡ("ColoredIcons",ǁ);ǣ.CustomData=j.ǡ();ǀ=DateTime.UtcNow;}ǎ.
+Dispose();Ǫ++;yield return true;}ñ.Clear();ð.Clear();ò.Clear();ǆ=10;foreach(var ǣ in ǈ){if(ǣ==null)continue;if(ǣ.CustomName.ĺ(
+CST)){ñ.Add(ǣ,ǣ);}if(ǣ.CustomName.ĺ(IST)){ð.Add(ǣ,ǣ);}}ǆ=11;yield return true;foreach(var ǰ in ï){if(ǰ.Key==null)continue;Ƶ
+=ǰ.Value.CustomData.Split('@').ToList();foreach(var ª in Ƶ){if(ª.Contains(" GOAT-Level")){int Ǳ=-1;int.TryParse(ª.Split(
+'G')[0].Trim(),out Ǳ);if(Ǳ>=0&&ǰ.Key.SurfaceCount-1>=Ǳ&&!ñ.ContainsKey(ǰ.Key.GetSurface(Ǳ))){ñ.Add(ǰ.Key.GetSurface(Ǳ),ǰ.
+Value);}}if(ª.Contains(" GOAT-Inventory")){int Ǳ=-1;int.TryParse(ª.Split('G')[0].Trim(),out Ǳ);if(Ǳ>=0&&ǰ.Key.SurfaceCount-1
+>=Ǳ&&!ð.ContainsKey(ǰ.Key.GetSurface(Ǳ))){ð.Add(ǰ.Key.GetSurface(Ǳ),ǰ.Value);ò.Add(ǰ.Key.GetSurface(Ǳ),ª);}}}}ǆ=12;foreach
+(var ó in ñ){if(ó.Key==null)continue;ó.Key.ContentType=ContentType.SCRIPT;ó.Key.Script="";ƶ=null;if(ó.Key.GetText()==""){
+Ā=999999f;foreach(var ŕ in t){ā=Vector3.RectangularDistance(ó.Value.Position,ŕ.Position);if(ā<Ā){ƶ=ŕ;Ā=ā;}}ĉ="SteelPlate"
+;Ċ="";č=5;ċ="White";Č=ƶ.CustomName;if(ƶ is IMyGasTank){ĉ=ƶ.BlockDefinition.SubtypeId.Contains("Hydro")?"IconHydrogen":
+"IconOxygen";}else if(ƶ.HasInventory){var Â=ƶ.GetInventory();if(Â.ItemCount>0&&Ç.ContainsKey(Â.GetItemAt(0).Value.Type)){ĉ=Ç[Â.
+GetItemAt(0).Value.Type].Ő;}}j.Clear();j.Ǡ("ContainerID",ƶ.EntityId.ToString());j.Ǡ("OffsetX",ó.Value.Position.X-ƶ.Position.X);j.
+Ǡ("OffsetY",ó.Value.Position.Y-ƶ.Position.Y);j.Ǡ("OffsetZ",ó.Value.Position.Z-ƶ.Position.Z);j.Ǡ("Name",Č);j.Ǡ("Icon",ĉ);j
+.Ǡ("Icon2",Ċ);j.Ǡ("Style",č);j.Ǡ("Font",ċ);j.Ǡ("FindContainerByName","");ó.Key.WriteText(j.ǡ());ó.Key.
+ScriptBackgroundColor=Color.Black;ó.Key.ScriptForegroundColor=Color.White;}else{X.ǌ(ó.Key.GetText(),ref j);ƶ=GridTerminalSystem.
+GetBlockWithId(j.ǐ("ContainerID").ToInt64(0));if(ƶ==null){ǃ=Vector3.Zero;ǃ.X=j.ǐ("OffsetX").ToSingle(0f);ǃ.Y=j.ǐ("OffsetY").ToSingle(
+0f);ǃ.Z=j.ǐ("OffsetZ").ToSingle(0f);Ā=999999f;foreach(var ŕ in t){ā=Vector3.RectangularDistance(ó.Value.Position+ǃ,ŕ.
+Position);if(ā<Ā){ƶ=ŕ;Ā=ā;}}j.Ǡ("ContainerID",ƶ.EntityId.ToString());ó.Key.WriteText(j.ǡ());}Č=j.ǐ("Name").ToString("Name");ĉ=j.
+ǐ("Icon").ToString("SteelPlate");Ċ=j.ǐ("Icon2").ToString("");č=j.ǐ("Style").ToInt32(1);ċ=j.ǐ("Font").ToString("White");þ=
+j.ǐ("FindContainerByName").ToString("");if(þ!=""){ƶ=GridTerminalSystem.GetBlockWithName(þ);if(ƶ!=null){j.Ǡ("ContainerID",
+ƶ.EntityId.ToString());j.Ǡ("OffsetX",ó.Value.Position.X-ƶ.Position.X);j.Ǡ("OffsetY",ó.Value.Position.Y-ƶ.Position.Y);j.Ǡ(
+"OffsetZ",ó.Value.Position.Z-ƶ.Position.Z);j.Ǡ("FindContainerByName","");ó.Key.WriteText(j.ǡ());}}}if(ƶ==null)continue;if(ƶ is
+IMyGasTank){ć=(float)(ƶ as IMyGasTank).FilledRatio;Ĉ=1f-ć;}else{Ʒ=ƶ.GetInventory();ć=Ʒ.VolumeFillFactor;Ĉ=ć;}ô=new RectangleF((ó.
+Key.TextureSize-ó.Key.SurfaceSize)/2f,ó.Key.SurfaceSize);var ǎ=ó.Key.DrawFrame();var Ǐ=ô.Position;MySprite ǲ;if(Ċ=="")Ċ=ĉ;ǳ
+(ƶ,out Ď);if(Ď.BuildLevelRatio<1f){ĉ=Ċ="Danger";}if(!ƶ.IsFunctional){ĉ=Ċ="Cross";}switch(č){case 1:case 2:case 3:ǲ=new
+MySprite(){Type=SpriteType.TEXT,Data=Č,Position=Ǐ+new Vector2(ó.Key.SurfaceSize.X/2,0),RotationOrScale=1.5f,Color=(č!=3?ó.Key.
+ScriptForegroundColor:R.Ǵ(Ĉ)).Shade(R.ǵ),Alignment=TextAlignment.CENTER,FontId=ċ};ǎ.Add(ǲ);Ǐ=new Vector2(4,32);ǲ=new MySprite(){Type=
+SpriteType.TEXTURE,Data=Ê.ContainsKey(ĉ)?Ê[ĉ].Ƕ():ĉ,Position=Ǐ+new Vector2(16,16),Size=new Vector2(32,32),Color=ó.Key.
+ScriptForegroundColor.Shade(R.ǵ),Alignment=TextAlignment.CENTER};ǎ.Add(ǲ);Ǐ=new Vector2(ó.Key.SurfaceSize.X-32-4,32);ǲ=new MySprite(){Type=
+SpriteType.TEXTURE,Data=Ê.ContainsKey(Ċ)?Ê[Ċ].Ƕ():Ċ,Position=Ǐ+new Vector2(16,16),Size=new Vector2(32,32),Color=ó.Key.
+ScriptForegroundColor.Shade(R.ǵ),Alignment=TextAlignment.CENTER};ǎ.Add(ǲ);Ǐ=new Vector2(10,84);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data=
+"SquareSimple",Position=Ǐ,Size=new Vector2(ó.Key.SurfaceSize.X-20,20),Color=ó.Key.ScriptForegroundColor.Shade(0.25f).Shade(R.ǵ),
+Alignment=TextAlignment.LEFT};ǎ.Add(ǲ);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data="SquareSimple",Position=Ǐ,Size=new Vector2(ć
+*(ó.Key.SurfaceSize.X-20),20),Color=(č==1?ó.Key.ScriptForegroundColor:R.Ǵ(Ĉ)).Shade(R.ǵ),Alignment=TextAlignment.LEFT};ǎ.
+Add(ǲ);break;case 4:case 5:case 6:ǲ=new MySprite(){Type=SpriteType.TEXT,Data=Č,Position=Ǐ+new Vector2(ó.Key.SurfaceSize.X/2
+,0),RotationOrScale=1.5f,Color=(č!=6?ó.Key.ScriptForegroundColor:R.Ǵ(Ĉ)).Shade(R.ǵ),Alignment=TextAlignment.CENTER,FontId
+=ċ};ǎ.Add(ǲ);Ǐ=new Vector2(4,32);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data=Ê.ContainsKey(ĉ)?Ê[ĉ].Ƕ():ĉ,Position=Ǐ+new
+Vector2(32,32),Size=new Vector2(64,64),Color=ó.Key.ScriptForegroundColor.Shade(R.ǵ),Alignment=TextAlignment.CENTER};ǎ.Add(ǲ);Ǐ=
+new Vector2(ó.Key.SurfaceSize.X-64-4,32);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data=Ê.ContainsKey(Ċ)?Ê[Ċ].Ƕ():Ċ,Position
+=Ǐ+new Vector2(32,32),Size=new Vector2(64,64),Color=ó.Key.ScriptForegroundColor.Shade(R.ǵ),Alignment=TextAlignment.CENTER
+};ǎ.Add(ǲ);Ǐ=new Vector2(10+64,84);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data="SquareSimple",Position=Ǐ,Size=new
+Vector2(ó.Key.SurfaceSize.X-20-128,20),Color=ó.Key.ScriptForegroundColor.Shade(0.25f).Shade(R.ǵ),Alignment=TextAlignment.LEFT};
+ǎ.Add(ǲ);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data="SquareSimple",Position=Ǐ,Size=new Vector2(ć*(ó.Key.SurfaceSize.X-
+20-128),20),Color=(č==4?ó.Key.ScriptForegroundColor:R.Ǵ(Ĉ)).Shade(R.ǵ),Alignment=TextAlignment.LEFT};ǎ.Add(ǲ);break;}ǎ.
+Dispose();yield return true;}ǆ=13;foreach(var ó in ð){if(ó.Key==null)continue;ó.Key.ContentType=ContentType.SCRIPT;ó.Key.Script
+="";ô=new RectangleF((ó.Key.TextureSize-ó.Key.SurfaceSize)/2f,ó.Key.SurfaceSize);if(ò.ContainsKey(ó.Key)){ÿ=ò[ó.Key].
+Split('\n');}else if(ó.Key.GetText()!=""){ÿ=ó.Key.GetText().Split('\n');}else{ÿ=Array.Empty<string>();}ƹ=16;ƺ=0;var ǎ=ó.Key.
+DrawFrame();var Ǐ=ô.Position;Ƹ=1f;ƻ=false;foreach(var Ʃ in ÿ){if(Ʃ.StartsWith("@"))continue;ƺ++;X.Ƿ(Ʃ,ref j);if(ƺ==1){ƹ=j.ǐ(
+"Margin").ToInt32(16);Ǐ.X+=ƹ;Ǐ.Y+=ƹ;}if(Ʃ.StartsWith("Size=")){Ƹ=j.ǐ("Size").ToSingle(1f);continue;}if(Ʃ.StartsWith("HideEmpty")
+){ƻ=true;}if(Ʃ.StartsWith("ShowEmpty")){ƻ=false;}if(Ʃ.StartsWith("Header=")){þ=j.ǐ("Header").ToString("");if(þ==
+"#GridName")þ=Me.CubeGrid.CustomName;R.ǖ(ó.Key,ǎ,Ǐ,þ,Ƹ,ƹ);goto Ǹ;}if(Ʃ.StartsWith("Category=")){Ă=0;ă=j.ǐ("Offset").ToInt32(0);þ=j.
+ǐ("Category").ToString("");foreach(var ª in Ê){if(þ!=ª.Value.ō)continue;if(ƻ&&ª.Value.ƀ<=0f)continue;if(Ă<ă){Ă++;continue
+;}if(Ǐ.Y+30*Ƹ>(ô.Height+ô.Position.Y))break;R.ǹ(ó.Key,ǎ,Ǐ,ª.Value,Ƹ,ƹ,ô);Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}continue;}if(Ʃ
+.StartsWith("ShortItem=")){þ=j.ǐ("ShortItem").ToString("");foreach(var ª in Ê){if(þ!=ª.Value.Ő)continue;R.Ǻ(ó.Key,ǎ,Ǐ,ª.
+Value,Ƹ,ƹ,ô);goto Ǹ;}continue;}if(Ʃ.StartsWith("Space")){þ=Ʃ.Replace("Space=","");Ă=0;if(!Int32.TryParse(þ,out Ă)){Ă=1;}for(
+int ļ=0;ļ<Ă;ļ++){Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}continue;}if(Ʃ.StartsWith("IconBar=")){þ=j.ǐ("IconBar").ToString("");Ă=j
+.ǐ("Target").ToInt32(0);foreach(var ª in Ê){if(þ!=ª.Value.Ő)continue;if(Ă==0){R.ǻ(ó.Key,ǎ,Ǐ,ª.Value.Ƕ(),ª.Value.Ǽ(),Ƹ,ƹ);
+}else{R.ǻ(ó.Key,ǎ,Ǐ,ª.Value.Ƕ(),Math.Min(Math.Max(ª.Value.ƀ/Ă,0f),1f),Ƹ,ƹ);}goto Ǹ;}continue;}if(Ʃ.StartsWith("Text=")){þ
+=j.ǐ("Text").ToString("");if(þ=="#GridName")þ=Me.CubeGrid.CustomName;R.ǔ(ó.Key,ǎ,Ǐ,þ,Ƹ);goto Ǹ;}if(Ʃ.StartsWith(
+"CategoryLevel=")){þ=j.ǐ("CategoryLevel").ToString("");Ā=0;ā=0;foreach(var ŕ in p){if(!ŕ.Value.Contains(þ))continue;Ʒ=ŕ.Key.Â;Ā+=(float)
+Ʒ.CurrentVolume;ā+=(float)Ʒ.MaxVolume;}R.Ǜ(ó.Key,ǎ,Ǐ,Ā/ā,Ƹ,ƹ);goto Ǹ;}if(Ʃ.StartsWith("DeltaItems")||Ʃ.StartsWith(
+"Stonks")){Ă=0;ă=j.ǐ("Offset").ToInt32();þ="";foreach(var ª in Ê){if(ª.Value.ǽ==0)continue;if(Ă<ă){Ă++;continue;}if(Ǐ.Y+30*Ƹ>ô.
+Height)break;R.Ǿ(ó.Key,ǎ,Ǐ,ª.Value,Ƹ,ƹ);goto Ǹ;}continue;}if(Ʃ.StartsWith("Icon=")){if(Ê.ContainsKey(Ʃ.Replace("Icon=",""))){R
+.Ǔ(ó.Key,ǎ,Ǐ,Ê[Ʃ.Replace("Icon=","")].Ƕ(),Ƹ);}else{R.Ǔ(ó.Key,ǎ,Ǐ,Ʃ.Replace("Icon=",""),Ƹ);}goto Ǹ;}if(Ʃ.StartsWith("Push"
+)){þ=Ʃ.Replace("Push=","");Ă=0;if(!Int32.TryParse(þ,out Ă)){Ă=1;}Ǐ=new Vector2(Ǐ.X+Ă*Ƹ,Ǐ.Y);continue;}if(Ʃ.StartsWith(
+"BG")){Ă=j.ǐ("Repeat").ToInt32(1);þ=j.ǐ("BG").ToString("Grid");Ā=j.ǐ("Opacity").ToSingle(1f);Ǆ=X.ǿ(j.ǐ("Color").ToString(
+"000000"));Ą=j.ǐ("AspectCorrection").ToBoolean(true);R.Ȁ(ó.Key,ǎ,þ,Ă,Ā,ô,Ǆ,Ą);continue;}if(Ʃ.StartsWith("StockStats=")){if(Į.ȁ.
+ContainsKey(Ʃ.Replace("StockStats=",""))){Į.ȁ[Ʃ.Replace("StockStats=","")].Ȃ(ó.Key,ǎ,Ǐ,Ƹ);goto Ǹ;}continue;}if(Ʃ.StartsWith(
+"StockLevel=")){þ=j.ǐ("StockLevel").ToString();if(Į.ȁ.ContainsKey(þ)){Į.ȁ[þ].ȃ(ó.Key,ǎ,Ǐ,Ƹ,ƹ,j.ǐ("Color").ToInt32(0)-1);goto Ǹ;}
+continue;}if(Ʃ.StartsWith("StockLevelFull=")){þ=j.ǐ("StockLevelFull").ToString();if(Į.ȁ.ContainsKey(þ)){Į.ȁ[þ].Ȅ(ó.Key,ô,ǎ,Ǐ,ƹ,j
+.ǐ("Color").ToInt32(0)-1);goto Ǹ;}continue;}if(Ʃ.StartsWith("StockVolume=")){þ=j.ǐ("StockVolume").ToString();if(Į.ȁ.
+ContainsKey(þ)){Į.ȁ[þ].ȅ(ó.Key,ǎ,Ǐ,Ƹ,ƹ,j.ǐ("Color").ToInt32(0)-1);goto Ǹ;}continue;}if(Ʃ.StartsWith("StockVolumeFull=")){þ=j.ǐ(
+"StockVolumeFull").ToString();if(Į.ȁ.ContainsKey(þ)){Į.ȁ[þ].Ȇ(ó.Key,ô,ǎ,Ǐ,ƹ,j.ǐ("Color").ToInt32(0)-1);goto Ǹ;}continue;}if(Ʃ.StartsWith(
+"StockList=")){þ=j.ǐ("StockList").ToString();if(Į.ȁ.ContainsKey(þ)){Į.ȁ[þ].ȇ(ó.Key,ô,ǎ,Ǐ,Ƹ,ƹ,Ç);goto Ǹ;}continue;}foreach(var ª in Ê
+){if(Ʃ!=ª.Value.Ő)continue;R.ǹ(ó.Key,ǎ,Ǐ,ª.Value,Ƹ,ƹ,ô);goto Ǹ;}continue;Ǹ:Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}ǎ.Dispose();
+yield return true;}Ǌ.Clear();foreach(var Ʈ in Į.Ƃ){if(Ʈ.Ȉ)continue;Ǌ.Add(Ʈ);}foreach(var ȉ in Ǌ){ȉ.Ȋ(Ç);}yield return true;}}
+bool ȋ;Vector2 Ȍ;Vector2 ȍ;int Ȏ=128;string ȏ="";Random Ȑ=new Random();RectangleF ȑ;void ȗ(){switch(Ð%16){case 0:case 1:case
+2:case 3:Ñ="•---";break;case 4:case 5:case 6:case 7:Ñ="-•--";break;case 8:case 9:case 10:case 11:Ñ="--•-";break;case 12:
+case 13:case 14:case 15:Ñ="---•";break;}if(Ò==9){Echo($"{Ñ} {Ò}:{Ô}({ǆ}) {Ó} ({ĩ}/{Ī})");Echo(
+$"Current inventory: {t[ĩ-1].CustomName}\n");}else{Echo($"{Ñ} {Ò}:{Ô}({ǆ}) {Ó}\n");}if(Tutorials&&k.Count==0){Echo(
+$"Please build a screen with \"{SST[0]}\" in its name.\n");}Echo($"Instructions: {Runtime.CurrentInstructionCount}/{Runtime.MaxInstructionCount}\n");Echo(
+$"Runtime: {Runtime.LastRunTimeMs}\n");if(â&&ä!=null){Echo($"Learning mode active for {Math.Floor(300-(DateTime.UtcNow-ä.Value).TotalSeconds)} seconds");Echo
+("DO NOT RECOMPILE!!!");Echo("this will not save newly learned recipes!");Echo(
+"to save newly learned recipes, run the same argument again.\n");}foreach(var ǚ in Î){if(ǚ.Value<0f){Echo($"{ǚ.Key}: Warning, no container");}else{Echo($"{ǚ.Key}: {ǚ.Value*100f:F2}%")
+;}}if(Ö!=null){Ù=$"{(DateTime.UtcNow.Second%2==0?DateTime.UtcNow.AddHours(UTC).ToString("HH:mm"):DateTime.UtcNow.AddHours(UTC).ToString("HH mm"))} | {Ò.ToString().PadLeft(2,'0')} - {Ó}\n"
+;for(int ļ=Õ.Count-1;ļ>=0;ļ--){Ù+=$"{Õ[ļ].Value.AddHours(UTC):HH:mm:ss} | {Õ[ļ].Key}";if(ļ!=0){Ù+="\n";}}Ö.WriteText(Ù);}
+if(LN!=null){int Ǫ=DBG2.Count;if(Ǫ>25)DBG2.RemoveRange(0,Ǫ-25);LN.WriteText(string.Join("\n",DBG2));}if(LC!=null)LC.WriteText(string.Join("\n",DBG));var Ȓ=Me as IMyTextSurfaceProvider;var ȓ=Ȓ.GetSurface(0);if(ȓ==null){Ð++;
+return;}var ǎ=ȓ.DrawFrame();ȑ=new RectangleF((ȓ.TextureSize-ȓ.SurfaceSize)/2f,ȓ.SurfaceSize);var Ǐ=new Vector2(ȑ.Center.X,ȑ.
+Position.Y+16);ȓ.ContentType=ContentType.SCRIPT;R.Ȁ(ȓ,ǎ,"Grid",1,0.1f,ȑ,Color.Black);R.Ȕ(ȓ,ǎ,Ǐ,$"GOAT Sorter {G}",ȑ.Height<=256?
+1f:1.5f);R.ȕ(ȓ,ǎ,new Vector2(ȑ.Center.X,ȑ.Center.Y+30),new Vector2(ȑ.Width,ȑ.Height-60),"SquareHollow",Color.Black,Ȗ:0.1f)
+;if(!ȋ){Ȍ=ȑ.Center;ȍ=Vector2.One;ȏ="Textures\\FactionLogo\\Builders\\BuilderIcon_1.dds";if(ȑ.Height<=256){Ȏ=48;}ȋ=true;}Ȍ
++=ȍ;if(Ȍ.X+Ȏ/2>ȑ.Right||Ȍ.X-Ȏ/2<ȑ.X){ȍ.X*=-1f;if(Ç.Count>0)ȏ=Ç.ElementAt(Ȑ.Next(0,Ç.Count)).Value.Ƕ();}if(Ȍ.Y+Ȏ/2>ȑ.Bottom
+||Ȍ.Y-Ȏ/2<ȑ.Y+60){ȍ.Y*=-1f;if(Ç.Count>0)ȏ=Ç.ElementAt(Ȑ.Next(0,Ç.Count)).Value.Ƕ();}R.ȕ(ȓ,ǎ,Ȍ,new Vector2(Ȏ,Ȏ),ģ?
+"Textures\\FactionLogo\\Traders\\TraderIcon_2.dds":ȏ,Color.White);ǎ.Dispose();Ð++;}static void Ź(string Ș){var ș=Ș.Split('\n');for(int ļ=0;ļ<ș.Length;ļ++){Õ.Add(new
+KeyValuePair<string,DateTime>(ș[ļ],DateTime.UtcNow));if(Õ.Count>LL){Õ.RemoveAt(0);}}}static void Ɖ(float Ț,string ų,string ŗ,string
+ț,string Ȝ){Ź($"Moved {Ț}x{ų}({ŗ}) from {ț} to {Ȝ}");}static void Ɖ(MyFixedPoint Ț,string ų,string ŗ,string ț,string Ȝ){Ɖ
+((float)Ț,ų,ŗ,ț,Ȝ);}public static void ƫ(string ȝ){Û.Add(ȝ);}static void Ƨ(){Û.Clear();}static void Ʊ(string ǝ){ě.Add(ǝ);
+}static void ĳ(){Ĝ.Clear();foreach(var ǝ in ě){Ĝ.Add(ǝ);}ě.Clear();}void ǳ(IMyTerminalBlock Ȟ,out IMySlimBlock ȟ){ȟ=Ȟ.
+CubeGrid.GetCubeBlock(Ȟ.Position);}void ȡ(){if(AT&&Runtime.LastRunTimeMs>ATMS){ħ=(int)(Math.Ceiling(Runtime.LastRunTimeMs/(ATMS*
+0.9f))+1);}if(ħ!=0&&Ĩ<ħ){Ĩ++;return;}ħ=0;Ĩ=0;if(d!=null){bool Ƞ=false;try{Ƞ=d.MoveNext();}catch(Exception Ǧ){Ź(
+$"Error during Main Loop step \"{Ò}:{Ô}\": {Ǧ.Message}");Ʊ($"Main Loop crashed during step \"{Ò}:{Ô}\" please check {LST[0]}");}if(Ƞ&&!å){ȗ();}else{å=false;d.Dispose();d=e();}
+}}void Ȣ(){if(f!=null&&Ò!=10&&Ò!=11&&Ò!=12&&Ò!=1&&Ò!=3&&Ò!=4){bool Ƞ=false;try{Ƞ=f.MoveNext();}catch(Exception Ǧ){Ź(
+$"Error during Display Loop \"{ǆ}\"({Ò}:{Ô}): {Ǧ.Message}");Ʊ($"Display Loop crashed please check {LST[0]}");}if(!Ƞ){f.Dispose();f=g();}}}int ȣ(IMyCubeGrid t){if(t.IsStatic)
+return 10;if(t.GridSizeEnum==MyCubeSize.Large)return 5;return 1;}int ĵ(IMyProgrammableBlock Ȥ,out bool ȥ){var Ȧ=Ȥ.CustomData.
+Split(new string[]{"@GSIM-GridPriotity="},StringSplitOptions.None);if(Ȧ.Length==2){Ȧ=Ȧ[1].Split(new string[]{"\n"},
+StringSplitOptions.None);if(Ȧ.Length>1){var ȧ=0;int.TryParse(Ȧ[0],out ȧ);if(ȧ>=0){ȥ=true;return ȧ;}}}ȥ=false;if(Ȥ.CustomData.StartsWith(
+"@GOAT-Inventory-Manager")){return ȣ(Ȥ.CubeGrid);}return-1;}int Ļ(IMyShipConnector ĸ,List<IMyTerminalBlock>Ȩ){int ȩ=-1;bool ȥ=false;foreach(var Ŀ
+in Ȩ){if(Ŀ.CubeGrid!=ĸ.CubeGrid)continue;if(!(Ŀ is IMyProgrammableBlock))continue;ȩ=ĵ(Ŀ as IMyProgrammableBlock,out ȥ);if(
+ȥ)break;}return ȩ;}void J(){string Ȫ=Ć.Argument(1);if(Ȫ=="true"){ã=true;}if(Ȫ=="false"){ã=false;ä=null;}if(Ȫ=="toggle"){ã
+=!ã;}if(ã)å=true;else ä=null;}void K(){string Ȫ=Ć.Argument(1);if(Ȫ=="true"){æ=true;}if(Ȫ=="false"){æ=false;}if(Ȫ==
+"toggle"){æ=!æ;}if(æ){ğ=0;å=true;}else{ê=null;}}void L(){ë=true;Ź("Item Index Rebuild has been requested.");}void M(){Ġ=true;Ź(
+"Removing of not craftable Blueprints has been requested.");}void N(){ȫ();}void O(){ȫ(true);}void P(){ì=true;Ź("Item Index Population has been requested.");}void Q(){í=true;Ź(
+"Item Name Translation has been requested.");}void S(){SCN=!SCN;Ź(SCN?"Scan Mode ON: will scan production until a new blueprint is found.":"Scan Mode off.");}void ȫ(bool Ȭ=false){if(Ć.ArgumentCount!=6)return;var ª=new V(
+$"~{Ć.Argument(1)}~{Ć.Argument(2)}~{Ć.Argument(3)}~{Ć.Argument(4)}~{Ć.Argument(5)}~");if(!ª.ň){Ź($"Item definition for \"{Ć.Argument(1)}\" could not be parsed");return;}if(Ȭ){Ħ.Add(ª);}else{ĥ.Add(ª);}Ź(
+$"Item \"{ª.Ő}\" import queued from external source.");}void ȭ(){if(ä!=null){if((DateTime.UtcNow-ä.Value).TotalSeconds>300){ã=false;ä=null;}}if(æ&&ğ>5&&ê==null){æ=false;}}
+bool ť(IMyInventory Ȯ,MyInventoryItem ª,string ȯ=""){foreach(var ŕ in p){if(!ŕ.Value.Contains(Ç[ª.Type].ō))continue;Ã=ŕ.Key.
+Â;if(!Ȯ.CanTransferItemTo(Ã,ª.Type))continue;if(!Ã.CanItemsBeAdded(ª.Amount,ª.Type))continue;if(Ȯ.TransferItemTo(Ã,0,null
+,true,ª.Amount)){if(ȯ!="")Ɖ(ª.Amount,Ç[ª.Type].Ő,Ç[ª.Type].ō,ȯ,ŕ.Key.ŕ.CustomName);return true;}}return false;}string œ(
+Dictionary<string,V>Ȱ,string ų){if(!Ȱ.ContainsKey(ų))return ų;int ļ=1;while(Ȱ.ContainsKey($"{ų}_{ļ}")){ļ++;}return$"{ų}_{ļ}";}
+public void
+ Main
+(string ȱ,UpdateType Ȳ){if((Ȳ&(UpdateType.Trigger|UpdateType.Terminal))!=0&&Ć.TryParse(ȱ)){Action ȳ;string ȴ=Ć.Argument(0
+);if(ȴ==null){Echo("No command specified");}else if(I.TryGetValue(ȴ,out ȳ)){ȳ();}else{Echo($"Unknown command {ȴ}");}}ȭ();
+if((Ȳ&UpdateType.Update1)!=0){ȡ();}if((Ȳ&UpdateType.Update10)!=0){Ȣ();}}
+}
+public class à{public MyDefinitionId Ŧ;public int Ơ;public float i;public V Ƣ;public à(MyDefinitionId Ŧ,int Ơ,float i,V
+Ƣ){this.Ŧ=Ŧ;this.Ơ=Ơ;this.i=i;this.Ƣ=Ƣ;}}public class V{public const string ȵ="MyObjectBuilder_";public const string ű=
+"MyObjectBuilder_BlueprintDefinition/";public const string ȶ="Ore";public const string ȷ="Ingot";const string ȸ="Component";const string ȹ="AmmoMagazine";
+const string Ⱥ="OxygenContainerObject";const string Ȼ="GasContainerObject";const string ȼ="PhysicalGunObject";const string Ƚ=
+"PhysicalObject";const string Ⱦ="ConsumableItem";const string ȿ="Datapad";const string ɀ="SeedItem";const string Ɂ="Package";const
+string ɂ="Position";const string Ƀ="AngleGrinder";const string Ʉ="HandDrill";const string Ʌ="MealPack";const string Ɇ=
+"FireworksBox";const string ɇ="AutomaticRifle";static Dictionary<string,string>Ɉ=new Dictionary<string,string>(){{ȵ+ȶ,"Ores"},{ȵ+ȷ,
+"Ingots"},{ȵ+ȸ,"Components"},{ȵ+ȹ,"Ammo"},{ȵ+Ⱥ,"Tools"},{ȵ+Ȼ,"Tools"},{ȵ+ȼ,"Tools"},{ȵ+Ƚ,"Tools"},{ȵ+Ⱦ,"Consumables"},{ȵ+ȿ,
+"Misc"},{ȵ+ɀ,"Seeds"},{ȵ+Ɂ,"Misc"},};static ɉ ņ;public static Dictionary<string,ɉ>Ņ=>Ɋ;static Dictionary<string,ɉ>Ɋ=new
+Dictionary<string,ɉ>{{ȵ+ȸ+"/BulletproofGlass",new ɉ("","",ű+"BulletproofGlass")},{ȵ+ȸ+"/Canvas",new ɉ("","",ű+ɂ+"0030_Canvas")},{ȵ
++ȸ+"/Computer",new ɉ("","",ű+"Computer"+ȸ)},{ȵ+ȸ+"/Construction",new ɉ("ConstructionComp","",ű+"Construction"+ȸ)},{ȵ+ȸ+
+"/Detector",new ɉ("DetectorComponent","",ű+"Detector"+ȸ)},{ȵ+ȸ+"/Display",new ɉ("","",ű+"Display")},{ȵ+ȸ+"/EngineerPlushie",new ɉ()
+},{ȵ+ȸ+"/Explosives",new ɉ("","",ű+"Explosives"+ȸ)},{ȵ+ȸ+"/Girder",new ɉ("","",ű+"Girder"+ȸ)},{ȵ+ȸ+"/GravityGenerator",
+new ɉ("GravityGenComponent","",ű+"GravityGenerator"+ȸ)},{ȵ+ȸ+"/InteriorPlate",new ɉ("","",ű+"InteriorPlate")},{ȵ+ȸ+
+"/LargeTube",new ɉ("","",ű+"LargeTube")},{ȵ+ȸ+"/Medical",new ɉ("MedicalComponent","",ű+"Medical"+ȸ)},{ȵ+ȸ+"/MetalGrid",new ɉ("","",ű
++"MetalGrid")},{ȵ+ȸ+"/Motor",new ɉ("","",ű+"Motor"+ȸ)},{ȵ+ȸ+"/PowerCell",new ɉ("","",ű+"PowerCell")},{ȵ+ȸ+
+"/PrototechCapacitor",new ɉ("","",ű+"PrototechCapacitor")},{ȵ+ȸ+"/PrototechCircuitry",new ɉ("","",ű+"PrototechCircuitry")},{ȵ+ȸ+
+"/PrototechCoolingUnit",new ɉ("","",ű+"PrototechCoolingUnit")},{ȵ+ȸ+"/PrototechFrame",new ɉ()},{ȵ+ȸ+"/PrototechMachinery",new ɉ("","",ű+
+"PrototechMachinery")},{ȵ+ȸ+"/PrototechPanel",new ɉ("","",ű+"PrototechPanel")},{ȵ+ȸ+"/PrototechPropulsionUnit",new ɉ("","",ű+
+"PrototechPropulsionUnit")},{ȵ+ȸ+"/RadioCommunication",new ɉ("RadioCommComponent","",ű+"RadioCommunication"+ȸ)},{ȵ+ȸ+"/Reactor",new ɉ(
+"ReactorComponent","",ű+"Reactor"+ȸ)},{ȵ+ȸ+"/SabiroidPlushie",new ɉ()},{ȵ+ȸ+"/SmallTube",new ɉ("","",ű+"SmallTube")},{ȵ+ȸ+"/SolarCell",new
+ɉ("","",ű+"SolarCell")},{ȵ+ȸ+"/SteelPlate",new ɉ("","",ű+"SteelPlate")},{ȵ+ȸ+"/Superconductor",new ɉ("","",ű+
+"Superconductor")},{ȵ+ȸ+"/Thrust",new ɉ("ThrustComponent","",ű+"Thrust"+ȸ)},{ȵ+ȸ+"/ZoneChip",new ɉ()},{ȵ+ɀ+"/Fruit",new ɉ("FruitSeeds",
+"",ű+ɂ+"0010_Seeds_Fruit")},{ȵ+ɀ+"/Grain",new ɉ("GrainSeeds","",ű+ɂ+"0020_Seeds_Grain")},{ȵ+ɀ+"/Mushrooms",new ɉ(
+"MushroomSpores","",ű+ɂ+"0040_Spores_Mushrooms")},{ȵ+ɀ+"/Vegetables",new ɉ("VegetableSeeds","",ű+ɂ+"0030_Seeds_Vegetables")},{ȵ+Ⱦ+
+"/ClangCola",new ɉ("","Foods","")},{ȵ+Ⱦ+"/CosmicCoffee",new ɉ("","Foods","")},{ȵ+Ⱦ+"/Fruit",new ɉ("","Ingredients","")},{ȵ+Ⱦ+
+"/InsectMeatCooked",new ɉ("","Foods",ű+ɂ+"0020_CookSpiderMeat")},{ȵ+Ⱦ+"/InsectMeatRaw",new ɉ("","Ingredients","")},{ȵ+Ⱦ+"/MammalMeatCooked"
+,new ɉ("","Foods",ű+ɂ+"0010_CookMammalMeat")},{ȵ+Ⱦ+"/MammalMeatRaw",new ɉ("","Ingredients","")},{ȵ+Ⱦ+"/"+Ʌ+"_Burrito",new
+ɉ("Burrito","Foods",ű+ɂ+"0170_"+Ʌ+"_Burrito")},{ȵ+Ⱦ+"/"+Ʌ+"_Chili",new ɉ("Chili","Foods",ű+ɂ+"0070_"+Ʌ+"_Chili")},{ȵ+Ⱦ+
+"/"+Ʌ+"_Curry",new ɉ("Curry","Foods",ű+ɂ+"0120_"+Ʌ+"_Curry")},{ȵ+Ⱦ+"/"+Ʌ+"_Dumplings",new ɉ("Dumplings","Foods",ű+ɂ+"0140_"
++Ʌ+"_Dumplings")},{ȵ+Ⱦ+"/"+Ʌ+"_Flatbread",new ɉ("Flatbread","Foods",ű+ɂ+"0080_"+Ʌ+"_Flatbread")},{ȵ+Ⱦ+"/"+Ʌ+
+"_FrontierStew",new ɉ("FrontierStew","Foods",ű+ɂ+"0180_"+Ʌ+"_FrontierStew")},{ȵ+Ⱦ+"/"+Ʌ+"_FruitBar",new ɉ("FruitBar","Foods",ű+ɂ+
+"0040_"+Ʌ+"_FruitBar")},{ȵ+Ⱦ+"/"+Ʌ+"_FruitPastry",new ɉ("FruitPastry","Foods",ű+ɂ+"0100_"+Ʌ+"_FruitPastry")},{ȵ+Ⱦ+"/"+Ʌ+
+"_GardenSlaw",new ɉ("GardenSlaw","Foods",ű+ɂ+"0050_"+Ʌ+"_GardenSlaw")},{ȵ+Ⱦ+"/"+Ʌ+"_GreenPellets",new ɉ("GreenPellets","Foods",ű+ɂ+
+"0130_"+Ʌ+"_GreenPellets")},{ȵ+Ⱦ+"/"+Ʌ+"_KelpCrisp",new ɉ("KelpCrisp","Foods",ű+ɂ+"0030_"+Ʌ+"_KelpCrisp")},{ȵ+Ⱦ+"/"+Ʌ+
+"_Lasagna",new ɉ("Lasagna","Foods",ű+ɂ+"0160_"+Ʌ+"_Lasagna")},{ȵ+Ⱦ+"/"+Ʌ+"_Ramen",new ɉ("Ramen","Foods",ű+ɂ+"0090_"+Ʌ+"_Ramen")},{
+ȵ+Ⱦ+"/"+Ʌ+"_RedPellets",new ɉ("RedPellets","Foods",ű+ɂ+"0060_"+Ʌ+"_RedPellets")},{ȵ+Ⱦ+"/"+Ʌ+"_SearedSabiroid",new ɉ(
+"SearedSabiroid","Foods",ű+ɂ+"0190_"+Ʌ+"_SearedSabiroid")},{ȵ+Ⱦ+"/"+Ʌ+"_Spaghetti",new ɉ("Spaghetti","Foods",ű+ɂ+"0150_"+Ʌ+"_Spaghetti")
+},{ȵ+Ⱦ+"/"+Ʌ+"_SteakDinner",new ɉ("SteakDinner","Foods",ű+ɂ+"0200_"+Ʌ+"_SteakDinner")},{ȵ+Ⱦ+"/"+Ʌ+"_VeggieBurger",new ɉ(
+"VeggieBurger","Foods",ű+ɂ+"0110_"+Ʌ+"_VeggieBurger")},{ȵ+Ⱦ+"/Medkit",new ɉ("","",ű+ɂ+"0021_Medkit")},{ȵ+Ⱦ+"/Mushrooms",new ɉ("",
+"Ingredients","")},{ȵ+Ⱦ+"/Powerkit",new ɉ("","",ű+ɂ+"0022_Powerkit")},{ȵ+Ⱦ+"/Vegetables",new ɉ("","Ingredients","")},{ȵ+ȹ+
+"/AutocannonClip",new ɉ("AutocannonMagazine","",ű+ɂ+"0090_AutocannonClip")},{ȵ+ȹ+"/LargeCalibreAmmo",new ɉ("ArtilleryShell","",ű+ɂ+
+"0120_LargeCalibreAmmo")},{ȵ+ȹ+"/MediumCalibreAmmo",new ɉ("AssaultCannonShell","",ű+ɂ+"0110_MediumCalibreAmmo")},{ȵ+ȹ+"/Missile200mm",new ɉ(
+"Missile","",ű+ɂ+"0100_Missile200mm")},{ȵ+ȹ+"/NATO_25x184mm",new ɉ("GatlingAmmo","",ű+ɂ+"0080_NATO_25x184mmMagazine")},{ȵ+ȹ+
+"/LargeRailgunAmmo",new ɉ("LargeRailgunSabot","",ű+ɂ+"0140_LargeRailgunAmmo")},{ȵ+ȹ+"/SmallRailgunAmmo",new ɉ("SmallRailgunSabot","",ű+ɂ+
+"0130_SmallRailgunAmmo")},{ȵ+ȹ+"/SemiAutoPistolMagazine",new ɉ("PistolMagazine-S-10","",ű+ɂ+"0010_SemiAutoPistolMagazine")},{ȵ+ȹ+
+"/ElitePistolMagazine",new ɉ("PistolMagazine-S-10E","",ű+ɂ+"0030_ElitePistolMagazine")},{ȵ+ȹ+"/FullAutoPistolMagazine",new ɉ(
+"PistolMagazine-S-20A","",ű+ɂ+"0020_FullAutoPistolMagazine")},{ȵ+ȹ+"/"+ɇ+"Gun_Mag_20rd",new ɉ("RifleMagazine-MR-20","",ű+ɂ+"0040_"+ɇ+
+"Gun_Mag_20rd")},{ȵ+ȹ+"/RapidFire"+ɇ+"Gun_Mag_50rd",new ɉ("RifleMagazine-MR-50A","",ű+ɂ+"0050_RapidFire"+ɇ+"Gun_Mag_50rd")},{ȵ+ȹ+
+"/Precise"+ɇ+"Gun_Mag_5rd",new ɉ("RifleMagazine-MR-8P","",ű+ɂ+"0060_Precise"+ɇ+"Gun_Mag_5rd")},{ȵ+ȹ+"/Ultimate"+ɇ+"Gun_Mag_30rd",
+new ɉ("RifleMagazine-MR-30E","",ű+ɂ+"0070_Ultimate"+ɇ+"Gun_Mag_30rd")},{ȵ+ȹ+"/FlareClip",new ɉ("FlareGunClip","",ű+ɂ+
+"0051_FlareGunMagazine")},{ȵ+ȹ+"/"+Ɇ+"Blue",new ɉ("","",ű+ɂ+"0060_"+Ɇ+"Blue")},{ȵ+ȹ+"/"+Ɇ+"Green",new ɉ("","",ű+ɂ+"0061_"+Ɇ+"Green")},{ȵ+ȹ+"/"+
+Ɇ+"Pink",new ɉ("","",ű+ɂ+"0064_"+Ɇ+"Pink")},{ȵ+ȹ+"/"+Ɇ+"Rainbow",new ɉ("","",ű+ɂ+"0065_"+Ɇ+"Rainbow")},{ȵ+ȹ+"/"+Ɇ+"Red",
+new ɉ("","",ű+ɂ+"0062_"+Ɇ+"Red")},{ȵ+ȹ+"/"+Ɇ+"Yellow",new ɉ("","",ű+ɂ+"0063_"+Ɇ+"Yellow")},{ȵ+ȼ+
+"/AdvancedHandHeldLauncherItem",new ɉ("RocketLauncher-PRO-1","",ű+ɂ+"0090_AdvancedHandHeldLauncher")},{ȵ+ȼ+"/BasicHandHeldLauncherItem",new ɉ(
+"RocketLauncher-RO-1","",ű+ɂ+"0080_BasicHandHeldLauncher")},{ȵ+ȼ+"/"+ɇ+"Item",new ɉ("Rifle-MR-20","",ű+ɂ+"0040_"+ɇ)},{ȵ+ȼ+"/RapidFire"+ɇ+
+"Item",new ɉ("Rifle-MR-50A","",ű+ɂ+"0050_RapidFire"+ɇ)},{ȵ+ȼ+"/Precise"+ɇ+"Item",new ɉ("Rifle-MR-8P","",ű+ɂ+"0060_Precise"+ɇ)}
+,{ȵ+ȼ+"/Ultimate"+ɇ+"Item",new ɉ("Rifle-MR-30E","",ű+ɂ+"0070_Ultimate"+ɇ)},{ȵ+ȼ+"/SemiAutoPistolItem",new ɉ("Pistol-S-10"
+,"",ű+ɂ+"0010_SemiAutoPistol")},{ȵ+ȼ+"/FullAutoPistolItem",new ɉ("Pistol-S-20A","",ű+ɂ+"0020_FullAutoPistol")},{ȵ+ȼ+
+"/ElitePistolItem",new ɉ("Pistol-S-10E","",ű+ɂ+"0030_EliteAutoPistol")},{ȵ+ȼ+"/FlareGunItem",new ɉ("FlareGun","",ű+ɂ+"0050_FlareGun")},{ȵ+
+Ⱥ+"/OxygenBottle",new ɉ("","",ű+ɂ+"0010_OxygenBottle")},{ȵ+Ȼ+"/HydrogenBottle",new ɉ("","",ű+ɂ+"0020_HydrogenBottle")},{ȵ
++ȼ+"/"+Ƀ+"Item",new ɉ(Ƀ+"0","",ű+ɂ+"0010_"+Ƀ)},{ȵ+ȼ+"/"+Ƀ+"2Item",new ɉ(Ƀ+"1","",ű+ɂ+"0020_"+Ƀ+"2")},{ȵ+ȼ+"/"+Ƀ+"3Item",
+new ɉ(Ƀ+"2","",ű+ɂ+"0030_"+Ƀ+"3")},{ȵ+ȼ+"/"+Ƀ+"4Item",new ɉ(Ƀ+"3","",ű+ɂ+"0040_"+Ƀ+"4")},{ȵ+ȼ+"/"+Ʉ+"Item",new ɉ(Ʉ+"0","",ű
++ɂ+"0050_"+Ʉ)},{ȵ+ȼ+"/"+Ʉ+"2Item",new ɉ(Ʉ+"1","",ű+ɂ+"0060_"+Ʉ+"2")},{ȵ+ȼ+"/"+Ʉ+"3Item",new ɉ(Ʉ+"2","",ű+ɂ+"0070_"+Ʉ+"3")
+},{ȵ+ȼ+"/"+Ʉ+"4Item",new ɉ(Ʉ+"3","",ű+ɂ+"0080_"+Ʉ+"4")},{ȵ+ȼ+"/WelderItem",new ɉ("Welder0","",ű+ɂ+"0090_Welder")},{ȵ+ȼ+
+"/Welder2Item",new ɉ("Welder1","",ű+ɂ+"0100_Welder2")},{ȵ+ȼ+"/Welder3Item",new ɉ("Welder2","",ű+ɂ+"0110_Welder3")},{ȵ+ȼ+"/Welder4Item"
+,new ɉ("Welder3","",ű+ɂ+"0120_Welder4")},{ȵ+Ƚ+"/Algae",new ɉ("","Ingredients","")},{ȵ+Ƚ+"/Grain",new ɉ("","Ingredients",
+"")},{ȵ+Ƚ+"/SpaceCredit",new ɉ("","Consumables","")},{ȵ+ȶ+"/Cobalt",new ɉ()},{ȵ+ȶ+"/Gold",new ɉ()},{ȵ+ȶ+"/Ice",new ɉ("Ice"
+,"","")},{ȵ+ȶ+"/Iron",new ɉ()},{ȵ+ȶ+"/Magnesium",new ɉ()},{ȵ+ȶ+"/Nickel",new ɉ()},{ȵ+ȶ+"/Platinum",new ɉ()},{ȵ+ȶ+"/Scrap"
+,new ɉ()},{ȵ+ȶ+"/Silicon",new ɉ()},{ȵ+ȶ+"/Silver",new ɉ()},{ȵ+ȶ+"/Stone",new ɉ("Stone","","")},{ȵ+ȶ+"/Uranium",new ɉ()},{
+ȵ+ȷ+"/Cobalt",new ɉ()},{ȵ+ȷ+"/Gold",new ɉ()},{ȵ+ȷ+"/Stone",new ɉ("Gravel","","")},{ȵ+ȷ+"/Iron",new ɉ()},{ȵ+ȷ+"/Magnesium"
+,new ɉ()},{ȵ+ȷ+"/Nickel",new ɉ()},{ȵ+ȷ+"/Platinum",new ɉ()},{ȵ+ȷ+"/PrototechScrap",new ɉ()},{ȵ+ȷ+"/Silicon",new ɉ()},{ȵ+ȷ
++"/Silver",new ɉ()},{ȵ+ȷ+"/Uranium",new ɉ()},};public static bool W=true;public static bool c=false;public MyItemType ŉ;
+public string Ő;public string ɋ;public string ƙ;public string ō;public MyDefinitionId?Ŧ=null;public bool ƥ=false;public bool ň
+=false;public string Œ="";public bool Ɍ=false;public float ƀ{get{return ɍ;}set{Ɏ=value;}}float ɍ=0;float Ɏ=0;public float
+Ƒ{get{return ɏ;}set{ɐ=value;}}float ɏ=0;float ɐ=0;public float ƒ=0;public float Ɛ{get{return ɑ;}set{ɒ=value;}}float ɑ=0;
+float ɒ=0;public float ǽ=0;[Flags]public enum ɖ{ɓ=0,ɔ=1,ɕ=2,}public ɖ ɗ=ɖ.ɓ;public bool Ǯ=false;public int ɘ=1;public int i=0
+;string[]ə;int ɚ;int ɛ;public V(MyItemType Ŷ){ŉ=Ŷ;Ő=Ŷ.SubtypeId;switch(Ŷ.TypeId){case"MyObjectBuilder_Ore":if(!Ŷ.
+SubtypeId.Contains("Scrap"))Ő+="Ore";break;case"MyObjectBuilder_Ingot":Ő+="Ingot";break;case"MyObjectBuilder_SeedItem":Ő+="Seed";
+break;}ɋ=Ŷ.TypeId;ƙ=Ŷ.SubtypeId;ň=true;if(Ɉ.ContainsKey(ɋ)){ō=Ɉ[ɋ];}else{ō="Misc";}if(ƙ.Contains("MealPack_")){Ő=Ő.Replace(
+"MealPack_","");ō="Foods";}if(Ɋ.ContainsKey(ɜ())){ņ=Ɋ[ɜ()];Ɍ=Ɋ[ɜ()].ɝ;if(ņ.Ő!="")Ő=ņ.Ő;if(ņ.ō!="")ō=ņ.ō;if(ņ.ɞ!=""&&W)Ŧ=Ŧ=
+MyDefinitionId.Parse(ņ.ɞ);if(ņ.ɘ!=1)ɘ=ņ.ɘ;}ɟ();}public V(string ɠ,string ɡ,string ų,string ŗ){ɋ=ɠ;ƙ=ɡ;Ő=ų;ō=ŗ;if(Ɋ.ContainsKey(ɜ()))Ɍ=
+Ɋ[ɜ()].ɝ;ɟ();}public V(string ə){this.ə=ə.Split('~');if(this.ə.Length>=7){try{ŉ=MyItemType.Parse(
+$"{this.ə[3]}/{this.ə[4]}");Ő=this.ə[1];ɋ=ŉ.TypeId;ƙ=ŉ.SubtypeId;ō=this.ə[2];if(this.ə[5]!="")Ŧ=MyDefinitionId.Parse(this.ə[5]);ň=true;if(Ɋ.
+ContainsKey(ɜ()))Ɍ=Ɋ[ɜ()].ɝ;ɟ();}catch{}}}public override string ToString(){return$"~{Ő}~{ō}~{ɋ}~{ƙ}~{Ŧ.ToString()}~";}public void
+N(int ɢ){Ɏ+=ɢ;}public void Ɩ(int ɢ){ɐ+=ɢ;}public void ƚ(int ɢ){ɒ+=ɢ;}public void Ɯ(){ǽ=Ɏ-ɍ;ɍ=Ɏ;ɑ=ɒ;ɏ=ɐ;}public string ɜ()
+{if(ɋ=="gas"){switch(ƙ){case"oxygen":return"IconOxygen";case"hydrogen":return"IconHydrogen";}}if(ɋ=="energy"&&ƙ==
+"electricity")return"IconEnergy";return ɋ+"/"+ƙ;}public string Ƕ(){string ɣ=ɜ();if(c&&Ɍ&&ɣ.StartsWith("MyObjectBuilder_")){return ɣ.
+Replace("MyObjectBuilder_","ColorfulIcons_");}return ɣ;}public void Ō(string ə){this.ə=ə.Split('~');if(this.ə.Length>=7){Ő=this
+.ə[1];ō=this.ə[2];ɟ();}}public string ǥ(){return$"{Ő}~~~~{X.ɤ(ɍ)}/{X.ɤ(Ɛ)}{(ɗ.HasFlag(ɖ.ɔ)?"A":"")}{(ɗ.HasFlag(ɖ.ɕ)?"D":"")}{(Ǯ?"H":"")}{(ɘ!=1?$"[Y:{ɘ}]":"")}{(i!=0?$"[P:{i}]":"")}"
+;}public string ɥ(){return$"{X.ɤ(ɍ)}/{X.ɤ(Ɛ)} {(ɗ.HasFlag(ɖ.ɔ)?"A":"")}{(ɗ.HasFlag(ɖ.ɕ)?"D":"")}";}public int ƞ(){ɚ=0;if(
+ɗ.HasFlag(ɖ.ɕ)&&ɗ.HasFlag(ɖ.ɔ)){ɚ=(int)Math.Round(Ɛ-ƀ-ƒ*ɘ);}else if(ɗ.HasFlag(ɖ.ɕ)){ɚ=(int)Math.Round(Math.Min(Ɛ-ƀ-ƒ*ɘ,0)
+);}else{ɚ=(int)Math.Round(Math.Max(Ɛ-ƀ-Math.Max(ƒ,0)*ɘ,0));}return ɚ/ɘ;}public void Ǥ(string ɦ){var ū=ɦ.Split(new[]{'~',
+'/'});var ɧ=ū[ū.Length-1];var Ȧ=ɧ.Split(new[]{'Y','<','['});if(Ȧ[0].Contains("A")){ɗ|=ɖ.ɔ;}else{ɗ&=~ɖ.ɔ;}if(Ȧ[0].Contains(
+"D")){ɗ|=ɖ.ɕ;}else{ɗ&=~ɖ.ɕ;}Ǯ=Ȧ[0].Contains("H");string ŵ;if(ɧ.Ů("Y<",">",out ŵ)){ɘ=int.Parse(ŵ);}else if(ɧ.Ů("[Y:","]",out
+ŵ)){ɘ=int.Parse(ŵ);}string ȩ;if(ɧ.Ů("[P:","]",out ȩ)){i=int.Parse(ȩ);}if(int.TryParse(Ȧ[0].Replace("A","").Replace("D",""
+).Replace("H",""),out ɛ)){ɑ=ɛ;}ɒ=ɑ;}public bool Ŋ(){return ɋ==ȵ+ȶ&&!ƙ.ToLower().Contains("scrap");}public bool ɨ(){return
+ɋ==ȵ+ȶ&&ƙ.ToLower().Contains("ice");}public bool Ʀ(){return ɋ==ȵ+ȶ&&ƙ.ToLower().Contains("scrap");}public bool ɩ(){return
+ɋ==ȵ+ȶ&&ƙ.ToLower().Contains("stone");}public bool Ʋ(){return ɋ==ȵ+Ⱥ;}public bool Ƴ(){return ɋ==ȵ+Ȼ;}public float Ǽ(){if(
+ɑ==0f)return 1f;return Math.Max(ɍ/(float)ɑ,0f);}void ɟ(){Œ=$"{ō}~{Ő}";}public static void ŷ(string ɣ,string ų="",string ŗ
+="",string ŭ="",bool Ÿ=true,int ŵ=1){if(Ɋ.ContainsKey(ɣ)&&Ÿ){if(ų!="")Ɋ[ɣ].Ő=ų;if(ŗ!="")Ɋ[ɣ].ō=ŗ;if(ŭ!="")Ɋ[ɣ].ɞ=ŭ;Ɋ[ɣ].ɝ
+=false;Ɋ[ɣ].ŏ=ų;}else if(Ɋ.ContainsKey(ɣ)){Ɋ[ɣ].ŏ=ų;}else{Ɋ.Add(ɣ,new ɉ(ų,ŗ,ŭ,false){ŏ=ų,ɘ=ŵ});}}}public class ɉ{public
+string Ő;public string ō;public string ɞ;public bool ɝ=true;public string ŏ="";public int ɘ=1;public ɉ(bool ɪ=true){Ő="";ō="";
+ɞ="";ɝ=ɪ;}public ɉ(string ų,string ŗ,string ŭ,bool ɪ=true){Ő=ų;ō=ŗ;ɞ=ŭ;ɝ=ɪ;}}public static class Ǟ{static List<ɫ>z=new
+List<ɫ>();static int ɬ=0;static int ɭ=0;static int ɮ=0;static Random ɯ=new Random();static Ǟ(){N(10,$"Want to store a specific amount of Items in a Container? Use the \"{Program.SCT[0]}\" tag and set your values in the custom data!"
+);N(10,$"Want to exclude Containers from sorting? Tag them with the \"{Program.ITS[0]}\" tag!");N(10,$"Want to keep more Uranium inside your Reactor? Tag them with \"{Program.SCT[0]}\" and adjust the amount of Uranium Ingots in the Custom Data!"
+);N(10,"If you want the Script to Disassemble Items, add the Disassembling modifier to the wanted amount and have at least 1 Assembler set to disassemble."
+);N(10,"Stored Bottles will be refilled automatically as long as you have accessible and filled Gas Tanks on your Grid!")
+;N(10,"Did you know that you can add new tags to existing ones? Inside the Script Settings you can edit and or Add Tags!"
+);N(10,$"Don't want the Script to Count Items in a container for the AutoCrafting Panel? add the \"{Program.HTS[0]}\" tag to its name!"
+);N(10,"Did you know that the script knows pretty much all Vanilla Items? It just needs to see the Item Once and it will then add it to the AutoCrafting Panel."
+);N(10,"You can change the Display Name of Items inside the Custom Data of the PB running this Script.");N(10,"Need to Teach the Script a modded Item? Just run the PB with \"learning toggle\" and que 1000 of that Item in a Assembler that has \"is Learning\" in its name."
+);N(10,$"Don't want the Script to Handle a Machine? just add \"{Program.MTS[0]}\" to the name of that Machine.");N(10,
+"Do you Enjoy the Script? Please leave us a Like on our Workshop Page, it helps us a lot!");N(1,"Another Cargo Container needs your Help! I'll mark it on your map.\nA Fallout 4 Reference");N(1,
+"MyObjectBuilder_ConsumableItem/Potatoes ?!?\n Apparently the Null Reference Item for Space Engineers");N(1,"A Gold Plated Plate? A PLATINUM PLATED PLATE?!?\nPerry the Platapus Reference");N(1,"Inventory Full - And that voice in my head goes\nInventory Full - Making me lose my mind\nInventory Full - Just like a broken record\nInventory Full - With all the rock and stone I've mined\nSong by Black5heep"
+);}public static void N(int ɰ,string ȝ){z.Add(new ɫ(ɰ,ȝ));ɬ+=ɰ;}public static string ǟ(){ɭ=ɯ.Next(0,ɬ);ɮ=0;foreach(ɫ ª in
+z){if(ɮ<ɭ){ɮ+=ª.ɰ;continue;}return ª.ȝ;}return z.Last().ȝ;}}public class ɫ{public int ɰ;public string ȝ;public ɫ(int ɰ,
+string ȝ){this.ɰ=ɰ;this.ȝ=ȝ;}}public class m{public IMyTerminalBlock ŕ;public IMyInventory Â;public int i=0;public List<string
+>Ř=new List<string>();int ɱ;int ɲ;string þ;public m(IMyTerminalBlock ŕ){this.ŕ=ŕ;Â=ŕ.GetInventory();ɳ();}public void ɳ(){
+ɱ=ŕ.CustomName.IndexOf("[P:");if(ɱ<0)return;þ=ŕ.CustomName.Substring(ɱ+3);ɲ=þ.IndexOf(']');if(ɲ<0)return;int.TryParse(þ.
+Substring(0,ɲ),out i);}}public static class ʂ{public static bool ĺ(this string ɴ,string[]ɵ){if(ɵ.Length==1)return ɴ.Contains(ɵ[0]
+);foreach(string ɶ in ɵ){if(ɴ.Contains(ɶ))return true;}return false;}public static MyIniValue ǐ(this MyIni ɷ,string ų){
+return ɷ.Get("config",ų);}public static void Ǡ(this MyIni ɷ,string ų,bool ɸ){ɷ.Set("config",ų,ɸ);}public static void Ǡ(this
+MyIni ɷ,string ų,int ɸ){ɷ.Set("config",ų,ɸ);}public static void Ǡ(this MyIni ɷ,string ų,string ɸ){ɷ.Set("config",ų,ɸ);}public
+static void Ǡ(this MyIni ɷ,string ų,float ɸ){ɷ.Set("config",ų,ɸ);}public static bool ɹ(this MyIni ɷ,string ų){return ɷ.
+ContainsKey("config",ų);}public static string ǡ(this MyIni ɷ){return ɷ.ToString().Replace("[config]\n","");}public static bool Ů(
+this string ɺ,string Ĵ,string ɻ,out string ũ){ũ="";int ɼ=0;if(Ĵ!=""){ɼ=ɺ.IndexOf(Ĵ,StringComparison.Ordinal);if(ɼ==-1)return
+false;}if(ɻ!=""){int ɽ=ɺ.Substring(ɼ+Ĵ.Length).IndexOf(ɻ,StringComparison.Ordinal);if(ɽ==-1)return false;ũ=ɺ.Substring(ɼ+Ĵ.
+Length,ɽ);}else{ũ=ɺ.Substring(ɼ+Ĵ.Length);}return true;}public static string Ų(this string ɺ){int ɼ=ɺ.IndexOfAny(new char[]{
+'\n','\r'});if(ɼ==-1)return ɺ;return ɺ.Substring(0,ɼ);}public static MyFixedPoint ɾ(this IMyInventory Â){return Â.MaxVolume-
+Â.CurrentVolume;}public static MyFixedPoint ʁ(this MyFixedPoint ɿ,MyFixedPoint ʀ){return(MyFixedPoint)((float)ɿ/(float)ʀ)
+;}public static MyFixedPoint ʁ(this MyFixedPoint ɿ,float ʀ){return(MyFixedPoint)((float)ɿ/ʀ);}}public class ʆ{public V ʃ;
+public List<ʄ>ɘ=new List<ʄ>();float ʅ;public ʆ(V Ư){ʃ=Ư;}public bool ʇ(){return ɘ.Count==0;}public string ſ(){List<string>ŵ=
+new List<string>();foreach(var Ʃ in ɘ){ŵ.Add($"{Ʃ.Ƣ.ŉ.TypeId}/{Ʃ.Ƣ.ŉ.SubtypeId}:{Ʃ.Ơ}");}return string.Join(",",ŵ);}public
+float ʈ(Dictionary<MyItemType,V>Ç){ʅ=1000000000f;foreach(var Ʃ in ɘ){if(!Ç.ContainsKey(Ʃ.Ƣ.ŉ))continue;if(Ç[Ʃ.Ƣ.ŉ].ƀ/Ʃ.Ơ<ʅ){ʅ
+=Ç[Ʃ.Ƣ.ŉ].ƀ/Ʃ.Ơ;}}return ʅ;}}public class ç{Dictionary<V,ʆ>ʉ=new Dictionary<V,ʆ>();MyItemType ʊ;V ʋ;List<KeyValuePair<V,
+float>>ʌ=new List<KeyValuePair<V,float>>();List<V>Ĕ=new List<V>();Dictionary<string,List<ʍ>>ʎ=new Dictionary<string,List<ʍ>>{
+{V.ȵ+V.ȶ+"/Stone",new List<ʍ>{new ʍ(V.ȵ+V.ȷ+"/Stone",1.4f),new ʍ(V.ȵ+V.ȷ+"/Iron",3f),new ʍ(V.ȵ+V.ȷ+"/Nickel",0.24f),new ʍ
+(V.ȵ+V.ȷ+"/Silicon",0.4f)}},{V.ȵ+V.ȶ+"/Iron",new List<ʍ>{new ʍ(V.ȵ+V.ȷ+"/Iron",70f)}},{V.ȵ+V.ȶ+"/Nickel",new List<ʍ>{new
+ʍ(V.ȵ+V.ȷ+"/Nickel",40f)}},{V.ȵ+V.ȶ+"/Cobalt",new List<ʍ>{new ʍ(V.ȵ+V.ȷ+"/Cobalt",30f)}},{V.ȵ+V.ȶ+"/Silicon",new List<ʍ>{
+new ʍ(V.ȵ+V.ȷ+"/Silicon",70f)}},{V.ȵ+V.ȶ+"/Silver",new List<ʍ>{new ʍ(V.ȵ+V.ȷ+"/Silver",10f)}},{V.ȵ+V.ȶ+"/Gold",new List<ʍ>{
+new ʍ(V.ȵ+V.ȷ+"/Gold",1f)}},{V.ȵ+V.ȶ+"/Platinum",new List<ʍ>{new ʍ(V.ȵ+V.ȷ+"/Platinum",0.5f)}},{V.ȵ+V.ȶ+"/Magnesium",new
+List<ʍ>{new ʍ(V.ȵ+V.ȷ+"/Magnesium",0.7f)}},{V.ȵ+V.ȶ+"/Uranium",new List<ʍ>{new ʍ(V.ȵ+V.ȷ+"/Uranium",1f)}},};string[]ə;string
+[]ʏ;string[]ʐ;MyIni j=new MyIni();public bool Ż(V Ư){return ʉ.ContainsKey(Ư);}public void ŋ(V Ư,Dictionary<MyItemType,V>Ç
+){ʉ.Add(Ư,new ʆ(Ư));if(!ʎ.ContainsKey(Ư.ɜ()))return;foreach(var ŵ in ʎ[Ư.ɜ()]){ʊ=MyItemType.Parse(ŵ.ɗ);if(!Ç.ContainsKey(
+ʊ))Ç.Add(ʊ,new V(ʊ));ʉ[Ư].ɘ.Add(new ʄ(Ç[ʊ],ŵ.Ơ));if(Ç[ʊ].ƥ==false)Ç[ʊ].ƥ=true;}}public bool ʑ(){foreach(var Ư in ʉ){if(Ư.
+Value.ʇ()){return true;}}return false;}public bool ż(V Ư){return ʉ.ContainsKey(Ư)&&ʉ[Ư].ʇ();}public void ž(V Ư,Dictionary<
+MyItemType,V>Ç,List<MyInventoryItem>z,int ŵ){foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))Ç.Add(ª.Type,new V(ª.Type));ʉ[Ư].ɘ.Add(
+new ʄ(Ç[ª.Type],(float)ª.Amount/(ŵ/100f)));Ç[ª.Type].ƥ=true;}}public string ſ(V Ç){return ʉ[Ç].ſ();}public override string
+ToString(){List<string>Ǳ=new List<string>();foreach(var Ʃ in ʉ){Ǳ.Add($"~{Ʃ.Key.Ő}~{Ʃ.Key.ɋ}~{Ʃ.Key.ƙ}~{Ʃ.Value.ſ()}~");}return
+string.Join("\n",Ǳ);}public void Ŏ(string ʒ,Dictionary<MyItemType,V>Ç){ə=ʒ.Split('~');if(ə.Length<6)return;try{MyItemType ƍ=
+MyItemType.Parse($"{ə[2]}/{ə[3]}");if(!Ç.ContainsKey(ƍ))Ç.Add(ƍ,new V(ƍ));if(!ʉ.ContainsKey(Ç[ƍ]))ʉ.Add(Ç[ƍ],new ʆ(Ç[ƍ]));if(!ʉ[Ç[
+ƍ]].ʇ())return;ʏ=ə[4].Split(',');foreach(var ŵ in ʏ){if(ŵ=="")continue;ʐ=ŵ.Split(':');if(ʐ.Length!=2)continue;MyItemType
+ʓ=MyItemType.Parse(ʐ[0]);if(!Ç.ContainsKey(ʓ))Ç.Add(ʓ,new V(ʓ));Ç[ʓ].ƥ=true;ʉ[Ç[ƍ]].ɘ.Add(new ʄ(Ç[ʓ],float.Parse(ʐ[1])));
+}}catch(Exception Ǧ){}}public V ƪ(V ʔ,out float ʕ,Dictionary<MyItemType,V>Ç){ʋ=null;ʕ=0;foreach(var Ư in ʉ){foreach(var ŵ
+in Ư.Value.ɘ){if(ŵ.Ƣ==ʔ&&ŵ.Ơ>ʕ&&Ç[Ư.Key.ŉ].Ƒ>0){ʕ=ŵ.Ơ;ʋ=Ư.Key;}}}return ʋ;}public void Ɨ(MyInventoryItem ª,Dictionary<
+MyItemType,V>Ç,IMyRefinery Ń){j.Clear();X.ǌ(Ń.CustomData,ref j);int ʖ=j.ǐ("yield").ToInt32(100);foreach(var Ű in ʉ){if(Ű.Key.ŉ!=ª.
+Type)continue;foreach(var ŵ in Ű.Value.ɘ){Ç[ŵ.Ƣ.ŉ].ƒ+=((float)ª.Amount/100f)*ŵ.Ơ*(ʖ/100f);}}}public List<V>Ƭ(Dictionary<
+MyItemType,V>Ç){ʋ=null;ʌ.Clear();Ĕ.Clear();foreach(var ª in Ç){if(ª.Value.Ƒ<=0f)continue;if(ª.Value.Ŋ()&&ʉ.ContainsKey(ª.Value)&&!
+ª.Value.ɨ()&&!ª.Value.ɩ()){ʌ.Add(new KeyValuePair<V,float>(ª.Value,ʉ[ª.Value].ʈ(Ç)));}else if(ª.Value.ɩ()){ʌ.Add(new
+KeyValuePair<V,float>(ª.Value,0f));}else if(ª.Value.ɨ()){}else if(ª.Value.Ʀ()){ʌ.Add(new KeyValuePair<V,float>(ª.Value,0.001f));}
+else if(ª.Value.Ŋ()){ʌ.Add(new KeyValuePair<V,float>(ª.Value,1000000000f));}}ʌ=ʌ.OrderBy(Š=>Š.Value).ToList();foreach(var ŵ
+in ʌ){Ĕ.Add(ŵ.Key);Program.ƫ($"{ŵ.Key.Ő}: {ŵ.Value}");}return Ĕ;}public void ń(){Ĕ.Clear();ʉ.Clear();ʌ.Clear();}}public
+class ʄ{public V Ƣ;public float Ơ;public ʄ(V ª,float Ț){Ƣ=ª;Ơ=Ț;}}public class ʍ{public string ɗ;public float Ơ;public ʍ(
+string ƍ,float Ț){ɗ=ƍ;Ơ=Ț;}}public static class R{public static bool S;public static Color U;public static Color T;public
+static float ǵ=1f;public static void Ǣ(){ǵ-=0.01f;if(ǵ<0.98f){ǵ=1f;}}public static void ǔ(IMyTextSurface ȓ,MySpriteDrawFrame ǎ
+,Vector2 Ǐ,string ɺ,float Ƹ=1f){var ǲ=new MySprite(){Type=SpriteType.TEXT,Data=ɺ,Position=Ǐ,RotationOrScale=Ƹ,Color=ȓ.
+ScriptForegroundColor.Shade(ǵ),Alignment=TextAlignment.LEFT,FontId="White"};ǎ.Add(ǲ);}public static void Ȕ(IMyTextSurface ȓ,MySpriteDrawFrame
+ǎ,Vector2 Ǐ,string ɺ,float Ƹ=1f){var ǲ=new MySprite(){Type=SpriteType.TEXT,Data=ɺ,Position=Ǐ,RotationOrScale=Ƹ,Color=ȓ.
+ScriptForegroundColor.Shade(ǵ),Alignment=TextAlignment.CENTER,FontId="White"};ǎ.Add(ǲ);}public static int ǘ(IMyTextSurface ȓ,
+MySpriteDrawFrame ǎ,Vector2 Ǐ,string ɺ,float Ƹ=1f,int ƹ=16){List<string>ʗ=new List<string>();string[]ʘ=ɺ.Split(' ');string þ="";int ļ=0;
+foreach(string ʙ in ʘ){if(ļ==0){þ=ʙ;ļ++;continue;}if(ʙ.EndsWith("\n")){ʗ.Add($"{þ} {ʙ.TrimEnd('\n')}");þ="";ļ=0;}else if(ȓ.
+MeasureStringInPixels(new StringBuilder($"{þ} {ʙ}"),"White",Ƹ).X+(2*ƹ)>ȓ.SurfaceSize.X){ʗ.Add($"{þ}");þ=ʙ;}else{þ=$"{þ} {ʙ}";}}ʗ.Add($"{þ}");
+ǔ(ȓ,ǎ,Ǐ,string.Join("\n",ʗ),Ƹ);return ʗ.Count;}public static void ǖ(IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,string
+ɺ,float Ƹ=1f,int ƹ=16){var ǲ=new MySprite(){Type=SpriteType.TEXT,Data=ɺ,Position=Ǐ,RotationOrScale=Ƹ,Color=ȓ.
+ScriptForegroundColor.Shade(ǵ),Alignment=TextAlignment.LEFT,FontId="White"};ǎ.Add(ǲ);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data=
+"SquareSimple",Position=Ǐ+new Vector2(0,30*Ƹ),Size=new Vector2(ȓ.SurfaceSize.X-(ƹ*2),2*Ƹ),Color=ȓ.ScriptForegroundColor.Shade(ǵ),
+Alignment=TextAlignment.LEFT};ǎ.Add(ǲ);}public static void ǹ(IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,V ª,float Ƹ=1f,int ƹ=
+16,RectangleF?ô=null){ʚ(ȓ,ǎ,Ǐ,ª.Ő,ª.Ƕ(),ª.Ɛ!=0?$"{X.ʛ(ª.ƀ)}/{X.ʛ(ª.Ɛ)}":$"{X.ʛ(ª.ƀ)}",Ƹ,ƹ,ô);}public static void Ǔ(
+IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,string ʜ,float Ƹ=1f,int ƹ=16,float Ǘ=0f,bool ʝ=false){var ǲ=new MySprite(){Type=
+SpriteType.TEXTURE,Data=ʜ,Position=Ǐ+new Vector2(16,16)*Ƹ,Size=new Vector2(32,32)*Ƹ,Color=ʝ?ȓ.ScriptForegroundColor.Shade(ǵ):Color
+.White.Shade(ǵ),Alignment=TextAlignment.CENTER,RotationOrScale=Ǘ};ǎ.Add(ǲ);}public static void ȕ(IMyTextSurface ȓ,
+MySpriteDrawFrame ǎ,Vector2 Ǐ,Vector2 ʞ,string ʜ,Color ʟ,float Ǘ=0f,float Ȗ=1f){var ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data=ʜ,
+Position=Ǐ,Size=ʞ,Color=ʟ==Color.Black?ȓ.ScriptForegroundColor.Shade(ǵ).Alpha(Ȗ):ʟ.Shade(ǵ).Alpha(Ȗ),Alignment=TextAlignment.
+CENTER,RotationOrScale=Ǘ};ǎ.Add(ǲ);}public static void Ǻ(IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,V ª,float Ƹ=1f,int ƹ=
+16,RectangleF?ô=null){ʚ(ȓ,ǎ,Ǐ,"",ª.Ƕ(),ª.Ɛ!=0?$"{X.ʛ(ª.ƀ)}/{X.ʛ(ª.Ɛ)}":$"{X.ʛ(ª.ƀ)}",Ƹ,ƹ,ô);}public static void ǯ(
+IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,V ª,float Ƹ=1f,int ƹ=16,RectangleF?ô=null,bool ʝ=false){ʚ(ȓ,ǎ,Ǐ,ª.Ő,ª.Ƕ(),ª.ɥ(),Ƹ,ƹ,ô,ʝ
+);if(ª.ƒ!=0){Ǐ.X+=16*Ƹ;Ǐ.Y+=12*Ƹ;Ǔ(ȓ,ǎ,Ǐ,"Construction",Ƹ/1.5f,ƹ);}}public static void ʚ(IMyTextSurface ȓ,
+MySpriteDrawFrame ǎ,Vector2 Ǐ,string ɺ,string ʜ,string ɸ,float Ƹ=1f,int ƹ=16,RectangleF?ô=null,bool ʝ=false){var ǲ=new MySprite(){Type=
+SpriteType.TEXTURE,Data=ʜ,Position=Ǐ+new Vector2(16,16)*Ƹ,Size=new Vector2(32,32)*Ƹ,Color=ʝ?ȓ.ScriptForegroundColor.Shade(ǵ):Color
+.White.Shade(ǵ),Alignment=TextAlignment.CENTER};ǎ.Add(ǲ);Ǐ+=new Vector2(40*Ƹ,0);ǲ=new MySprite(){Type=SpriteType.TEXT,
+Data=ɺ,Position=Ǐ,RotationOrScale=Ƹ,Color=ȓ.ScriptForegroundColor.Shade(ǵ),Alignment=TextAlignment.LEFT,FontId="White"};ǎ.
+Add(ǲ);if(ô!=null){Ǐ=new Vector2(ô.Value.Right-ƹ,Ǐ.Y);}else{Ǐ=new Vector2(ȓ.SurfaceSize.X-ƹ,Ǐ.Y);}ǲ=new MySprite(){Type=
+SpriteType.TEXT,Data=ɸ,Position=Ǐ,RotationOrScale=Ƹ,Color=ȓ.ScriptForegroundColor.Shade(ǵ),Alignment=TextAlignment.RIGHT,FontId=
+"White"};ǎ.Add(ǲ);}public static void ǻ(IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,string ʜ,float ɸ,float Ƹ=1f,int ƹ=16,
+bool ʝ=false,int ʟ=-1){var ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data=ʜ,Position=Ǐ+new Vector2(16,16)*Ƹ,Size=new Vector2(
+32,32)*Ƹ,Color=ʝ?ȓ.ScriptForegroundColor.Shade(ǵ):Color.White.Shade(ǵ),Alignment=TextAlignment.CENTER};ǎ.Add(ǲ);Ǐ+=new
+Vector2(40*Ƹ,0);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data="SquareSimple",Position=Ǐ+new Vector2(0,16)*Ƹ,Size=new Vector2(ȓ.
+SurfaceSize.X-(ƹ*2)-(40*Ƹ),20*Ƹ),Color=ȓ.ScriptForegroundColor.Shade(0.25f).Shade(ǵ),Alignment=TextAlignment.LEFT};ǎ.Add(ǲ);ǲ=new
+MySprite(){Type=SpriteType.TEXTURE,Data="SquareSimple",Position=Ǐ+new Vector2(0,16)*Ƹ,Size=new Vector2((ȓ.SurfaceSize.X-(ƹ*2)-(
+40*Ƹ))*ɸ,20*Ƹ),Color=Ǵ(ɸ,ʟ,ȓ.ScriptForegroundColor.Shade(ǵ)),Alignment=TextAlignment.LEFT};ǎ.Add(ǲ);}public static void Ǜ(
+IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,float ɸ,float Ƹ=1f,int ƹ=16,float ǜ=1f,float ʠ=0f,int ʟ=-1){var ǲ=new MySprite(){Type=
+SpriteType.TEXTURE,Data="SquareSimple",Position=Ǐ+(ʠ==0f?new Vector2(0,16)*Ƹ:new Vector2(0,ʠ/2f)),Size=new Vector2(ȓ.SurfaceSize.X
+*ǜ-(ƹ*2),ʠ==0?20*Ƹ:ʠ),Color=ȓ.ScriptForegroundColor.Shade(0.25f).Shade(ǵ),Alignment=TextAlignment.LEFT};ǎ.Add(ǲ);ǲ=new
+MySprite(){Type=SpriteType.TEXTURE,Data="SquareSimple",Position=Ǐ+(ʠ==0f?new Vector2(0,16)*Ƹ:new Vector2(0,ʠ/2f)),Size=new
+Vector2((ȓ.SurfaceSize.X*ǜ-(ƹ*2))*ɸ,ʠ==0?20*Ƹ:ʠ),Color=Ǵ(ɸ,ʟ,ȓ.ScriptForegroundColor.Shade(ǵ)),Alignment=TextAlignment.LEFT};ǎ.
+Add(ǲ);}public static void Ǿ(IMyTextSurface ȓ,MySpriteDrawFrame ǎ,Vector2 Ǐ,V ª,float Ƹ=1f,int ƹ=16){var ǲ=new MySprite(){
+Type=SpriteType.TEXTURE,Data=ª.Ƕ(),Position=Ǐ+new Vector2(16,16)*Ƹ,Size=new Vector2(32,32)*Ƹ,Color=ȓ.ScriptForegroundColor.
+Shade(ǵ),Alignment=TextAlignment.CENTER};ǎ.Add(ǲ);Ǐ+=new Vector2(40*Ƹ,0);ǲ=new MySprite(){Type=SpriteType.TEXT,Data=ª.Ő,
+Position=Ǐ,RotationOrScale=Ƹ,Color=ȓ.ScriptForegroundColor.Shade(ǵ),Alignment=TextAlignment.LEFT,FontId="White"};ǎ.Add(ǲ);Ǐ=new
+Vector2(ȓ.SurfaceSize.X-ƹ-32*Ƹ,Ǐ.Y);ǲ=new MySprite(){Type=SpriteType.TEXTURE,Data="Triangle",Position=Ǐ+new Vector2(16,16)*Ƹ,
+Size=new Vector2(32,16)*Ƹ,Color=Ǵ(ª.ǽ>0?1f:0f,1).Shade(ǵ),RotationOrScale=ª.ǽ>0?0f:(float)Math.PI,Alignment=TextAlignment.
+CENTER};ǎ.Add(ǲ);Ǐ=new Vector2(ȓ.SurfaceSize.X-ƹ-40*Ƹ,Ǐ.Y);ǲ=new MySprite(){Type=SpriteType.TEXT,Data=X.ʛ(ª.ǽ),Position=Ǐ,
+RotationOrScale=Ƹ,Color=Ǵ(ª.ǽ>0?1f:0f,1).Shade(ǵ),Alignment=TextAlignment.RIGHT,FontId="White"};ǎ.Add(ǲ);}public static Color Ǵ(float ɸ
+,int ʡ=0,Color?ʟ=null){switch(ʡ){default:if(S)return Color.Lerp(U,T,ɸ);return Color.Lerp(Color.Green,Color.Red,ɸ);case 1:
+if(S)return Color.Lerp(U,T,1f-ɸ);return Color.Lerp(Color.Green,Color.Red,1f-ɸ);case 2:if(S)return Color.Lerp(ʟ.Value,T,ɸ);
+return Color.Lerp(ʟ.Value,Color.Red,ɸ);case 3:if(S)return Color.Lerp(U,ʟ.Value,1f-ɸ);return Color.Lerp(Color.Green,ʟ.Value,1f-
+ɸ);case-1:return ʟ.Value;}}public static float Ǚ(RectangleF ô,float ʢ){return ô.Position.X+ʢ;}public static void Ȁ(
+IMyTextSurface ʣ,MySpriteDrawFrame ǎ,string ʤ,int ʥ,float Ȗ,RectangleF ô,Color ʟ,bool ʦ=true){var ǲ=new MySprite();int ʧ=ʥ;int ʨ=ʥ;if(
+ʦ){if(ô.Width>=ô.Height*2){ʧ*=2;}else if(ô.Height>=ô.Width*2){ʨ*=2;}}for(int ő=0;ő<ʧ;ő++){for(int ʩ=0;ʩ<ʨ;ʩ++){ǲ=new
+MySprite(){Type=SpriteType.TEXTURE,Data=ʤ,Position=ô.Position+new Vector2(ô.Width/ʧ,ô.Height/ʨ)*0.5f+new Vector2(ô.Width/ʧ*ő,ô.
+Height/ʨ*ʩ),Size=new Vector2(ô.Width/ʧ,ô.Height/ʨ),Color=ʟ==Color.Black?ʣ.ScriptForegroundColor.Shade(ǵ).Alpha(Ȗ):ʟ.Shade(ǵ).
+Alpha(Ȗ),Alignment=TextAlignment.CENTER};ǎ.Add(ǲ);}}}}public class Į{public static int ʪ=200;public int i=0;public bool Ɓ=
+true;public static Dictionary<IMyTerminalBlock,Į>ƭ=new Dictionary<IMyTerminalBlock,Į>();public static List<Į>Ƃ=new List<Į>()
+;public static Dictionary<string,Į>ȁ=new Dictionary<string,Į>();public string Ő=>ų!=string.Empty?ų:ʫ.CustomName;string ų=
+string.Empty;Dictionary<MyItemType,ʬ>Ʈ=new Dictionary<MyItemType,ʬ>();Dictionary<string,ʬ>ʭ=new Dictionary<string,ʬ>();List<
+string>ʮ=new List<string>();ʬ ʯ;MyInventoryItem?µ;int ɱ;int ɲ;string þ;int ʰ=0;int ʱ=0;int ʲ=0;bool ʳ;string ʴ="";string ʵ="";
+IMyTerminalBlock ʫ;List<IMyTerminalBlock>ʶ=new List<IMyTerminalBlock>();List<IMyInventory>ʷ=new List<IMyInventory>();public bool Ȉ=true;
+IMyTextSurface ȉ;string ɦ;MyFixedPoint ʸ;int ʹ=0;public int Ś=5;MyFixedPoint ʺ;MyFixedPoint º;List<MyFixedPoint>ʻ=new List<
+MyFixedPoint>();MyFixedPoint ʼ;MyFixedPoint ʽ;MyFixedPoint ʾ;MyFixedPoint ʿ;List<MyFixedPoint>ˀ=new List<MyFixedPoint>();
+MyFixedPoint ˁ;int ˆ=0;string[]ˇ;IMyGridTerminalSystem ˈ;List<IMyTerminalBlock>t;IMyTerminalBlock ˉ;Vector3 ǃ;float ˊ;float Ā;bool ˋ
+=false;string[]ˌ;public Į(IMyTerminalBlock ŕ,IMyGridTerminalSystem ˍ=null,List<IMyTerminalBlock>t=null){ʫ=ŕ;if(ŕ is
+IMyTextSurface){Ȉ=false;ˈ=ˍ;this.t=t;ȉ=ŕ as IMyTextSurface;if(ʫ.CustomData=="")ʫ.CustomData=
+"Margin=0\nSize=0.7\nStockStats\nStockLevel,Color=2\nStockVolume,Color=1";}else{ŝ(ŕ);}Ƃ.Add(this);ɳ();}public Į(int ȩ,string ų,int ʹ=1){i=ȩ;Ɓ=false;this.ų=ų;this.ʹ=ʹ;Ƃ.Add(this);ȁ.Add(this.ų,
+this);}public void ŝ(IMyTerminalBlock ŕ,int ˎ=0){if(!ƭ.ContainsKey(ŕ))ƭ.Add(ŕ,this);ʶ.Add(ŕ);ʷ.Add(ŕ.GetInventory(ˎ));}
+public void N(V ª,int Ț){if(Ț==-1){ʯ=new ʬ(ª,0,ʬ.ˏ.ː);}else{ʯ=new ʬ(ª,Ț,ʬ.ˏ.ˑ);}if(Ʈ.ContainsKey(ª.ŉ))Ʈ[ª.ŉ].ˠ+=Ț;else Ʈ.Add(ª
+.ŉ,ʯ);}public static void Ŕ(){ƭ.Clear();Ƃ.Clear();ȁ.Clear();}public static bool Ŝ(IMyTerminalBlock ŕ){return ƭ.
+ContainsKey(ŕ);}public static Į Ŗ(IMyTerminalBlock ŕ){return ƭ[ŕ];}public static void ş(){ƭ=ƭ.OrderByDescending(Š=>Š.Value.i).
+ToDictionary(š=>š.Key,š=>š.Value);}public MyFixedPoint ƅ(MyItemType ª,MyFixedPoint Ț,ref bool Ƅ){if(!Ʈ.ContainsKey(ª))return 0;if(Ʈ[
+ª].ˡ==ʬ.ˏ.ː){Ƅ=true;}else{Ƅ=false;}if(Ʈ[ª].ˠ==0&&Ʈ[ª].ˡ!=ʬ.ˏ.ː)return 0;if(Ʈ[ª].ˡ==ʬ.ˏ.ˢ)return 0;if(Ʈ[ª].ˡ==ʬ.ˏ.ˑ||Ʈ[ª].
+ˡ==ʬ.ˏ.ˣ){º=Ʈ[ª].ˠ;foreach(var Â in ʷ){µ=null;µ=Â.FindItem(ª);if(µ!=null)º-=µ.Value.Amount;}Ț=MyFixedPoint.Min(Ț,º);}Ț=
+MyFixedPoint.Min(Ț,ˤ().ʁ(ª.GetItemInfo().Volume));return Ț;}public MyFixedPoint ˤ(){ʸ=MyFixedPoint.Zero;foreach(var Â in ʷ){ʸ+=Â.ɾ()
+;}return ʸ;}public MyFixedPoint ˬ(){ʸ=MyFixedPoint.Zero;foreach(var Â in ʷ){ʸ+=Â.MaxVolume;}return ʸ;}public float ͳ(){
+float ˮ=0;float Ͱ=0;ͱ();foreach(var Ʃ in Ʈ){if(Ʃ.Value.ˡ==ʬ.ˏ.ː||Ʃ.Value.ˠ==0)continue;ˮ+=Ʃ.Value.ˠ;Ͱ+=Ʃ.Value.Ͳ;}if(ˮ<=0f)
+return 1f-(float)ˤ().ʁ(ˬ());return Ͱ/ˮ;}void ͱ(){if(ˋ)return;List<MyInventoryItem>z=new List<MyInventoryItem>();foreach(var Â
+in ʷ){z.Clear();Â.GetItems(z);foreach(var ª in z){if(!Ʈ.ContainsKey(ª.Type))continue;Ʈ[ª.Type].Ͳ+=(float)ª.Amount;}}ˋ=true
+;}bool ʹ=false;static int Ͷ=0;public bool Ɔ(MyItemType ª,MyFixedPoint Ț,ref MyFixedPoint ͷ,int ȩ=0){if(!ʹ){ͷ=0;ʹ=true;}if
+(!Ʈ.ContainsKey(ª)){ͷ=Ț;return false;}if(ȩ>i){ͷ=Ț;return false;}if(Ʈ[ª].ˠ==0&&Ʈ[ª].ˡ!=ʬ.ˏ.ː){ͷ=Ț;return false;}if(Ʈ[ª].ˡ
+==ʬ.ˏ.ˢ||Ʈ[ª].ˡ==ʬ.ˏ.ˑ){ͷ=0;for(int ļ=0;ļ<ʷ.Count;ļ++){if(ļ<Ͷ){continue;}µ=ʷ[ļ].FindItem(ª);if(µ.HasValue)ͷ+=µ.Value.
+Amount;if(ļ-Ͷ>=20){Ͷ=ļ;return true;}}ͷ=Math.Min(Math.Max((int)ͷ-Ʈ[ª].ˠ,0),(int)Ț);return false;}ʹ=false;Ͷ=0;ͷ=0;return false;}
+void Ά(List<V>ͺ){ʮ.Clear();þ="";ʴ="";ʵ="";ʮ.Add("@GOAT-Stock Definitions START");if(!Ȉ){ʮ.Add(
+$"~~~~~~~~ Container List ~~~~~~~~");foreach(var ŕ in ʶ){ʮ.Add(ͻ(ŕ));}ʮ.Add($"~~~~~~~~ Settings ~~~~~~~~");ʮ.Add($"method={(ʹ==0?"Priority":"Balance")}");ʮ
+.Add($"rebalancePercentage={Ś}");ʮ.Add($"name={Ő}");ʮ.Add($"~~~~~~~~ Modifier Explanation ~~~~~~~~");}ʮ.Add(
+"~ ItemName=100 >>> Adds 100, removes excess.");ʮ.Add("~ ItemName=100M >>> Adds 100, Ignoring excess.");ʮ.Add(
+"~ ItemName=100L >>> Doesn't Add Item, removes above 100.");ʮ.Add("~ ItemName=All >>> Adds Item until full, Ignores excess.");ʮ.Add(
+"~ ItemName=100P >>> Pins the Item to the Top of the List");ʮ.Add("~ Note: P can be used after any Modifier, Example =100MP");ʮ.Add($"~~~~~~~~ Pinned Items ~~~~~~~~");foreach(V Ç
+in ͺ){if(!Ʈ.ContainsKey(Ç.ŉ))continue;if(!Ʈ[Ç.ŉ].ͼ)continue;ʮ.Add(Ʈ[Ç.ŉ].ToString());}foreach(V Ç in ͺ){if(!Ʈ.ContainsKey(
+Ç.ŉ))continue;if(Ʈ[Ç.ŉ].ͼ)continue;if(þ!=Ç.ō){ʮ.Add($"~~~~~~~~ {Ç.ō} ~~~~~~~~");þ=Ç.ō;}ʮ.Add(Ʈ[Ç.ŉ].ToString());}ʮ.Add(
+$"~~~~~~~~ Currently Unknown Items ~~~~~~~~");foreach(var ͽ in ʭ){ʮ.Add(ͽ.Value.ToString());}ʮ.Add($"@GOAT-Stock Definitions END");if(Ȉ){ɱ=ʫ.CustomData.IndexOf(
+"@GOAT-Stock Definitions");if(ɱ>=0){ʴ=ʫ.CustomData.Substring(0,ɱ);}else{ʴ=ʫ.CustomData;}ɲ=ʫ.CustomData.IndexOf("@GOAT-Stock Definitions END");if(
+ɲ>0&&ɲ+27<ʫ.CustomData.Length){ʵ=ʫ.CustomData.Substring(ɲ+27);}if(!ʴ.EndsWith("\n"))ʴ+="\n";ʫ.CustomData=ʴ+string.Join(
+"\n",ʮ)+ʵ;}else{ȉ.WriteText(string.Join("\n",ʮ));}}public void Έ(){ʰ=0;}public bool Ō(List<V>ͺ,Dictionary<string,V>Ê){ʲ=0;ʱ=
+0;ʳ=false;ˆ=0;if(Ȉ){ɦ=ʫ.CustomData;}else{ɦ=ȉ.GetText();}if(ɦ!=""){ʮ=ɦ.Split('\n').ToList();foreach(var Ή in ʮ){if(!Ή.
+StartsWith("@GOAT-Stock Definitions")&&!ʳ)continue;ʳ=true;if(ʱ<ʰ){ʱ++;continue;}if(ʱ==ʰ){ʱ+=999999;}if(Ή.StartsWith(
+"~~~~~~~~ Cont")){ˆ=1;ʰ++;continue;}if(Ή.StartsWith("~~~~~~~~ Set")){ˆ=2;ʰ++;continue;}if(Ή.StartsWith("~~~~~~~~ Mod")){ˆ=0;ʰ++;
+continue;}if(ˆ==1){Ί(Ή);ʰ++;continue;}if(ˆ==2){ˇ=Ή.Split('=');if(ˇ.Length==2){switch(ˇ[0]){case"method":ʹ=ˇ[1].StartsWith("Prio"
+)?0:1;break;case"rebalancePercentage":Ś=int.Parse(ˇ[1]);break;case"name":ų=ˇ[1];if(!ȁ.ContainsKey(ų))ȁ.Add(ų,this);break;
+}}ʰ++;continue;}if(Ή.StartsWith("~")||Ή.StartsWith("@")){ʲ++;ʰ++;continue;}ʯ=new ʬ(Ή,Ê);if(ʯ.ň&&!Ʈ.ContainsKey(ʯ.Ŷ.ŉ)){Ʈ.
+Add(ʯ.Ŷ.ŉ,ʯ);}else if(ʯ.ň){Ʈ[ʯ.Ŷ.ŉ].ˠ=ʯ.ˠ;Ʈ[ʯ.Ŷ.ŉ].ˡ=ʯ.ˡ;Ʈ[ʯ.Ŷ.ŉ].ͼ=ʯ.ͼ;}else if(!string.IsNullOrEmpty(ʯ.Ό)&&!ʭ.ContainsKey
+(ʯ.Ό)){ʭ.Add(ʯ.Ό,ʯ);}else if(!string.IsNullOrEmpty(ʯ.Ό)){ʭ[ʯ.Ό].ˠ=ʯ.ˠ;ʭ[ʯ.Ό].ˡ=ʯ.ˡ;ʭ[ʯ.Ό].ͼ=ʯ.ͼ;}ʲ++;ʰ++;if(ʲ>=ʪ){return
+false;}if(Ή.StartsWith("@GOAT-Stock Definitions END"))break;}}foreach(var Ç in ͺ){if(!Ʈ.ContainsKey(Ç.ŉ)){Ʈ.Add(Ç.ŉ,new ʬ(Ç,0
+,ʬ.ˏ.ˑ));}}Ά(ͺ);return true;}public void ɳ(){ɱ=ʫ.CustomName.IndexOf("[P:");if(ɱ<0)return;þ=ʫ.CustomName.Substring(ɱ+3);ɲ=
+þ.IndexOf(']');if(ɲ<0)return;int.TryParse(þ.Substring(0,ɲ),out i);}void Ύ(){ʻ.Clear();ʽ=0;ʾ=0;foreach(var Â in ʷ){ʼ=Â.ɾ()
+;if(ʼ>ʽ)ʽ=ʼ;ʻ.Add(ʼ);}for(int ļ=0;ļ<ʻ.Count;ļ++){ʻ[ļ]=ʻ[ļ].ʁ(ʽ);ʾ+=ʻ[ļ];}}public bool Ƌ(){if(ʹ==0)return false;if(ʷ.Count
+<=0)return false;float Ώ=1f;float ΐ=0f;foreach(var Â in ʷ){if(Â.VolumeFillFactor>ΐ)ΐ=Â.VolumeFillFactor;if(Â.
+VolumeFillFactor<Ώ)Ώ=Â.VolumeFillFactor;}if((ΐ-Ώ)*100f<=Ś)return false;return true;}public bool ƌ(){return!X.Ǝ(ʷ);}bool Α=false;int Β=0;
+public bool ƈ(IMyInventory ț,int Ǳ,ref bool Γ,MyFixedPoint?ˠ=null){µ=ț.GetItemAt(Ǳ);if(!µ.HasValue){Γ=false;Α=false;return
+true;}if(ˠ.HasValue)ʺ=ˠ.Value;else ʺ=µ.Value.Amount;if(ʹ==1){if(!Α){Β=0;Ύ();ʿ=ʺ.ʁ(ʾ);ˀ.Clear();foreach(var Δ in ʻ){ˀ.Add(Δ*ʿ
+);}if(!µ.Value.Type.GetItemInfo().UsesFractions){ˁ=0;for(int ļ=0;ļ<ˀ.Count;ļ++){ˁ+=ˀ[ļ]-MyFixedPoint.Floor(ˀ[ļ]);ˀ[ļ]=
+MyFixedPoint.Floor(ˀ[ļ]);}for(int ļ=0;ļ<ʻ.Count;ļ++){if(ʻ[ļ]==1){ˀ[ļ]=MyFixedPoint.Ceiling(ˀ[ļ]+ˁ);break;}}}for(int ļ=0;ļ<ʷ.Count;ļ
+++){if(ʷ[ļ].ɾ()<µ.Value.Type.GetItemInfo().Volume*ˀ[ļ]){Γ=false;Α=false;return true;}}Α=true;}for(int ļ=0;ļ<ʷ.Count;ļ++){
+if(ļ<Β){continue;}ț.TransferItemTo(ʷ[ļ],Ǳ,null,true,ˀ[ļ]);if(ļ-Β>20){Β=ļ;return false;}}Γ=true;}else{if(ˠ.HasValue&&µ.
+Value.Type.GetItemInfo().Volume*ˠ>ˤ()){Γ=false;Α=false;return true;}if(!Α){Β=0;Α=true;}if(!ˠ.HasValue){for(int ļ=0;ļ<ʷ.Count;
+ļ++){if(ļ<Β){continue;}Γ|=ț.TransferItemTo(ʷ[ļ],Ǳ,null,true);{Β=ļ;return true;}}}else{Γ=true;foreach(var Â in ʷ){º=
+MyFixedPoint.Min(ˠ.Value,(MyFixedPoint)((float)Â.ɾ()/µ.Value.Type.GetItemInfo().Volume));if(ț.TransferItemTo(Â,Ǳ,null,true,º)){ˠ-=º;
+}else{Γ=false;}}}}Α=false;return true;}void Ί(string Ε){if(Ε.StartsWith("ID:")){ˇ=Ε.Substring(3).Split('|');ˉ=ˈ.
+GetBlockWithId(long.Parse(ˇ[0]));if(ˉ!=null){ŝ(ˉ);}else{ǃ=Vector3.Zero;ǃ.X=float.Parse(ˇ[1]);ǃ.Y=float.Parse(ˇ[2]);ǃ.Z=float.Parse(ˇ[3
+]);ˊ=999999f;foreach(var ŕ in t){Ā=Vector3.RectangularDistance(ʫ.Position+ǃ,ŕ.Position);if(Ā<ˊ){ˉ=ŕ;ˊ=Ā;}}if(ˊ<999999f){ŝ
+(ˉ);}}}else if(Ε.StartsWith("G:")){var Ζ=ˈ.GetBlockGroupWithName(Ε.Substring(2));var Ȩ=new List<IMyTerminalBlock>();Ζ.
+GetBlocks(Ȩ);foreach(var Ŀ in Ȩ){ŝ(Ŀ);}}else{ˉ=ˈ.GetBlockWithName(Ε);if(ˉ!=null){ŝ(ˉ);}}}string ͻ(IMyTerminalBlock ŕ){return$"ID:{ŕ.EntityId.ToString()}|{ʫ.Position.X-ŕ.Position.X}|{ʫ.Position.Y-ŕ.Position.Y}|{ʫ.Position.Z-ŕ.Position.Z}|{ŕ.CustomName}"
+;}public void Ȋ(Dictionary<MyItemType,V>Ç){if(ȉ==null)return;RectangleF ô=new RectangleF((ȉ.TextureSize-ȉ.SurfaceSize)/2f
+,ȉ.SurfaceSize);var ǎ=ȉ.DrawFrame();var Ǐ=ô.Position;ˌ=ʫ.CustomData.Split('\n');int ƹ=16;int ƺ=0;float Ƹ=1f;MyIni j=new
+MyIni();foreach(var Ʃ in ˌ){if(Ʃ.StartsWith("@")||Ʃ.StartsWith("~"))continue;ƺ++;X.Ƿ(Ʃ,ref j);if(ƺ==1){ƹ=j.ǐ("Margin").
+ToInt32(16);Ǐ.X+=ƹ;Ǐ.Y+=ƹ;}if(Ʃ.StartsWith("Size=")){Ƹ=j.ǐ("Size").ToSingle(1f);continue;}if(Ʃ.StartsWith("StockVolumeFull")){Ȇ
+(ȉ,ô,ǎ,Ǐ,ƹ,j.ǐ("Color").ToInt32(0)-1);Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}else if(Ʃ.StartsWith("StockVolume")){ȅ(ȉ,ǎ,Ǐ,Ƹ,ƹ,
+j.ǐ("Color").ToInt32(0)-1);Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}if(Ʃ.StartsWith("StockLevelFull")){Ȅ(ȉ,ô,ǎ,Ǐ,ƹ,j.ǐ("Color").
+ToInt32(0)-1);Ǐ=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}else if(Ʃ.StartsWith("StockLevel")){ȃ(ȉ,ǎ,Ǐ,Ƹ,ƹ,j.ǐ("Color").ToInt32(0)-1);Ǐ=
+new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}if(Ʃ.StartsWith("StockList")){ȇ(ȉ,ô,ǎ,Ǐ,Ƹ,ƹ,Ç);}if(Ʃ.StartsWith("StockStats")){Ȃ(ȉ,ǎ,Ǐ,Ƹ);Ǐ
+=new Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}}ǎ.Dispose();}public void Ȃ(IMyTextSurface ȉ,MySpriteDrawFrame ǎ,Vector2 Ǐ,float Ƹ=1f){R
+.ǔ(ȉ,ǎ,Ǐ,$"Managed Containers: {ʷ.Count} | LastUpdate: {DateTime.UtcNow.AddHours(X.Y):HH:mm:ss}",Ƹ);}public void ȇ(
+IMyTextSurface ȉ,RectangleF ô,MySpriteDrawFrame ǎ,Vector2 Ǐ,float Ƹ,int ƹ,Dictionary<MyItemType,V>Ç){ͱ();foreach(var Η in Ʈ){if(Η.
+Value.ˡ==ʬ.ˏ.ː||Η.Value.ˠ==0)continue;if(!Ç.ContainsKey(Η.Key))continue;R.ǻ(ȉ,ǎ,Ǐ,Ç[Η.Key].Ƕ(),Η.Value.Ͳ/Η.Value.ˠ,Ƹ,ƹ);Ǐ=new
+Vector2(R.Ǚ(ô,ƹ),Ǐ.Y+30*Ƹ);}}public void ȃ(IMyTextSurface ȉ,MySpriteDrawFrame ǎ,Vector2 Ǐ,float Ƹ,int ƹ,int ʟ){R.ǻ(ȉ,ǎ,Ǐ,
+"Textures\\FactionLogo\\Builders\\BuilderIcon_15.dds",ͳ(),Ƹ,ƹ,ʟ:ʟ);}public void ȅ(IMyTextSurface ȉ,MySpriteDrawFrame ǎ,Vector2 Ǐ,float Ƹ,int ƹ,int ʟ){R.ǻ(ȉ,ǎ,Ǐ,
+"Textures\\FactionLogo\\Builders\\BuilderIcon_1.dds",1f-(float)ˤ().ʁ(ˬ()),Ƹ,ƹ,ʟ:ʟ);}public void Ȅ(IMyTextSurface ȉ,RectangleF ô,MySpriteDrawFrame ǎ,Vector2 Ǐ,int ƹ,int ʟ){R
+.Ǜ(ȉ,ǎ,Ǐ,ͳ(),ƹ:ƹ,ʠ:ô.Height,ʟ:ʟ);}public void Ȇ(IMyTextSurface ȉ,RectangleF ô,MySpriteDrawFrame ǎ,Vector2 Ǐ,int ƹ,int ʟ){
+R.Ǜ(ȉ,ǎ,Ǐ,1f-(float)ˤ().ʁ(ˬ()),ƹ:ƹ,ʠ:ô.Height,ʟ:ʟ);}}public class ʬ{public V Ŷ;public int ˠ;public bool ň=false;string[]ə
+;public string Ό;public float Ͳ=0;public enum ˏ{ˑ=0,ˣ=1,ˢ=2,ː=3}public ˏ ˡ;public bool ͼ=false;public ʬ(V Ŷ,int ˠ,ˏ ˡ){
+this.Ŷ=Ŷ;this.ˠ=ˠ;this.ˡ=ˡ;ň=true;}public ʬ(string ə,Dictionary<string,V>ͺ){this.ə=ə.Split('=');if(this.ə.Length!=2)return;Ό
+=this.ə[0];Θ(this.ə[1]);if(ͺ.ContainsKey(this.ə[0])){Ŷ=ͺ[this.ə[0]];ň=true;}}public override string ToString(){return
+$"{(ň?Ŷ.Ő:Ό)}={Ι()}";}string Ι(){switch(ˡ){case ˏ.ˣ:return$"{ˠ}M{(ͼ?"P":"")}";case ˏ.ˢ:return$"{ˠ}L{(ͼ?"P":"")}";case ˏ.ː:return
+$"All{(ͼ?"P":"")}";default:return$"{ˠ.ToString()}{(ͼ?"P":"")}";}}void Θ(string Κ){if(Κ.Contains("P")){ͼ=true;Κ=Κ.Replace("P","");}else{ͼ=
+false;}if(Κ.ToLower()=="all"){ˡ=ˏ.ː;}else if(Κ.ToLower().EndsWith("m")){ˡ=ˏ.ˣ;int.TryParse(Κ.Substring(0,Κ.Length-1),out ˠ);}
+else if(Κ.ToLower().EndsWith("l")){ˡ=ˏ.ˢ;int.TryParse(Κ.Substring(0,Κ.Length-1),out ˠ);}else{int.TryParse(Κ,out ˠ);}}}public
+static class Ķ{static IMyCubeGrid Λ;static Dictionary<IMyCubeGrid,Μ>Ν=new Dictionary<IMyCubeGrid,Μ>();static string[]Ξ;static
+string[]Ο;public static void ķ(IMyCubeGrid t,string[]Ξ,string[]Ο){Λ=t;Ķ.Ξ=Ξ;Ķ.Ο=Ο;Ν.Clear();Ν.Add(Λ,new Μ{Π=false,Ρ=false,Σ=
+false,Τ=true});}public static void Ĺ(IMyShipConnector ĸ){if(!Ν.ContainsKey(ĸ.CubeGrid))Ν.Add(ĸ.CubeGrid,new Μ());if(ĸ.
+IsConnected&&ĸ.OtherConnector!=null){if(!Ν.ContainsKey(ĸ.OtherConnector.CubeGrid))Ν.Add(ĸ.OtherConnector.CubeGrid,new Μ());if(!Ν[ĸ.
+CubeGrid].Υ.ContainsKey(ĸ.OtherConnector.CubeGrid))Ν[ĸ.CubeGrid].Υ.Add(ĸ.OtherConnector.CubeGrid,new Φ{Π=ĸ.CustomName.ĺ(Ο)||ĸ.
+OtherConnector.CustomName.ĺ(Ο),Ρ=ĸ.CustomName.ĺ(Ξ)||ĸ.OtherConnector.CustomName.ĺ(Ξ),});if(!Ν[ĸ.OtherConnector.CubeGrid].Υ.ContainsKey
+(ĸ.CubeGrid))Ν[ĸ.OtherConnector.CubeGrid].Υ.Add(ĸ.CubeGrid,new Φ{Π=ĸ.CustomName.ĺ(Ο)||ĸ.OtherConnector.CustomName.ĺ(Ο),Ρ=
+ĸ.CustomName.ĺ(Ξ)||ĸ.OtherConnector.CustomName.ĺ(Ξ),});}}public static void Ľ(IMyMechanicalConnectionBlock Χ){if(!Ν.
+ContainsKey(Χ.CubeGrid))Ν.Add(Χ.CubeGrid,new Μ());if(Χ.IsAttached&&Χ.Top!=null){if(!Ν.ContainsKey(Χ.Top.CubeGrid))Ν.Add(Χ.Top.
+CubeGrid,new Μ());if(!Ν[Χ.CubeGrid].Ψ.ContainsKey(Χ.Top.CubeGrid))Ν[Χ.CubeGrid].Ψ.Add(Χ.Top.CubeGrid,new Φ());if(!Ν[Χ.Top.
+CubeGrid].Ψ.ContainsKey(Χ.CubeGrid))Ν[Χ.Top.CubeGrid].Ψ.Add(Χ.CubeGrid,new Φ());}}public static void ľ(){Ω(Λ,Ϊ:true,Ϋ:Λ);}static
+void Ω(IMyCubeGrid t,IMyCubeGrid Ϋ,bool Ϊ=false,bool Π=false,bool Ρ=false){if(!Ν[t].Σ){Ν[t].Π=Π||Ν[Ϋ].Π;Ν[t].Ρ=Ρ||Ν[Ϋ].Ρ;Ν[t
+].Τ=Ϊ;Ν[t].Σ=true;foreach(var Χ in Ν[t].Υ){Ω(Χ.Key,t,false,Χ.Value.Π,Χ.Value.Ρ);}foreach(var Χ in Ν[t].Ψ){Ω(Χ.Key,t,Ϊ,Χ.
+Value.Π,Χ.Value.Ρ);}}}public static bool Ł(IMyCubeGrid t){if(Ν.ContainsKey(t))return Ν[t].Π;return true;}public static bool ł
+(IMyCubeGrid t){if(Ν.ContainsKey(t))return Ν[t].Ρ;return true;}public static bool ŀ(IMyCubeGrid t){if(Ν.ContainsKey(t))
+return Ν[t].Τ;return false;}}public class Μ{public bool Τ=false;public bool Π=true;public bool Ρ=true;public bool Σ=false;
+public Dictionary<IMyCubeGrid,Φ>Υ=new Dictionary<IMyCubeGrid,Φ>();public Dictionary<IMyCubeGrid,Φ>Ψ=new Dictionary<IMyCubeGrid
+,Φ>();}public class Φ{public bool Π=false;public bool Ρ=false;}public static class X{public static double Y;public static
+string ʛ(float ά){if(Math.Abs(ά)>=1000000000)return ʛ(ά/1000000000)+"G";if(Math.Abs(ά)>=1000000)return ʛ(ά/1000000)+"M";if(
+Math.Abs(ά)>=100000)return ʛ(ά/1000)+"K";if(Math.Abs(ά)>=10000)return(ά/1000D).ToString("0.#")+"K";return ά.ToString("#,0");
+}public static string ɤ(float ά){return ά.ToString("N0").Replace(",","");}public static bool ǌ(string ɦ,ref MyIni ɷ){ɷ.
+Clear();return ɷ.TryParse($"[Config]\n{ɦ}");}public static bool Ƿ(string ɦ,ref MyIni ɷ){ɷ.Clear();var έ=ɦ.Split(',');var ή=
+"[Config]\n";foreach(var Ʃ in έ){if(Ʃ.Contains("="))ή+=Ʃ+"\n";}return ɷ.TryParse(ή);}public static int ź(IMyTerminalBlock Ŀ){int ŵ=
+100;string[]Ȧ=Ŀ.DetailedInfo.Split(':');if(Ȧ.Length<6)return 100;string ί=Ȧ[5];int Ǳ=ί.IndexOf('%');if(Ǳ==-1)return 100;ί=ί
+.Substring(1,Ǳ-1);int.TryParse(ί,out ŵ);return ŵ;}public static Color ǿ(string ʟ){if(ʟ.Length==6){return new Color(int.
+Parse(ʟ.Substring(0,2),System.Globalization.NumberStyles.HexNumber),int.Parse(ʟ.Substring(2,2),System.Globalization.
+NumberStyles.HexNumber),int.Parse(ʟ.Substring(4,2),System.Globalization.NumberStyles.HexNumber));}return Color.Black;}static bool ΰ=
+false;static int Ͷ=0;static List<MyFixedPoint>α=new List<MyFixedPoint>();static MyFixedPoint β;static List<MyInventoryItem>z=
+new List<MyInventoryItem>();static Dictionary<MyItemType,MyFixedPoint>ǉ=new Dictionary<MyItemType,MyFixedPoint>();static
+Dictionary<int,Dictionary<MyItemType,MyFixedPoint>>Ç=new Dictionary<int,Dictionary<MyItemType,MyFixedPoint>>();static MyFixedPoint
+γ;static MyFixedPoint δ;public static bool Ǝ(List<IMyInventory>ʷ){if(!ΰ){α.Clear();β=MyFixedPoint.Zero;z.Clear();ǉ.Clear(
+);Ç.Clear();γ=MyFixedPoint.Zero;δ=MyFixedPoint.Zero;for(int ļ=0;ļ<ʷ.Count;ļ++){α.Add(ʷ[ļ].MaxVolume);β+=ʷ[ļ].MaxVolume;Ç.
+Add(ļ,new Dictionary<MyItemType,MyFixedPoint>());z.Clear();ʷ[ļ].GetItems(z);foreach(MyInventoryItem ª in z){if(ǉ.
+ContainsKey(ª.Type)){ǉ[ª.Type]+=ª.Amount;}else{ǉ.Add(ª.Type,ª.Amount);}if(Ç[ļ].ContainsKey(ª.Type)){Ç[ļ][ª.Type]+=ª.Amount;}else{Ç[
+ļ].Add(ª.Type,ª.Amount);}}}for(int ļ=0;ļ<ʷ.Count;ļ++){α[ļ]=α[ļ].ʁ(β);}}ΰ=true;for(int ļ=Ͷ;ļ<ʷ.Count;ļ++){z.Clear();ʷ[ļ].
+GetItems(z);for(int Ǭ=0;Ǭ<z.Count;Ǭ++){if(!ǉ.ContainsKey(z[Ǭ].Type))continue;γ=ǉ[z[Ǭ].Type]*α[ļ];if(γ>z[Ǭ].Amount)continue;δ=z[Ǭ
+].Amount-γ;for(int ε=0;ε<ʷ.Count;ε++){if(ļ==ε)continue;γ=MyFixedPoint.Max(ǉ[z[Ǭ].Type]*α[ε],δ);if(Ç[ε].ContainsKey(z[Ǭ].
+Type))γ-=Ç[ε][z[Ǭ].Type];if(!z[Ǭ].Type.GetItemInfo().UsesFractions)γ=MyFixedPoint.Floor(γ);if(γ<=0)continue;if(ʷ[ļ].
+TransferItemTo(ʷ[ε],Ǭ,null,true,γ)){δ-=γ;if(Ç[ε].ContainsKey(z[Ǭ].Type)){Ç[ε][z[Ǭ].Type]+=γ;}else{Ç[ε].Add(z[Ǭ].Type,γ);}if(Ç[ļ].
+ContainsKey(z[Ǭ].Type))Ç[ļ][z[Ǭ].Type]-=γ;}else{}}}if(ļ-Ͷ>20){Ͷ=ļ;return false;}}Ͷ=0;ΰ=false;return true;}
