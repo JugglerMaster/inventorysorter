@@ -24,5 +24,22 @@ Reported errors: CS0139 "No enclosing loop out of which to break or continue" (~
   - Block at 283: trailing `}}}}}}` (6) → `}}}}}}}` (7)`.
 - After fix, both blocks and the whole file report brace balance 0.
 
-## Verification notes
-- No C# compiler is available in this environment (no dotnet/csc/mcs/mono), so fixes were verified structurally (brace-balance script that respects strings/comments) rather than by compiling. Compiler-reported line/col numbers did NOT match `GSIM.txt`'s physical lines (the compiled/pasted version is reformatted differently), so diagnosis was done by code inspection + brace analysis, not by line number.
+## Local compile verification (C# compiler IS now available)
+- **.NET SDK 8.0.425 is installed at `~/.dotnet`** (no sudo needed; it was already present). Its `csc` is **Roslyn — the exact compiler engine the SE Programmable Block uses**, so error codes match in-game.
+- Install/refresh if ever missing: `curl -sSL https://dot.net/v1/dotnet-install.sh | bash -s -- --channel 8.0 --install-dir /home/dadisc01/.dotnet`.
+- **Space Engineers API is NOT available on Linux** (SE has no Linux client; the PB compiler lives inside the game). So we cannot compile against the real `VRage*`/`Sandbox*` assemblies here without a Windows dev machine + game/MDK reference assemblies. This means the harness checks **structure/scope/braces only**, not SE-API correctness.
+- Harness: `/tmp/opencode/verify/` (`verify.csproj` + `verify.sh`). It wraps `GSIM.txt` as `class Program { … }` with **no base class**, so every SE API symbol becomes an expected "not found" error (`CS0246`) that we filter out; real structural errors (CS0136/CS0139/brace/syntax) still surface.
+  - Run: `bash /tmp/opencode/verify/verify.sh`. It prints a "STRUCTURAL ERROR CHECK" section (targets CS0136/CS0139/CS1513/CS1002/CS1022/CS1519/CS1520/CS1525 …) and a distinct-error-code tally.
+- **Result after bug #2 fix: clean.** No CS0136/CS0139/brace/syntax errors. Only `CS0246` (508×, unresolved SE API types — expected stub noise) + one `CS8981` naming warning. Negative self-tests confirm the harness catches CS0136/CS0139 when injected and reports clean when fixed.
+- Final full-fidelity confirmation still requires re-pasting `GSIM.txt` into the in-game PB (the only place the real SE API is resolved).
+
+## Scan blocks de-duplicated + stricter learning (DONE)
+The two near-identical scan blocks (the `SCN` scan-mode loop at old ~237, and the per-production-block auto-scan in the sort loop at old ~283) were collapsed into a single helper `LearnBlueprintFrom(IMyProductionBlock)` (defined near `S()`). It contains all the original guards (skip null / disassembler assembler / not working / empty queue / non-uniform queue) and the original learn+log+`SCN`-stop behavior. Net: ~300 fewer chars (file now 98,920).
+
+### Stricter "real product" check
+`LearnBlueprintFrom` now only stamps a blueprint onto an output item when that item is an **actual output** of the queued blueprint, verified via the authoritative blueprint definition:
+`var ƈ=MyDefinitionManager.Static.GetBlueprintDefinition(ß[0].BlueprintId);` → for each output item, `foreach(var Ɵo in ƈ.Outputs){ if(Ɵo.Id==ª.Type) … }`. If the definition can't be fetched (`try/catch` → `ƈ=null`) it falls back to the old lenient behavior (stamp anyway) so mod/special recipes still learn. This prevents learning false blueprint associations for items merely sitting in a production block's output inventory.
+- **API caveat:** `MyDefinitionManager` / `MyBlueprintDefinition.Outputs` / `MyBlueprintDefinitionItem.Id` are SE-PB-whitelisted and standard, but the local harness cannot validate SE-specific members (they show as `CS0246` stub noise). Confirm with an in-game re-paste.
+
+### Learning LCD (`LN`) isolation
+- Removed the periodic `LN.WriteText` from the generic LCD-update section (was `if(LN!=null){int Ǫ=DBG2.Count;…;LN.WriteText(…);}` at old ~505). Now **only learning code** writes the learn LCD: the new helper `WriteLearnLog()` (called from `LearnBlueprintFrom` and from the active-learning "learn" branch at ~244). `LC` (craftingStatus) and all other LCD code are untouched. `WriteLearnLog()` also owns the `DBG2` 25-line trim, so the generic update no longer manages that buffer.

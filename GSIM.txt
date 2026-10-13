@@ -234,14 +234,14 @@ ToDictionary(š=>š.Key,š=>š.Value);yield return true;Ï.Clear();foreach(var �
 if(Ţ.Value.Ř.Count!=1)continue;if(!Ï.ContainsKey(Ţ.Value.Ř[0]))Ï.Add(Ţ.Value.Ř[0],new List<IMyInventory>());Ï[Ţ.Value.Ř[0]
 ].Add(Ţ.Key.GetInventory());}Ô=7;Î.Clear();foreach(var ŗ in Í){Ā=0f;ā=0f;if(o.ContainsKey(ŗ)){foreach(var ŕ in o[ŗ]){Ā+=(
 float)ŕ.Â.CurrentVolume;ā+=(float)ŕ.Â.MaxVolume;}}if(ā>0f){Î.Add(ŗ,Ā/ā);}else{Î.Add(ŗ,-1f);}}Ò=5;Ô=0;Ó="Learning Blueprints";
-if(SCN){foreach(var Ť in Ü){yield return true;if(Ť==null)continue;if(!Ť.IsWorking)continue;if(Ť is IMyAssembler&&(Ť as IMyAssembler).Mode==MyAssemblerMode.Disassembly)continue;ß.Clear();Ť.GetQueue(ß);if(ß.Count==0)continue;{bool hx=true;for(int qx=1;qx<ß.Count;qx++)if(ß[qx].BlueprintId!=ß[0].BlueprintId){hx=false;break;}if(!hx)continue;}z.Clear();Ť.OutputInventory.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))Ç.Add(ª.Type,new V(ª.Type));if(!Ç[ª.Type].Ŧ.HasValue){Ç[ª.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("scan "+Ť.CustomName+" "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);if(LN!=null)LN.WriteText(string.Join("\n",DBG2));if(SCN){SCN=false;Ź("Scan found new blueprint "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);}}}}}â=ã;bool ţ=false;foreach(var Ť in Ü){yield return true;if(Ť==null)continue;if(Ť is IMyRefinery)continue;if(Ť is
+if(SCN){foreach(var Ť in Ü){yield return true;if(Ť==null)continue;LearnBlueprintFrom(Ť);}}â=ã;bool ţ=false;foreach(var Ť in Ü){yield return true;if(Ť==null)continue;if(Ť is IMyRefinery)continue;if(Ť is
 IMyAssembler&&(Ť as IMyAssembler).Mode==MyAssemblerMode.Disassembly)continue;if(ã){if(ä==null){ä=DateTime.UtcNow;ţ=true;}if(ţ){Ť.
 ClearQueue();for(int ļ=Ť.OutputInventory.ItemCount-1;ļ>=0;ļ--){ť(Ť.OutputInventory,Ť.OutputInventory.GetItemAt(ļ).Value);yield
 return true;}continue;}Ť.ShowOnHUD=true;if(!Ť.CustomName.Contains(" is Learning"))Ť.CustomName+=" is Learning";if(Ť.CustomName
 .Contains(Ĳ)){if(Ť.OutputInventory.ItemCount==0){Ť.CustomName=Ť.CustomName.Replace(Ĳ,"");}Ť.ClearQueue();continue;}â=true
 ;Ó="Learning Item Recepies";Ô=1;ß.Clear();Ť.GetQueue(ß);if(ß.Count>1){for(int ļ=ß.Count-1;ļ>0;ļ--){Ť.RemoveQueueItem(ļ,ß[
 ļ].Amount);}continue;}if(Ť.OutputInventory.ItemCount!=1)continue;ª=Ť.OutputInventory.GetItemAt(0);if(!ª.HasValue)continue
-;if(!Ç.ContainsKey(ª.Value.Type)){Ç.Add(ª.Value.Type,new V(ª.Value.Type));}Ç[ª.Value.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("learn "+ª.Value.Type.SubtypeId+"="+ß[0].BlueprintId.SubtypeId);ä=DateTime.
+;if(!Ç.ContainsKey(ª.Value.Type)){Ç.Add(ª.Value.Type,new V(ª.Value.Type));}Ç[ª.Value.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("learn "+ª.Value.Type.SubtypeId+"="+ß[0].BlueprintId.SubtypeId);WriteLearnLog();ä=DateTime.
 UtcNow;Ť.ClearQueue();Ĥ=ť(Ť.OutputInventory,ª.Value);if(!Ĥ){if(!Ť.CustomName.Contains(Ĳ))Ť.CustomName+=Ĳ;}}else{Ť.ShowOnHUD=
 false;Ť.CustomName=Ť.CustomName.Replace(" is Learning","");Ť.CustomName=Ť.CustomName.Replace(Ĳ,"");}}if(â)continue;if(!ī){Ô=2
 ;var ŧ=Me.GetProperty("GSIMIntegration_filteredBlueprintLib")?.As<string>();var Ũ=ŧ?.GetValue(Me);MyIniParseResult ũ;
@@ -280,7 +280,7 @@ $"@GSIM-GridPriotity={i}");Ä.Add($"~Name~Category~TypeId~SubTypeId~Blueprint~")
 ;Ô=0;Ó="Sorting Items";Ú=0;Ī=t.Count;ĩ=0;foreach(var ŕ in t){ĩ++;Ú++;if(Ú%VTEC==0)yield return true;if(ŕ==null)continue;
 if(ŕ is IMyParachute)continue;if(ŕ is IMyUserControllableGun)continue;if(ŕ is IMyGasGenerator&&!Į.Ŝ(ŕ))continue;if(ŕ is
 IMyReactor&&!Į.Ŝ(ŕ))continue;if(ŕ.CustomName.ĺ(ITS))continue;Â=ŕ.GetInventory(0);Ô=1;if(ŕ is IMyProductionBlock)Â=((
-IMyProductionBlock)ŕ).OutputInventory;if(ŕ is IMyProductionBlock&&!(ŕ is IMyAssembler&&(ŕ as IMyAssembler).Mode==MyAssemblerMode.Disassembly)){var xq=(IMyProductionBlock)ŕ;if(xq.IsWorking){ß.Clear();xq.GetQueue(ß);if(ß.Count>0){bool hx=true;for(int qx=1;qx<ß.Count;qx++)if(ß[qx].BlueprintId!=ß[0].BlueprintId){hx=false;break;}if(hx){z.Clear();xq.OutputInventory.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))Ç.Add(ª.Type,new V(ª.Type));if(!Ç[ª.Type].Ŧ.HasValue){Ç[ª.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("scan "+xq.CustomName+" "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);if(LN!=null)LN.WriteText(string.Join("\n",DBG2));if(SCN){SCN=false;Ź("Scan found new blueprint "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);}}}}}}}if(ŕ is IMyAssembler&&(ŕ as IMyAssembler).Mode==MyAssemblerMode.Disassembly)Â=((IMyAssembler)ŕ).
+IMyProductionBlock)ŕ).OutputInventory;if(ŕ is IMyProductionBlock)LearnBlueprintFrom((IMyProductionBlock)ŕ);if(ŕ is IMyAssembler&&(ŕ as IMyAssembler).Mode==MyAssemblerMode.Disassembly)Â=((IMyAssembler)ŕ).
 InputInventory;Ô=2;if(Â==null)continue;if(Į.Ŝ(ŕ)&&!Į.Ŗ(ŕ).Ɓ){Ú++;if(Ú%VTEC==0)yield return true;continue;}for(int ļ=Â.ItemCount-1;ļ>=0
 ;ļ--){À=0;Á=0;Ú++;if(Ú%VTEC==0)yield return true;ª=Â.GetItemAt(ļ);if(!ª.HasValue)continue;µ=ª.Value;Ô=3;if(!Ç.ContainsKey
 (µ.Type))continue;Ì=Ç[µ.Type];º=ª.Value.Amount;Ô=4;foreach(var ƃ in Į.Ƃ){Ô=5;Ú++;if(Ú%VTEC==0)yield return true;if(ƃ==
@@ -502,7 +502,7 @@ $"Runtime: {Runtime.LastRunTimeMs}\n");if(â&&ä!=null){Echo($"Learning mode act
 "to save newly learned recipes, run the same argument again.\n");}foreach(var ǚ in Î){if(ǚ.Value<0f){Echo($"{ǚ.Key}: Warning, no container");}else{Echo($"{ǚ.Key}: {ǚ.Value*100f:F2}%")
 ;}}if(Ö!=null){Ù=$"{(DateTime.UtcNow.Second%2==0?DateTime.UtcNow.AddHours(UTC).ToString("HH:mm"):DateTime.UtcNow.AddHours(UTC).ToString("HH mm"))} | {Ò.ToString().PadLeft(2,'0')} - {Ó}\n"
 ;for(int ļ=Õ.Count-1;ļ>=0;ļ--){Ù+=$"{Õ[ļ].Value.AddHours(UTC):HH:mm:ss} | {Õ[ļ].Key}";if(ļ!=0){Ù+="\n";}}Ö.WriteText(Ù);}
-if(LN!=null){int Ǫ=DBG2.Count;if(Ǫ>25)DBG2.RemoveRange(0,Ǫ-25);LN.WriteText(string.Join("\n",DBG2));}if(LC!=null)LC.WriteText(string.Join("\n",DBG));var Ȓ=Me as IMyTextSurfaceProvider;var ȓ=Ȓ.GetSurface(0);if(ȓ==null){Ð++;
+if(LC!=null)LC.WriteText(string.Join("\n",DBG));var Ȓ=Me as IMyTextSurfaceProvider;var ȓ=Ȓ.GetSurface(0);if(ȓ==null){Ð++;
 return;}var ǎ=ȓ.DrawFrame();ȑ=new RectangleF((ȓ.TextureSize-ȓ.SurfaceSize)/2f,ȓ.SurfaceSize);var Ǐ=new Vector2(ȑ.Center.X,ȑ.
 Position.Y+16);ȓ.ContentType=ContentType.SCRIPT;R.Ȁ(ȓ,ǎ,"Grid",1,0.1f,ȑ,Color.Black);R.Ȕ(ȓ,ǎ,Ǐ,$"GOAT Sorter {G}",ȑ.Height<=256?
 1f:1.5f);R.ȕ(ȓ,ǎ,new Vector2(ȑ.Center.X,ȑ.Center.Y+30),new Vector2(ȑ.Width,ȑ.Height-60),"SquareHollow",Color.Black,Ȗ:0.1f)
@@ -528,7 +528,7 @@ in Ȩ){if(Ŀ.CubeGrid!=ĸ.CubeGrid)continue;if(!(Ŀ is IMyProgrammableBlock))con
 =!ã;}if(ã)å=true;else ä=null;}void K(){string Ȫ=Ć.Argument(1);if(Ȫ=="true"){æ=true;}if(Ȫ=="false"){æ=false;}if(Ȫ==
 "toggle"){æ=!æ;}if(æ){ğ=0;å=true;}else{ê=null;}}void L(){ë=true;Ź("Item Index Rebuild has been requested.");}void M(){Ġ=true;Ź(
 "Removing of not craftable Blueprints has been requested.");}void N(){ȫ();}void O(){ȫ(true);}void P(){ì=true;Ź("Item Index Population has been requested.");}void Q(){í=true;Ź(
-"Item Name Translation has been requested.");}void S(){SCN=!SCN;Ź(SCN?"Scan Mode ON: will scan production until a new blueprint is found.":"Scan Mode off.");}void ȫ(bool Ȭ=false){if(Ć.ArgumentCount!=6)return;var ª=new V(
+"Item Name Translation has been requested.");}void S(){SCN=!SCN;Ź(SCN?"Scan Mode ON: will scan production until a new blueprint is found.":"Scan Mode off.");}void WriteLearnLog(){if(LN==null)return;int Ǫ=DBG2.Count;if(Ǫ>25)DBG2.RemoveRange(0,Ǫ-25);LN.WriteText(string.Join("\n",DBG2));}void LearnBlueprintFrom(IMyProductionBlock Ť){if(Ť==null)return;if(Ť is IMyAssembler&&(Ť as IMyAssembler).Mode==MyAssemblerMode.Disassembly)return;if(!Ť.IsWorking)return;ß.Clear();Ť.GetQueue(ß);if(ß.Count==0)return;bool hx=true;for(int qx=1;qx<ß.Count;qx++)if(ß[qx].BlueprintId!=ß[0].BlueprintId){hx=false;break;}if(!hx)return;MyBlueprintDefinition ƈ=null;try{ƈ=MyDefinitionManager.Static.GetBlueprintDefinition(ß[0].BlueprintId);}catch{ƈ=null;}z.Clear();Ť.OutputInventory.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))Ç.Add(ª.Type,new V(ª.Type));if(!Ç[ª.Type].Ŧ.HasValue){bool ƞp=false;if(ƈ!=null){foreach(var Ɵo in ƈ.Outputs){if(Ɵo.Id==ª.Type){ƞp=true;break;}}}else ƞp=true;if(!ƞp)continue;Ç[ª.Type].Ŧ=ß[0].BlueprintId;DBG2.Add("scan "+Ť.CustomName+" "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);WriteLearnLog();if(SCN){SCN=false;Ź("Scan found new blueprint "+Ç[ª.Type].Ő+"="+ß[0].BlueprintId.SubtypeId);}}}}void ȫ(bool Ȭ=false){if(Ć.ArgumentCount!=6)return;var ª=new V(
 $"~{Ć.Argument(1)}~{Ć.Argument(2)}~{Ć.Argument(3)}~{Ć.Argument(4)}~{Ć.Argument(5)}~");if(!ª.ň){Ź($"Item definition for \"{Ć.Argument(1)}\" could not be parsed");return;}if(Ȭ){Ħ.Add(ª);}else{ĥ.Add(ª);}Ź(
 $"Item \"{ª.Ő}\" import queued from external source.");}void ȭ(){if(ä!=null){if((DateTime.UtcNow-ä.Value).TotalSeconds>300){ã=false;ä=null;}}if(æ&&ğ>5&&ê==null){æ=false;}}
 bool ť(IMyInventory Ȯ,MyInventoryItem ª,string ȯ=""){foreach(var ŕ in p){if(!ŕ.Value.Contains(Ç[ª.Type].ō))continue;Ã=ŕ.Key.
