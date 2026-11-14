@@ -1,4 +1,4 @@
-
+﻿
 
 
 
@@ -303,7 +303,7 @@ Value!=Ɣ.BlueprintId)continue;if(Ɠ is IMyAssembler&&(Ɠ as IMyAssembler).Mode=
 return true;}foreach(var ŕ in t){if(ŕ==null)continue;if(ŕ.CustomName.ĺ(HTS))continue;if(ŕ.CustomName.ĺ(MTS))continue;if(ŕ is
 IMyProductionBlock&&!((IMyProductionBlock)ŕ).IsWorking)continue;ĝ=false;foreach(var ƕ in p){if(ƕ.Key.ŕ==ŕ){ĝ=true;break;}}if(STOR&&Į.Ŝ(ŕ))
 ĝ=true;z.Clear();Â=ŕ.GetInventory();if(Â==null)continue;Â.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))
-continue;Ç[ª.Type].N((int)ª.Amount);if(ĝ||ŕ is IMyRefinery){Ç[ª.Type].Ɩ((int)ª.Amount);}if(ŕ is IMyRefinery&&!ŕ.CustomName.ĺ(MTS
+continue;if(!(ŕ is IMyAssembler)){Ç[ª.Type].N((int)ª.Amount);if(ĝ||ŕ is IMyRefinery){Ç[ª.Type].Ɩ((int)ª.Amount);}}if(ŕ is IMyRefinery&&!ŕ.CustomName.ĺ(MTS
 )&&(ŕ as IMyRefinery).IsWorking){è.Ɨ(ª,Ç,ŕ as IMyRefinery);}yield return true;}if(ŕ is IMyRefinery){z.Clear();Â=(ŕ as
 IMyRefinery).OutputInventory;if(Â==null)continue;Â.GetItems(z);foreach(var ª in z){if(!Ç.ContainsKey(ª.Type))continue;Ç[ª.Type].N((
 int)ª.Amount);yield return true;}}else if(ŕ is IMyAssembler){Â=(ŕ as IMyAssembler).OutputInventory;if(Â==null)continue;z.
